@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdminPanel from '../components/AdminPanel';
+---
+
+<Layout title="Admin - Product Management">
+  <div class="mb-8">
+    <h1 class="mb-4">Product Management</h1>
+    <p class="text-gray-300 text-lg">
+      Add, edit, and manage your affiliate products. Changes are stored in your browser's local storage.
+    </p>
+    <div class="mt-4 p-4 bg-yellow-900/30 border border-yellow-600 rounded-lg">
+      <p class="text-sm text-yellow-200">
+        <strong>Note:</strong> This is a demo admin panel. In production, you would want to integrate with a proper backend database and authentication system.
+      </p>
+    </div>
+  </div>
+
+  <AdminPanel client:load />
+</Layout>

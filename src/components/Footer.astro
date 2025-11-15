@@ -1,9 +1,47 @@
 ---
+const currentYear = new Date().getFullYear();
 
+const footerLinks = [
+    { text: 'About', href: '/about' },
+    { text: 'Contact', href: '/contact' },
+    { text: 'Privacy Policy', href: '/privacy' },
+    { text: 'Terms of Service', href: '/terms' },
+];
 ---
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
-    </p>
+<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16 border-t border-gray-700">
+    <div class="space-y-6">
+        <div class="flex flex-wrap justify-between items-start gap-8">
+            <div class="max-w-sm">
+                <h3 class="text-xl font-bold mb-3 text-primary">TheBestOffersAround</h3>
+                <p class="text-gray-400 text-sm">
+                    Discover handpicked deals and offers on the best products and courses. 
+                    Your trusted source for verified affiliate recommendations.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold mb-3 text-white">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    {footerLinks.map(link => (
+                        <li>
+                            <a href={link.href} class="text-gray-400 hover:text-primary transition no-underline">
+                                {link.text}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pt-6 border-t border-gray-800 flex flex-wrap justify-between items-center gap-4 text-sm text-gray-400">
+            <p>
+                &copy; {currentYear} TheBestOffersAround.com. All rights reserved.
+            </p>
+            <p>
+                Affiliate Disclosure | 
+                <a href="/admin" class="text-gray-500 hover:text-primary ml-2">Admin</a>
+            </p>
+        </div>
+    </div>
 </footer>

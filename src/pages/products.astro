@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../data/products.json';
+
+const url = new URL(Astro.request.url);
+const filter = url.searchParams.get('filter');
+const search = url.searchParams.get('search');
+
+let filteredProducts = [...products];
+
+if (filter === 'trending') {
+  filteredProducts = products.filter(p => p.trending);
+} else if (filter === 'featured') {
+  filteredProducts = products.filter(p => p.featured);
+}
+
+if (search) {
+  const searchLower = search.toLowerCase();
+  filteredProducts = filteredProducts.filter(p => 
+    p.name.toLowerCase().includes(searchLower) || 
+    p.description.toLowerCase().includes(searchLower)
+  );
+}
+
+const title = filter === 'trending' ? 'Trending Products' : 
+              filter === 'featured' ? 'Featured Products' : 
+              search ? `Search Results for "${search}"` : 
+              'All Products';
+---
+
+<Layout title={`${title} - TheBestOffersAround.com`}>
+  <div class="mb-8">
+    <h1 class="mb-4">{title}</h1>
+    
+    <div class="flex items-center gap-4 text-sm text-gray-400 mb-6">
+      <a href="/" class="hover:text-primary">Home</a>
+      <span>/</span>
+      <span class="text-white">Products</span>
+    </div>
+
+    <form method="get" class="mb-6">
+      <div class="flex gap-3">
+        <input 
+          type="text" 
+          name="search"
+          value={search || ''}
+          placeholder="Search products..."
+          class="flex-1 px-4 py-3 rounded bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+        <button type="submit" class="btn">Search</button>
+      </div>
+    </form>
+
+    <div class="flex flex-wrap gap-3">
+      <a href="/products" class={`px-4 py-2 rounded ${!filter && !search ? 'bg-primary text-primary-content' : 'bg-gray-800 text-white hover:bg-gray-700'}`}>
+        All
+      </a>
+      <a href="/products?filter=featured" class={`px-4 py-2 rounded ${filter === 'featured' ? 'bg-primary text-primary-content' : 'bg-gray-800 text-white hover:bg-gray-700'}`}>
+        Featured
+      </a>
+      <a href="/products?filter=trending" class={`px-4 py-2 rounded ${filter === 'trending' ? 'bg-primary text-primary-content' : 'bg-gray-800 text-white hover:bg-gray-700'}`}>
+        Trending
+      </a>
+    </div>
+  </div>
+
+  {filteredProducts.length > 0 ? (
+    <div>
+      <p class="text-gray-300 mb-6">
+        Showing {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProducts.map(product => (
+          <ProductCard {...product} />
+        ))}
+      </div>
+    </div>
+  ) : (
+    <div class="text-center py-16 bg-gray-800 rounded-lg">
+      <p class="text-xl text-gray-400 mb-4">No products found matching your criteria.</p>
+      <a href="/products" class="btn btn-lg">
+        View All Products
+      </a>
+    </div>
+  )}
+</Layout>

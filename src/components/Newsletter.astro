@@ -1,0 +1,36 @@
+---
+---
+
+<div class="newsletter-section bg-gradient-to-r from-complementary to-primary/30 rounded-lg p-8 text-center">
+  <h2 class="text-3xl font-bold mb-3 text-white">Never Miss a Deal!</h2>
+  <p class="text-gray-200 mb-6 max-w-2xl mx-auto">
+    Get the latest offers, exclusive deals, and insider tips delivered straight to your inbox.
+  </p>
+  
+  <form class="max-w-md mx-auto flex gap-3" id="newsletter-form">
+    <input 
+      type="email" 
+      name="email"
+      placeholder="Enter your email"
+      required
+      class="flex-1 px-4 py-3 rounded bg-white/90 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+    />
+    <button type="submit" class="btn btn-lg whitespace-nowrap">
+      Subscribe
+    </button>
+  </form>
+  
+  <p class="text-xs text-gray-300 mt-4">
+    We respect your privacy. Unsubscribe at any time.
+  </p>
+</div>
+
+<script>
+  document.getElementById('newsletter-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    alert(`Thank you for subscribing with ${email}! This is a demo - integrate with your email service.`);
+    form.reset();
+  });
+</script>

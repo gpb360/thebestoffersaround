@@ -1,0 +1,38 @@
+[
+  {
+    "id": "health-fitness",
+    "name": "Health & Fitness",
+    "description": "Transform your body and improve your health",
+    "icon": "💪"
+  },
+  {
+    "id": "digital-marketing",
+    "name": "Digital Marketing",
+    "description": "Grow your online presence and business",
+    "icon": "📈"
+  },
+  {
+    "id": "make-money",
+    "name": "Make Money Online",
+    "description": "Build income streams and financial freedom",
+    "icon": "💰"
+  },
+  {
+    "id": "self-improvement",
+    "name": "Self-Improvement",
+    "description": "Unlock your potential and achieve your goals",
+    "icon": "🌟"
+  },
+  {
+    "id": "software-tools",
+    "name": "Software & Tools",
+    "description": "Powerful tools to boost your productivity",
+    "icon": "🔧"
+  },
+  {
+    "id": "ebooks-courses",
+    "name": "eBooks & Courses",
+    "description": "Learn new skills with quality education",
+    "icon": "📚"
+  }
+]
