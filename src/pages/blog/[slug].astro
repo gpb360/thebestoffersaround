@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { blogPosts, getBlogPostSlugs } from '../../data/blog';
+
+export function getStaticPaths() {
+  return getBlogPostSlugs().map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const post = blogPosts[slug];
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${post.title} | The Best Offers Around Blog`} type="article">
+  <Header />
+
+  <main class="flex-grow">
+    <section class="bg-off-black py-4">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="text-sm">
+          <a href="/" class="text-gold hover:underline">Home</a>
+          <span class="text-gray-500 mx-2">/</span>
+          <a href="/blog" class="text-gold hover:underline">Blog</a>
+          <span class="text-gray-500 mx-2">/</span>
+          <span class="text-gray-400">{post.title}</span>
+        </nav>
+      </div>
+    </section>
+
+    <article class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-12">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-6">
+          <span class="inline-block bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-semibold">
+            {post.category}
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-6">
+          {post.title}
+        </h1>
+
+        <div class="flex items-center text-gray-400 mb-8">
+          <div class="flex items-center">
+            <span>{post.author}</span>
+          </div>
+          <span class="mx-4">•</span>
+          <div class="flex items-center">
+            <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+          </div>
+          <span class="mx-4">•</span>
+          <div class="flex items-center">
+            <span>{post.readTime}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="py-12 bg-dark-gray">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose prose-lg prose-invert max-w-none">
+          <div set:html={post.content} />
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-800">
+          <div class="flex flex-wrap justify-between items-center gap-4">
+            <div class="flex gap-4">
+              <span class="text-gray-400">Categories:</span>
+              <a href="#" class="text-gold hover:underline">
+                {post.category}
+              </a>
+            </div>
+            <div class="flex gap-4">
+              <a href="/blog" class="text-gold hover:underline">← Back to Blog</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact Us | The Best Offers Around">
+  <Header />
+
+  <main class="flex-grow">
+    <section class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-6">
+          Contact Us
+        </h1>
+        <p class="text-xl text-gray-400">
+          Have questions? We'd love to hear from you.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-dark-gray">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div>
+            <h2 class="text-2xl font-bold text-off-white mb-6">Get in Touch</h2>
+            <p class="text-gray-300 mb-8">
+              Have a question about a product review? Want to suggest a product for us to review? Or just want to say hello? We're here to help.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="bg-gold/20 rounded-lg p-3 mr-4 flex-shrink-0">
+                  <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-off-white mb-1">Email</h3>
+                  <a href="mailto:contact@thebestoffersaround.com" class="text-gold hover:underline">
+                    contact@thebestoffersaround.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="bg-gold/20 rounded-lg p-3 mr-4 flex-shrink-0">
+                  <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-off-white mb-1">Response Time</h3>
+                  <p class="text-gray-400">We typically respond within 24-48 hours</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ Link -->
+            <div class="mt-8 bg-off-black rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-off-white mb-2">Before You Contact Us</h3>
+              <p class="text-gray-400 mb-4">
+                Check our FAQ sections on product pages for quick answers to common questions.
+              </p>
+              <a href="/" class="text-gold hover:underline font-medium">
+                Browse Products →
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-2xl font-bold text-off-white mb-6">Send a Message</h2>
+            <form
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+              class="space-y-4"
+            >
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded-lg text-off-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded-lg text-off-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">
+                  Subject
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded-lg text-off-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="product-question">Product Question</option>
+                  <option value="review-request">Review Request</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded-lg text-off-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-gold hover:bg-gold-dark text-off-black font-bold py-3 px-6 rounded-lg transition-colors duration-300"
+              >
+                Send Message
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                By submitting this form, you agree to our <a href="/privacy" class="text-gold hover:underline">Privacy Policy</a>
+              </p>
+            </form>
+
+            <!-- Note about Formspree -->
+            <div class="mt-6 bg-off-black rounded-lg p-4 text-sm">
+              <p class="text-gray-400">
+                <strong class="text-gold">Setup Required:</strong> Replace <code class="bg-dark-gray px-2 py-1 rounded">your-form-id</code> in the form action with your actual Formspree form ID. Sign up at <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="text-gold hover:underline">formspree.io</a> (free tier available).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

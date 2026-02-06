@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us | The Best Offers Around">
+  <Header />
+
+  <main class="flex-grow">
+    <section class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-6">
+          About The Best Offers Around
+        </h1>
+        <p class="text-xl text-gray-400">
+          Your trusted source for unbiased, research-based health supplement reviews
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-dark-gray">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-invert prose-lg">
+        <h2 class="text-3xl font-bold text-gold mb-6">Our Mission</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          At The Best Offers Around, we believe men deserve honest, accurate information about health supplements. The supplement industry is filled with hype and empty promises, making it difficult to separate quality products from marketing gimmicks.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-8">
+          Our mission is simple: provide thorough, research-backed reviews of men's health supplements so you can make informed decisions about your health. We don't sell products—we evaluate them.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-6 mt-12">What We Do</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          We specialize in reviewing supplements in key men's health categories:
+        </p>
+        <ul class="list-none space-y-2 mb-8">
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Testosterone Boosters</strong> - Natural support for vitality and performance</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Male Enhancement</strong> - Clinically-proven performance solutions</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Weight Loss</strong> - Stimulant-free fat burning for men</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Muscle & Fitness</strong> - HGH support for lean muscle growth</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Anti-Aging</strong> - Restore youthful energy and appearance</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-gold mr-3">✓</span>
+            <span class="text-gray-300"><strong>Brain Health</strong> - Nootropics for focus and mental clarity</span>
+          </li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gold mb-6 mt-12">Our Review Process</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Every product we review undergoes thorough evaluation based on:
+        </p>
+        <ol class="list-decimal list-inside space-y-2 text-gray-300 mb-8">
+          <li><strong class="text-off-white">Clinical Evidence</strong> - Is there scientific research backing the ingredients?</li>
+          <li><strong class="text-off-white">Ingredient Quality</strong> - Are the ingredients clinically-validated dosages?</li>
+          <li><strong class="text-off-white">Manufacturer Reputation</strong> - Is the company reputable with good practices?</li>
+          <li><strong class="text-off-white">User Reviews</strong> - What do real customers say about their results?</li>
+          <li><strong class="text-off-white">Value</strong> - Is the product worth the investment?</li>
+          <li><strong class="text-off-white">Guarantee</strong> - Does the company stand behind their product?</li>
+        </ol>
+
+        <h2 class="text-3xl font-bold text-gold mb-6 mt-12">Why Trust Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-off-black rounded-lg p-6">
+            <h3 class="text-xl font-bold text-off-white mb-2">Unbiased & Independent</h3>
+            <p class="text-gray-400">We don't own any products. Our recommendations are based solely on merit.</p>
+          </div>
+          <div class="bg-off-black rounded-lg p-6">
+            <h3 class="text-xl font-bold text-off-white mb-2">Research-Focused</h3>
+            <p class="text-gray-400">Every review is backed by research into ingredients, clinical studies, and user feedback.</p>
+          </div>
+          <div class="bg-off-black rounded-lg p-6">
+            <h3 class="text-xl font-bold text-off-white mb-2">Regularly Updated</h3>
+            <p class="text-gray-400">We continuously update our reviews as new research and products emerge.</p>
+          </div>
+          <div class="bg-off-black rounded-lg p-6">
+            <h3 class="text-xl font-bold text-off-white mb-2">Transparent</h3>
+            <p class="text-gray-400">We clearly disclose affiliate relationships and how we select products.</p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gold mb-6 mt-12">Affiliate Disclosure</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          This website contains affiliate links. If you purchase through our links, we may earn a commission at no extra cost to you. This supports our research and content creation.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          Importantly, affiliate relationships do NOT influence our reviews or recommendations. We only recommend products we genuinely believe offer value based on our research criteria.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { getFeaturedProducts } from '../data/products';
+
+const featuredProducts = getFeaturedProducts().slice(0, 3);
+---
+
+<Layout title="The Best Offers Around - Premium Health Supplement Reviews">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-off-black via-dark-gray to-off-black py-20 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-off-white mb-6">
+            Premium Health Supplements
+            <span class="block text-gold mt-2">That Actually Work</span>
+          </h1>
+          <p class="max-w-2xl mx-auto text-xl text-gray-400 mb-8">
+            Expert reviews of clinically-validated products for men's health, wellness, and performance. No hype, just science-backed solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#featured" class="bg-gold hover:bg-gold-dark text-off-black font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+              View Top Products
+            </a>
+            <a href="/category/testosterone-boosters" class="border-2 border-gold text-gold hover:bg-gold/10 font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+              Browse Categories
+            </a>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-lg p-4 mb-2 inline-block">
+              <svg class="w-8 h-8 text-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p class="text-sm text-gray-400">Clinically Validated</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-lg p-4 mb-2 inline-block">
+              <svg class="w-8 h-8 text-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-sm text-gray-400">Doctor Endorsed</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-lg p-4 mb-2 inline-block">
+              <svg class="w-8 h-8 text-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <p class="text-sm text-gray-400">Money-Back Guarantee</p>
+          </div>
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-lg p-4 mb-2 inline-block">
+              <svg class="w-8 h-8 text-gold mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p class="text-sm text-gray-400">Fast Results</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="py-16 bg-off-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-off-white mb-4">
+            Top Recommended Products
+          </h2>
+          <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+            Hand-picked supplements with clinical backing, doctor endorsements, and proven results
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featuredProducts.map(product => (
+            <ProductCard
+              name={product.name}
+              slug={product.slug}
+              image={product.image}
+              rating={product.rating}
+              price={product.price}
+              commission={product.commission}
+              guarantee={product.guarantee}
+              benefits={product.benefits}
+              affiliateLink={product.affiliateLink}
+              featured={true}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Overview -->
+    <section class="py-16 bg-dark-gray">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-off-white mb-4">
+            Shop by Category
+          </h2>
+          <p class="text-lg text-gray-400">
+            Find the right solution for your specific health goals
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <a href="/category/testosterone-boosters" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Testosterone Boosters</h3>
+            </div>
+            <p class="text-gray-400">Natural support for energy, muscle, and vitality</p>
+          </a>
+
+          <a href="/category/male-enhancement" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Male Enhancement</h3>
+            </div>
+            <p class="text-gray-400">Clinically proven solutions for performance</p>
+          </a>
+
+          <a href="/category/weight-loss" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Weight Loss</h3>
+            </div>
+            <p class="text-gray-400">Stimulant-free fat burning for men</p>
+          </a>
+
+          <a href="/category/muscle-fitness" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Muscle & Fitness</h3>
+            </div>
+            <p class="text-gray-400">HGH support for lean muscle growth</p>
+          </a>
+
+          <a href="/category/anti-aging" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Anti-Aging</h3>
+            </div>
+            <p class="text-gray-400">Restore youth with HGH releasers</p>
+          </a>
+
+          <a href="/category/brain-health" class="group bg-off-black border border-gray-800 hover:border-gold rounded-xl p-6 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="bg-gold/20 rounded-lg p-3 mr-4 group-hover:bg-gold/30 transition-colors">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-off-white">Brain Health</h3>
+            </div>
+            <p class="text-gray-400">Nootropics for focus and mental clarity</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-off-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-off-white mb-4">
+            Why Trust Our Reviews?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-off-white mb-2">Research-Based</h3>
+            <p class="text-gray-400">Every product is evaluated based on clinical studies, ingredient quality, and real user results</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-off-white mb-2">Unbiased Reviews</h3>
+            <p class="text-gray-400">We don't own any products. Our recommendations are based solely on merit and effectiveness</p>
+          </div>
+
+          <div class="text-center">
+            <div class="bg-dark-gray rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-off-white mb-2">Real User Feedback</h3>
+            <p class="text-gray-400">We analyze thousands of customer reviews to give you accurate pictures of product performance</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-gold/20 to-gold/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-off-white mb-4">
+          Ready to Transform Your Health?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Browse our top-rated products and find the perfect solution for your goals
+        </p>
+        <a href="#featured" class="inline-block bg-gold hover:bg-gold-dark text-off-black font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+          View Top Products →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

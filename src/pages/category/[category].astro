@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { getProductsByCategory, products } from '../../data/products';
+
+export function getStaticPaths() {
+  const categories = ['testosterone-boosters', 'male-enhancement', 'weight-loss', 'muscle-fitness', 'anti-aging', 'brain-health'];
+  return categories.map(category => ({ params: { category } }));
+}
+
+const { category } = Astro.params;
+
+const categoryData: Record<string, { title: string; description: string; whatIs: string; faqs: Array<{q: string; a: string}> }> = {
+  'testosterone-boosters': {
+    title: 'Testosterone Boosters',
+    description: 'Natural supplements to support healthy testosterone levels',
+    whatIs: 'Testosterone boosters support your body\'s own testosterone production.',
+    faqs: [{q: 'Do they work?', a: 'Quality products with clinically-validated ingredients can help.'}]
+  },
+  'male-enhancement': {
+    title: 'Male Enhancement',
+    description: 'Clinically-proven solutions for male sexual performance',
+    whatIs: 'Male enhancement supplements support various aspects of sexual health.',
+    faqs: [{q: 'Are they safe?', a: 'Quality supplements with natural ingredients are generally safe.'}]
+  },
+  'weight-loss': {
+    title: 'Weight Loss',
+    description: 'Stimulant-free fat burners for men',
+    whatIs: 'Weight loss supplements work by boosting metabolism and reducing appetite.',
+    faqs: [{q: 'Do they work without exercise?', a: 'Supplements work best with diet and exercise.'}]
+  },
+  'muscle-fitness': {
+    title: 'Muscle & Fitness',
+    description: 'HGH support for lean muscle gains',
+    whatIs: 'Muscle supplements support natural growth hormone production.',
+    faqs: [{q: 'Do they build muscle?', a: 'Combined with training, they can support muscle growth.'}]
+  },
+  'anti-aging': {
+    title: 'Anti-Aging',
+    description: 'Restore youthful energy with HGH releasers',
+    whatIs: 'Anti-aging supplements support HGH production which declines with age.',
+    faqs: [{q: 'Are they safe?', a: 'Natural HGH releasers are generally safe for healthy adults.'}]
+  },
+  'brain-health': {
+    title: 'Brain Health',
+    description: 'Enhance focus with nootropics',
+    whatIs: 'Nootropic supplements support brain health and cognitive function.',
+    faqs: [{q: 'Do they work?', a: 'Quality nootropics with studied ingredients can help.'}]
+  }
+};
+
+const data = categoryData[category];
+if (!data) {
+  return Astro.redirect('/404');
+}
+
+const categoryProducts = getProductsByCategory(category);
+const relatedProducts = products.filter(p => p.category !== category).slice(0, 3);
+---
+
+<Layout title={`${data.title} | The Best Offers Around`}>
+  <Header />
+
+  <main>
+    <section class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="text-sm mb-4">
+          <a href="/" class="text-gold hover:underline">Home</a>
+          <span class="text-gray-500 mx-2">/</span>
+          <span class="text-gray-400">{data.title}</span>
+        </nav>
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-4">
+          {data.title}
+        </h1>
+        <p class="text-xl text-gray-400 max-w-3xl">
+          {data.description}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-off-black">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-off-white mb-8 text-center">
+          Top Rated Products
+        </h2>
+
+        {categoryProducts.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categoryProducts.map((product, index) => (
+              <ProductCard
+                name={product.name}
+                slug={product.slug}
+                image={product.image}
+                rating={product.rating}
+                price={product.price}
+                commission={product.commission}
+                guarantee={product.guarantee}
+                benefits={product.benefits}
+                affiliateLink={product.affiliateLink}
+                featured={index === 0}
+              />
+            ))}
+          </div>
+        ) : (
+          <div class="text-center py-12">
+            <p class="text-gray-400">Products coming soon to this category.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

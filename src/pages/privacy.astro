@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy | The Best Offers Around">
+  <Header />
+
+  <main class="flex-grow">
+    <section class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-6">
+          Privacy Policy
+        </h1>
+        <p class="text-xl text-gray-400">
+          Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-dark-gray">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-invert prose-lg">
+        <div class="bg-gold/20 border-l-4 border-gold p-6 rounded-r-lg mb-8">
+          <h2 class="text-2xl font-bold text-off-white mb-3">Affiliate Disclosure (FTC Compliance)</h2>
+          <p class="text-gray-200 font-semibold mb-2">
+            This website contains affiliate links. We may earn a commission if you purchase through our links, at no extra cost to you.
+          </p>
+          <p class="text-gray-300 text-sm">
+            This disclosure is in compliance with the Federal Trade Commission's Guidelines concerning the use of endorsements and testimonials in advertising.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gold mb-4">1. Affiliate Relationships</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          The Best Offers Around is an affiliate marketer for various health and wellness products, including but not limited to SellHealth products. This means:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>We earn commissions on qualifying purchases made through our affiliate links</li>
+          <li>Commissions do NOT affect the price you pay</li>
+          <li>Our recommendations are based on research, not commission rates</li>
+          <li>We only promote products we believe provide value to our readers</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">2. Information We Collect</h2>
+        <h3 class="text-xl font-bold text-off-white mb-2">Automatically Collected Information</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Like most websites, we collect information that your browser sends automatically:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>Referring website</li>
+          <li>Pages viewed and time spent on pages</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-off-white mb-2">Personal Information</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          We may collect personal information only when you voluntarily provide it:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>Email address (if you subscribe to our newsletter)</li>
+          <li>Name and contact information (if you contact us)</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">3. How We Use Your Information</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          We use the information we collect to:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>Improve our website and content</li>
+          <li>Analyze website traffic and user behavior</li>
+          <li>Respond to your inquiries</li>
+          <li>Send newsletters (if you subscribe)</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">4. Third-Party Services</h2>
+        <h3 class="text-xl font-bold text-off-white mb-2">Google Analytics</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          We use Google Analytics to analyze website traffic. Google Analytics collects information anonymously and reports website trends without identifying individual visitors.
+        </p>
+
+        <h3 class="text-xl font-bold text-off-white mb-2">Affiliate Partners</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          When you click on affiliate links and make purchases, the third-party seller (e.g., SellHealth) may collect your information according to their own privacy policies. We encourage you to review these policies before making purchases.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">5. Cookies</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          We use cookies to:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>Remember your preferences</li>
+          <li>Understand website traffic patterns</li>
+          <li>Track affiliate conversions</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          You can disable cookies in your browser settings, but this may affect website functionality.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">6. Third-Party Links</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Our website contains links to third-party websites, including affiliate partners. We are not responsible for the privacy practices or content of these external sites. We encourage you to read the privacy policies of any third-party sites you visit.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">7. Testimonials and Reviews</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          In accordance with FTC guidelines:
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li>Testimonials represent individual experiences and may not be typical</li>
+          <li>Results may vary by individual</li>
+          <li>We are not required to verify the typicality of testimonials</li>
+          <li>Some testimonials may be received in exchange for free products</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">8. Data Security</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          While we implement reasonable security measures to protect your information, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">9. Children's Privacy</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Our website is not intended for children under 18. We do not knowingly collect personal information from children. If you are a parent and believe your child has provided us with personal information, please contact us.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">10. Your Privacy Rights</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Depending on your location, you may have certain rights regarding your personal information, including access, correction, deletion, and restriction of processing. To exercise these rights, please contact us using the information below.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">11. Changes to This Policy</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.
+        </p>
+
+        <h2 class="text-3xl font-bold text-gold mb-4 mt-12">12. Contact Us</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          If you have questions about this privacy policy or your personal information, please contact us at:
+        </p>
+        <div class="bg-off-black rounded-lg p-6 mb-8">
+          <p class="text-gray-300 mb-2">
+            <strong class="text-gold">Email:</strong> <a href="mailto:contact@thebestoffersaround.com" class="text-gold hover:underline">contact@thebestoffersaround.com</a>
+          </p>
+          <p class="text-gray-300">
+            <strong class="text-gold">Website:</strong> <a href="https://thebestoffersaround.com" class="text-gold hover:underline">https://thebestoffersaround.com</a>
+          </p>
+        </div>
+
+        <div class="bg-dark-gray border border-gray-700 rounded-lg p-6 text-sm text-gray-400">
+          <p class="mb-2">
+            <strong>Effective Date:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
+          <p>
+            This privacy policy is designed to comply with FTC guidelines, GDPR, CCPA, and other applicable privacy regulations.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

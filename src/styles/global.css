@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold-dark;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus, button:focus {
+  outline: 2px solid #d4af37;
+  outline-offset: 2px;
+}
