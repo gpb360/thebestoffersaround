@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-rec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-rec" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="cycle1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66bb6a"/>
+      <stop offset="100%" style="stop-color:#388e3c"/>
+    </linearGradient>
+    <linearGradient id="cycle2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#42a5f5"/>
+      <stop offset="100%" style="stop-color:#1565c0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-rec)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="200" cy="160" r="105" fill="#d4af37"/>
+    <circle cx="1000" cy="470" r="125" fill="#d4af37"/>
+  </g>
+
+  <!-- Circular recovery arrows -->
+  <g transform="translate(600, 350)" opacity="0.35">
+    <!-- Arrow 1 -->
+    <path d="M-100,-80 A 120,120 0 0,1 100,-80" fill="none" stroke="url(#cycle1)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="100,-80 85,-95 115,-95" fill="#66bb6a"/>
+
+    <!-- Arrow 2 -->
+    <path d="M120,0 A 120,120 0 0,1 80,100" fill="none" stroke="url(#cycle2)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="80,100 65,85 95,85" fill="#42a5f5"/>
+
+    <!-- Arrow 3 -->
+    <path d="M0,120 A 120,120 0 0,1 -80,100" fill="none" stroke="url(#cycle1)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="-80,100 -95,85 -65,85" fill="#66bb6a"/>
+
+    <!-- Arrow 4 -->
+    <path d="M-120,0 A 120,120 0 0,1 -80,-80" fill="none" stroke="url(#cycle2)" stroke-width="8" stroke-linecap="round"/>
+    <polygon points="-80,-80 -95,-95 -65,-95" fill="#42a5f5"/>
+  </g>
+
+  <!-- Center recovery symbol -->
+  <g transform="translate(600, 350)" opacity="0.4">
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#d4af37" stroke-width="4"/>
+    <path d="M-25,0 L-10,-20 L10,0 L-10,20 Z" fill="#d4af37"/>
+    <path d="M25,0 L10,-20 L-10,0 L10,20 Z" fill="#f4cf67"/>
+  </g>
+
+  <!-- Recovery stages -->
+  <g transform="translate(600, 450)" opacity="0.35">
+    <rect x="-200" y="0" width="130" height="45" rx="5" fill="#d4af37"/>
+    <text x="-135" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">TRAIN</text>
+
+    <rect x="-60" y="0" width="130" height="45" rx="5" fill="#f4cf67"/>
+    <text x="5" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">RECOVER</text>
+
+    <rect x="80" y="0" width="130" height="45" rx="5" fill="#d4af37"/>
+    <text x="145" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">GROW</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    WORKOUT RECOVERY
+  </text>
+  <text x="600" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    Supplements
+  </text>
+
+  <text x="600" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="600" fill="#d4af37" letter-spacing="1">
+    Speed Muscle Repair & Optimize Performance
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Recover Faster, Train Harder, Build More Muscle
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="280" y="500" width="640" height="2" fill="url(#gold-rec)"/>
+</svg>

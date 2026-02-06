@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-hgh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-hgh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="muscle1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90a4"/>
+      <stop offset="100%" style="stop-color:#2d5a6b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-hgh)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="200" cy="180" r="110" fill="#d4af37"/>
+    <circle cx="1000" cy="450" r="130" fill="#d4af37"/>
+  </g>
+
+  <!-- DNA/helix representation -->
+  <g transform="translate(600, 360)" opacity="0.3">
+    <path d="M-150,-60 Q-75,-80 0,-60 Q75,-40 150,-60" fill="none" stroke="url(#muscle1)" stroke-width="6"/>
+    <path d="M-150,-20 Q-75,0 0,-20 Q75,-40 150,-20" fill="none" stroke="#d4af37" stroke-width="6"/>
+    <path d="M-150,20 Q-75,40 0,20 Q75,0 150,20" fill="none" stroke="url(#muscle1)" stroke-width="6"/>
+    <path d="M-150,60 Q-75,80 0,60 Q75,40 150,60" fill="none" stroke="#d4af37" stroke-width="6"/>
+
+    <!-- Connecting bars -->
+    <line x1="-100" y1="-50" x2="-100" y2="-30" stroke="#f4cf67" stroke-width="4"/>
+    <line x1="-50" y1="-65" x2="-50" y2="-15" stroke="#f4cf67" stroke-width="4"/>
+    <line x1="0" y1="-60" x2="0" y2="-20" stroke="#f4cf67" stroke-width="4"/>
+    <line x1="50" y1="-45" x2="50" y2="-25" stroke="#f4cf67" stroke-width="4"/>
+    <line x1="100" y1="-55" x2="100" y2="-25" stroke="#f4cf67" stroke-width="4"/>
+  </g>
+
+  <!-- Growth arrow -->
+  <g transform="translate(600, 380)" opacity="0.4">
+    <polygon points="0,-140 -30,-100 -10,-100 -10,0 10,0 10,-100 30,-100" fill="#d4af37"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    HGH FOR MUSCLE
+  </text>
+  <text x="600" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    Growth
+  </text>
+
+  <text x="600" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#d4af37" letter-spacing="1">
+    How Growth Hormone Builds Lean Muscle
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Optimize Your Natural HGH for Maximum Gains
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="300" y="500" width="600" height="2" fill="url(#gold-hgh)"/>
+</svg>
