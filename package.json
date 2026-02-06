@@ -6,10 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "validate:seo": "node scripts/validate-seo.js",
+    "setup:posthog": "node scripts/setup-posthog.js"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "posthog-js": "^1.342.1",
+    "schema-dts": "^1.1.5"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",

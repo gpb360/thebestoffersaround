@@ -1,0 +1,126 @@
+---
+/**
+ * RelatedArticles Component
+ * Internal linking component for SEO and user engagement
+ */
+
+import { blogPosts } from '../data/blog';
+import { trackInternalLink } from '../lib/posthog';
+
+interface Props {
+  currentSlug: string;
+  category?: string;
+  maxArticles?: number;
+  title?: string;
+}
+
+const { currentSlug, category, maxArticles = 4, title = 'Related Articles' } = Astro.props;
+
+// Get related articles by category, excluding current article
+let relatedArticles = Object.entries(blogPosts)
+  .filter(([slug, post]) => {
+    if (slug === currentSlug) return false;
+    if (category && post.category !== category) return false;
+    return true;
+  })
+  .map(([slug, post]) => ({ slug, ...post }))
+  .slice(0, maxArticles);
+
+// If no category match, get recent articles
+if (relatedArticles.length === 0) {
+  relatedArticles = Object.entries(blogPosts)
+    .filter(([slug]) => slug !== currentSlug)
+    .map(([slug, post]) => ({ slug, ...post }))
+    .slice(0, maxArticles);
+}
+---
+
+{relatedArticles.length > 0 && (
+  <section class="related-articles relative my-16">
+    <!-- Section header with accent -->
+    <div class="flex items-center gap-4 mb-8">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent to-gold/50"></div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-off-white text-center">
+        {title}
+      </h2>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent to-gold/50"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {relatedArticles.map(article => (
+        <a
+          href={`/blog/${article.slug}`}
+          class="group block bg-gradient-to-br from-dark-gray to-darker-gray rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-gold/10 transition-all duration-500 border border-gray-800 hover:border-gold/30"
+          onClick={`trackInternalLink('/blog/${article.slug}', '${article.title}', '${currentSlug}')`}
+        >
+          <!-- Image with overlay -->
+          <div class="relative aspect-video overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+            <img
+              src={article.image}
+              alt={article.title}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
+            />
+
+            <!-- Category badge -->
+            <div class="absolute top-4 left-4 z-20">
+              <span class="inline-flex items-center gap-1 bg-gold/90 backdrop-blur-sm text-off-black px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                {article.category}
+              </span>
+            </div>
+
+            <!-- Read time badge -->
+            <div class="absolute bottom-4 right-4 z-20">
+              <span class="inline-flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                {article.readTime}
+              </span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-off-white group-hover:text-gold transition-colors line-clamp-2 mb-3">
+              {article.title}
+            </h3>
+
+            <p class="text-gray-400 text-sm line-clamp-2 mb-4 leading-relaxed">
+              {article.excerpt}
+            </p>
+
+            <!-- Read more link -->
+            <div class="flex items-center gap-2 text-gold text-sm font-semibold group-hover:gap-3 transition-all">
+              <span>Read Article</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
+
+<script>
+  (window as any).trackInternalLink = (destination: string, linkText: string, articleSlug: string) => {
+    import('../lib/posthog').then(({ trackInternalLink }) => {
+      trackInternalLink(destination, linkText, articleSlug);
+    });
+  };
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

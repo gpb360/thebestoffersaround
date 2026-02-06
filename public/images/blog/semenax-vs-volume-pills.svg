@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#292929;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradient7" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4cf67;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg7)"/>
+
+  <!-- VS comparison pattern -->
+  <g opacity="0.08">
+    <circle cx="300" cy="315" r="180" fill="#d4af37"/>
+    <circle cx="900" cy="315" r="180" fill="#f4cf67"/>
+    <line x1="480" y1="315" x2="720" y2="315" stroke="#d4af37" stroke-width="30"/>
+  </g>
+
+  <!-- Two-sided comparison design -->
+  <g transform="translate(600, 315)">
+    <circle cx="-200" cy="0" r="100" fill="none" stroke="url(#goldGradient7)" stroke-width="2" opacity="0.4"/>
+    <circle cx="200" cy="0" r="100" fill="none" stroke="url(#goldGradient7)" stroke-width="2" opacity="0.4"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="70" fill="url(#goldGradient7)" opacity="0.15">VS</text>
+  </g>
+
+  <!-- Text -->
+  <text x="600" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="url(#goldGradient7)">
+    SEMENAX vs VOLUME PILLS
+  </text>
+  <text x="600" y="220" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#e0e0e0" opacity="0.9">
+    Volume Enhancer Comparison
+  </text>
+  <text x="600" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#a0a0a0">
+    Ingredients • Results • Price • Guarantee
+  </text>
+
+  <line x1="300" y1="320" x2="900" y2="320" stroke="url(#goldGradient7)" stroke-width="2" opacity="0.4"/>
+
+  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#808080">
+    Semenax: Clinical Study • Volume Pills: Traditional Formula
+  </text>
+</svg>

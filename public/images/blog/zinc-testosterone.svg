@@ -1,0 +1,46 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a2a2a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4cf67;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+
+  <!-- Atomic/molecular pattern (zinc Zn=30) -->
+  <g opacity="0.08">
+    <circle cx="150" cy="150" r="100" fill="#d4af37"/>
+    <circle cx="1050" cy="480" r="90" fill="#f4cf67"/>
+    <circle cx="600" cy="315" r="200" fill="none" stroke="#d4af37" stroke-width="20"/>
+  </g>
+
+  <!-- Element-inspired design -->
+  <g transform="translate(600, 315)">
+    <circle cx="0" cy="0" r="130" fill="none" stroke="url(#goldGradient3)" stroke-width="2" opacity="0.3"/>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="url(#goldGradient3)" stroke-width="1.5" opacity="0.4"/>
+    <text x="0" y="15" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="60" fill="url(#goldGradient3)" opacity="0.2">Zn</text>
+  </g>
+
+  <!-- Text -->
+  <text x="600" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="50" font-weight="bold" fill="url(#goldGradient3)">
+    ZINC
+  </text>
+  <text x="600" y="245" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#e0e0e0" opacity="0.9">
+    for Testosterone
+  </text>
+  <text x="600" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#a0a0a0">
+    Essential Mineral • Male Sexual Health • T-Production
+  </text>
+
+  <line x1="380" y1="345" x2="820" y2="345" stroke="url(#goldGradient3)" stroke-width="2" opacity="0.4"/>
+
+  <text x="600" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#808080">
+    Prevents T→Estrogen Conversion • Libido Support
+  </text>
+</svg>

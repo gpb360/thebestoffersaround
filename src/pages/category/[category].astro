@@ -91,15 +91,7 @@ const relatedProducts = products.filter(p => p.category !== category).slice(0, 3
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryProducts.map((product, index) => (
               <ProductCard
-                name={product.name}
-                slug={product.slug}
-                image={product.image}
-                rating={product.rating}
-                price={product.price}
-                commission={product.commission}
-                guarantee={product.guarantee}
-                benefits={product.benefits}
-                affiliateLink={product.affiliateLink}
+                product={product}
                 featured={index === 0}
               />
             ))}

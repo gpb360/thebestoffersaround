@@ -1,0 +1,52 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#282828;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradient4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4cf67;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg4)"/>
+
+  <!-- Movement/energy lines -->
+  <g opacity="0.1">
+    <path d="M50,200 Q200,100 350,200 T650,200" stroke="#d4af37" stroke-width="8" fill="none"/>
+    <path d="M550,430 Q700,530 850,430 T1150,430" stroke="#f4cf67" stroke-width="6" fill="none"/>
+  </g>
+
+  <!-- Central dynamic shape -->
+  <g transform="translate(600, 315)">
+    <ellipse cx="0" cy="0" rx="160" ry="100" fill="none" stroke="url(#goldGradient4)" stroke-width="2" opacity="0.3"/>
+    <ellipse cx="0" cy="0" rx="130" ry="80" fill="none" stroke="url(#goldGradient4)" stroke-width="1.5" opacity="0.4"/>
+
+    <!-- Energy indicators -->
+    <g opacity="0.2">
+      <circle cx="-140" cy="0" r="8" fill="url(#goldGradient4)"/>
+      <circle cx="140" cy="0" r="8" fill="url(#goldGradient4)"/>
+      <circle cx="0" cy="-90" r="8" fill="url(#goldGradient4)"/>
+      <circle cx="0" cy="90" r="8" fill="url(#goldGradient4)"/>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <text x="600" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="url(#goldGradient4)">
+    EXERCISES
+  </text>
+  <text x="600" y="235" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#e0e0e0" opacity="0.9">
+    for Male Enhancement
+  </text>
+  <text x="600" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#a0a0a0">
+    Kegel Exercises • Aerobic Training • Pelvic Floor
+  </text>
+
+  <line x1="370" y1="335" x2="830" y2="335" stroke="url(#goldGradient4)" stroke-width="2" opacity="0.4"/>
+
+  <text x="600" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#808080">
+    40% Lower ED Risk • Improved Blood Flow • Better Control
+  </text>
+</svg>

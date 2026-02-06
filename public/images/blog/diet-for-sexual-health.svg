@@ -1,0 +1,56 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2b2b2b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGradient5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4cf67;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg5)"/>
+
+  <!-- Organic food/nutrition patterns -->
+  <g opacity="0.08">
+    <circle cx="200" cy="200" r="150" fill="#d4af37"/>
+    <circle cx="1000" cy="430" r="130" fill="#f4cf67"/>
+    <ellipse cx="600" cy="315" rx="350" ry="180" fill="#d4af37"/>
+  </g>
+
+  <!-- Central design -->
+  <g transform="translate(600, 315)">
+    <circle cx="0" cy="0" r="140" fill="none" stroke="url(#goldGradient5)" stroke-width="2" opacity="0.3"/>
+    <circle cx="0" cy="0" r="110" fill="none" stroke="url(#goldGradient5)" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="url(#goldGradient5)" stroke-width="1" opacity="0.5"/>
+
+    <!-- Nutrition points -->
+    <g opacity="0.2">
+      <circle cx="0" cy="-125" r="6" fill="url(#goldGradient5)"/>
+      <circle cx="108" cy="-63" r="6" fill="url(#goldGradient5)"/>
+      <circle cx="108" cy="63" r="6" fill="url(#goldGradient5)"/>
+      <circle cx="0" cy="125" r="6" fill="url(#goldGradient5)"/>
+      <circle cx="-108" cy="63" r="6" fill="url(#goldGradient5)"/>
+      <circle cx="-108" cy="-63" r="6" fill="url(#goldGradient5)"/>
+    </g>
+  </g>
+
+  <!-- Text -->
+  <text x="600" y="175" text-anchor="middle" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="url(#goldGradient5)">
+    DIET
+  </text>
+  <text x="600" y="240" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#e0e0e0" opacity="0.9">
+    for Sexual Health
+  </text>
+  <text x="600" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#a0a0a0">
+    Nitrate-Rich Foods • Zinc Sources • Libido Boosters
+  </text>
+
+  <line x1="360" y1="340" x2="840" y2="340" stroke="url(#goldGradient5)" stroke-width="2" opacity="0.4"/>
+
+  <text x="600" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#808080">
+    40% Lower ED Risk with Mediterranean Diet
+  </text>
+</svg>

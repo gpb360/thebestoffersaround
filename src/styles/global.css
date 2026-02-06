@@ -29,3 +29,84 @@ a:focus, button:focus {
   outline: 2px solid #d4af37;
   outline-offset: 2px;
 }
+
+/* Article Typography */
+.prose-article {
+  @apply text-gray-300;
+  max-width: 100ch; /* Full width for 1280px container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose-article p {
+  @apply mb-6 text-lg leading-relaxed;
+}
+
+.prose-article h2 {
+  @apply text-3xl font-bold mt-12 mb-6;
+  background: linear-gradient(135deg, #f5f5f5 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.prose-article h3 {
+  @apply text-2xl font-semibold mt-8 mb-4;
+  color: #d4af37;
+}
+
+.prose-article ul, .prose-article ol {
+  @apply mb-6 ml-6 space-y-3;
+}
+
+.prose-article li {
+  @apply text-gray-300;
+}
+
+.prose-article a {
+  @apply text-gold hover:text-amber-400 underline underline-offset-4 transition-colors;
+}
+
+.prose-article strong {
+  @apply text-off-white font-semibold;
+}
+
+.prose-article blockquote {
+  @apply border-l-4 border-gold bg-gold/5 pl-6 py-4 my-8 italic text-gray-300;
+  border-radius: 0 8px 8px 0;
+}
+
+.prose-article code {
+  @apply bg-gray-900 text-gold px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose-article pre {
+  @apply bg-gray-900 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.prose-article img {
+  @apply rounded-lg shadow-xl my-8;
+}
+
+.prose-article hr {
+  @apply my-12;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  height: 1px;
+  border: none;
+}
+
+.prose-article table {
+  @apply w-full my-6 border-collapse;
+}
+
+.prose-article th {
+  @apply bg-gold/10 text-gold font-bold p-3 text-left border border-gray-700;
+}
+
+.prose-article td {
+  @apply p-3 border border-gray-700;
+}
+
+.prose-article tr:nth-child(even) {
+  @apply bg-gray-800/30;
+}

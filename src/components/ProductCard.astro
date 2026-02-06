@@ -1,16 +1,12 @@
 ---
+import type { Product } from '../data/products';
+
 interface Props {
-  name: string;
-  slug: string;
-  image: string;
-  rating: number;
-  price: string;
-  commission?: string;
-  guarantee: string;
-  benefits: string[];
-  affiliateLink: string;
+  product: Product;
   featured?: boolean;
 }
+
+const { product, featured = false } = Astro.props;
 
 const {
   name,
@@ -20,10 +16,9 @@ const {
   price,
   commission,
   guarantee,
-  benefits,
-  affiliateLink,
-  featured = false
-} = Astro.props;
+  benefits = [],
+  affiliateLink
+} = product;
 
 const fullStars = Math.floor(rating);
 const hasHalfStar = rating % 1 >= 0.5;
@@ -72,7 +67,7 @@ const checkPath = "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-
       </div>
 
       <ul class="space-y-2 mb-6">
-        {benefits.slice(0, 3).map(benefit => (
+        {benefits?.slice(0, 3).map(benefit => (
           <li class="flex items-start">
             <svg class="w-5 h-5 text-gold mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d={checkPath} clip-rule="evenodd" />
@@ -137,7 +132,7 @@ const checkPath = "M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-
       </div>
 
       <ul class="space-y-1 mb-4">
-        {benefits.slice(0, 3).map(benefit => (
+        {benefits?.slice(0, 3).map(benefit => (
           <li class="flex items-start text-sm">
             <svg class="w-4 h-4 text-gold mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d={checkPath} clip-rule="evenodd" />

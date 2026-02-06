@@ -1,0 +1,70 @@
+---
+/**
+ * ProgressIndicator Component
+ * Shows reading progress for long-form articles
+ */
+
+interface Props {
+  articleSlug: string;
+}
+
+const { articleSlug } = Astro.props;
+---
+
+<!-- Progress bar at top of page -->
+<div class="reading-progress fixed top-0 left-0 right-0 h-1 bg-gray-900 z-50" data-article-slug={articleSlug}>
+  <div class="progress-bar h-full bg-gradient-to-r from-gold via-amber-400 to-gold shadow-lg shadow-gold/50 transition-all duration-150" style="width: 0%"></div>
+</div>
+
+<script>
+  // Track and update reading progress
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.querySelector('.reading-progress-bar .progress-fill');
+    if (!progressBar) return;
+
+    // Track scroll for progress bar
+    window.addEventListener('scroll', () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min((scrolled / documentHeight) * 100, 100);
+
+      (progressBar as HTMLElement).style.width = `${progress}%`;
+    });
+
+    // Track scroll depth milestones via PostHog
+    const articleSlug = document.querySelector('.reading-progress-bar')?.getAttribute('data-article-slug');
+    if (!articleSlug) return;
+
+    const thresholds = [25, 50, 75, 90, 100];
+    const tracked = new Set<number>();
+
+    window.addEventListener('scroll', () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = window.scrollY;
+      const progress = Math.min((scrolled / documentHeight) * 100, 100);
+
+      for (const threshold of thresholds) {
+        if (progress >= threshold && !tracked.has(threshold)) {
+          // Track via PostHog
+          import('../lib/posthog').then(({ trackScrollDepth }) => {
+            trackScrollDepth(threshold, articleSlug);
+          });
+          tracked.add(threshold);
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .reading-progress {
+    pointer-events: none;
+    backdrop-filter: blur(10px);
+  }
+
+  .progress-bar {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+</style>

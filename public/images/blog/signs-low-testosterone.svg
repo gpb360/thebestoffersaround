@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="alert1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="100%" style="stop-color:#c92a2a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="200" cy="200" r="80" fill="#d4af37"/>
+    <circle cx="1000" cy="430" r="100" fill="#d4af37"/>
+  </g>
+
+  <!-- Warning triangle -->
+  <g transform="translate(600, 320)" opacity="0.15">
+    <polygon points="0,-120 130,100 -130,100" fill="url(#alert1)"/>
+    <text x="0" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="#1a1a1a">!</text>
+  </g>
+
+  <!-- Symptom icons (abstract circles) -->
+  <g transform="translate(600, 400)" opacity="0.3">
+    <circle cx="-200" cy="0" r="30" fill="#d4af37"/>
+    <circle cx="-100" cy="-50" r="25" fill="#d4af37"/>
+    <circle cx="0" cy="-70" r="20" fill="#d4af37"/>
+    <circle cx="100" cy="-50" r="25" fill="#d4af37"/>
+    <circle cx="200" cy="0" r="30" fill="#d4af37"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    SIGNS OF LOW
+  </text>
+  <text x="600" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    TESTOSTERONE
+  </text>
+
+  <text x="600" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="600" fill="#f4cf67">
+    Symptoms, Causes &amp; Solutions
+  </text>
+
+  <!-- Alert badge -->
+  <g transform="translate(600, 500)">
+    <rect x="-150" y="-30" width="300" height="60" rx="30" fill="url(#alert1)" opacity="0.8"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#fff" letter-spacing="1">
+      10 WARNING SIGNS
+    </text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Know When to See a Doctor
+  </text>
+</svg>

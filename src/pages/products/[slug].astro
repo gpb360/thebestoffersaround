@@ -3,7 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 import { getProductBySlug, products, type Product } from '../../data/products';
+import { blogPosts } from '../../data/blog';
 
 export function getStaticPaths() {
   return products.map(product => ({ params: { slug: product.slug } }));
@@ -16,41 +20,242 @@ if (!product) {
   return Astro.redirect('/404');
 }
 
+// Check if product has full review content
+const hasFullReview = product.fullReviewContent && product.fullReviewContent.length > 0;
+
+// Get related products
 const relatedProducts = products
   .filter(p => p.category === product.category && p.id !== product.id)
   .slice(0, 3);
+
+// Get related blog posts based on keywords
+const relatedBlogPosts = Object.entries(blogPosts)
+  .filter(([key, post]) =>
+    post.category === 'Male Enhancement' ||
+    post.keywords?.some(k =>
+      product.keywords?.some(pk => k.toLowerCase().includes(pk.toLowerCase()) || pk.toLowerCase().includes(k.toLowerCase()))
+    )
+  )
+  .slice(0, 4)
+  .map(([key, post]) => ({ slug: key, ...post }));
+
+// Calculate word count
+const wordCount = hasFullReview ? product.fullReviewContent.split(/\s+/).length : 0;
+
+// Schema markup for product review
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": product.name,
+  "description": product.metaDescription || product.description,
+  "image": `https://thebestoffersaround.com${product.image}`,
+  "brand": {
+    "@type": "Brand",
+    "name": "Leading Edge Health"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": product.rating.toString(),
+    "reviewCount": "1250"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": product.price.replace('$', ''),
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
+// Add review schema if available
+if (hasFullReview) {
+  productSchema.review = {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": product.rating.toString(),
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "The Best Offers Around"
+    }
+  };
+}
 ---
 
-<Layout title={`${product.name} Review - ${product.description}`} type="product">
+<Layout title={`${product.metaTitle || `${product.name} Review - ${product.description}`} | The Best Offers Around`} description={product.metaDescription || product.description} type="product">
+  <!-- Product Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+
   <Header />
 
   <main>
+    <!-- Breadcrumb -->
     <section class="bg-off-black py-4">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="text-sm">
           <a href="/" class="text-gold hover:underline">Home</a>
+          <span class="text-gray-500 mx-2">/</span>
+          <a href="/#products" class="text-gold hover:underline">Products</a>
           <span class="text-gray-500 mx-2">/</span>
           <span class="text-gray-400">{product.name}</span>
         </nav>
       </div>
     </section>
 
+    <!-- Hero Section -->
     <section class="bg-gradient-to-br from-off-black via-dark-gray to-off-black py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-off-white mb-4">
-          {product.name} Review
-        </h1>
+        <div class="grid lg:grid-cols-[1fr,300px] gap-8">
+          <!-- Main Content -->
+          <div class="space-y-8">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-off-white leading-tight">
+              {product.name} Review
+            </h1>
 
-        <a
-          href={product.affiliateLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-gold hover:bg-gold-dark text-off-black font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300"
-        >
-          Visit Official Site &rarr;
-        </a>
+            <!-- Product metadata -->
+            <div class="flex flex-wrap items-center gap-4 text-sm">
+              <div class="flex items-center gap-2 bg-darker-gray px-4 py-2 rounded-full border border-gray-800">
+                <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="text-gray-300 font-medium">{product.rating} / 5.0</span>
+              </div>
+
+              <div class="flex items-center gap-2 bg-darker-gray px-4 py-2 rounded-full border border-gray-800">
+                <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-300">{wordCount} words</span>
+              </div>
+            </div>
+
+            <a
+              href={product.affiliateLink}
+              target="_blank"
+              rel="noopener sponsored noreferrer"
+              class="inline-block bg-gold hover:bg-gold-dark text-off-black font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300"
+            >
+              Visit Official Site &rarr;
+            </a>
+          </div>
+
+          <!-- Sidebar with TOC (if full review) -->
+          {hasFullReview && (
+            <aside class="hidden lg:block">
+              <TableOfContents content={product.fullReviewContent} />
+            </aside>
+          )}
+        </div>
       </div>
     </section>
+
+    <!-- Full Review Content -->
+    {hasFullReview && (
+      <article class="py-16 bg-gradient-to-b from-dark-gray to-darker-gray relative">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, #d4af37 1px, transparent 0); background-size: 40px 40px;"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Article Content -->
+          <div class="prose-article bg-dark-gray/50 backdrop-blur-sm rounded-2xl p-8 sm:p-12 shadow-2xl border border-gray-800/50">
+            <div set:html={product.fullReviewContent} />
+          </div>
+
+          <!-- CTA Section -->
+          <CTASection
+            productName={product.name}
+            productSlug={product.slug}
+            affiliateLink={product.affiliateLink}
+            title="Ready to Try {product.name}?"
+            description={`Based on our review, ${product.name} offers excellent value for men seeking ${product.category === 'male-enhancement' ? 'male enhancement' : product.category}.`}
+            variant="primary"
+            location="conclusion"
+            articleSlug={slug}
+            articleCategory={product.category}
+          />
+        </div>
+      </article>
+    )}
+
+    <!-- Product Summary (if no full review) -->
+    {!hasFullReview && (
+      <section class="py-16 bg-gradient-to-b from-dark-gray to-darker-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 class="text-2xl font-bold text-off-white mb-4">Description</h2>
+              <p class="text-gray-300">{product.description}</p>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-off-white mb-4">Key Ingredients</h2>
+              <ul class="space-y-2">
+                {product.keyIngredients.map(ingredient => (
+                  <li class="text-gray-300 flex items-start">
+                    <span class="text-gold mr-2">•</span>
+                    {ingredient}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold text-off-white mb-4">Benefits</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+              {product.benefits.map(benefit => (
+                <li class="text-gray-300 flex items-start">
+                  <svg class="w-5 h-5 text-gold mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Related Products -->
+    {relatedProducts.length > 0 && (
+      <section class="py-16 bg-off-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-off-white mb-8">Related Products</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedProducts.map((relatedProduct) => (
+              <ProductCard product={relatedProduct} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Related Articles -->
+    {relatedBlogPosts.length > 0 && (
+      <section class="py-16 bg-gradient-to-b from-dark-gray to-darker-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="text-3xl font-bold text-off-white mb-8">Related Articles</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {relatedBlogPosts.map(post => (
+              <a href={`/blog/${post.slug}`} class="group">
+                <div class="bg-dark-gray rounded-lg overflow-hidden border border-gray-800 hover:border-gold/50 transition-colors">
+                  <div class="aspect-video bg-gradient-to-br from-gold/20 to-amber-600/20 relative">
+                    <img src={post.image} alt={post.title} class="w-full h-full object-cover" />
+                  </div>
+                  <div class="p-4">
+                    <h3 class="text-lg font-semibold text-off-white group-hover:text-gold transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-2 line-clamp-2">{post.excerpt}</p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
   </main>
 
   <Footer />
