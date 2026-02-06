@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-wl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-wl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="scale1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e57373"/>
+      <stop offset="100%" style="stop-color:#c62828"/>
+    </linearGradient>
+    <linearGradient id="scale2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#81c784"/>
+      <stop offset="100%" style="stop-color:#388e3c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-wl)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="180" cy="180" r="95" fill="#d4af37"/>
+    <circle cx="1020" cy="450" r="115" fill="#d4af37"/>
+  </g>
+
+  <!-- Scale/balance representation -->
+  <g transform="translate(600, 380)" opacity="0.3">
+    <!-- Base -->
+    <rect x="-100" y="60" width="200" height="15" rx="3" fill="#d4af37"/>
+    <!-- Pole -->
+    <rect x="-8" y="-80" width="16" height="140" fill="#d4af37"/>
+    <!-- Crossbar -->
+    <rect x="-150" y="-80" width="300" height="8" rx="2" fill="#d4af37"/>
+
+    <!-- Left side (heavier - red) -->
+    <line x1="-120" y1="-80" x2="-120" y2="-20" stroke="#d4af37" stroke-width="3"/>
+    <ellipse cx="-120" cy="0" rx="50" ry="20" fill="url(#scale1)"/>
+    <text x="-120" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a1a1a">BEFORE</text>
+
+    <!-- Right side (lighter - green) -->
+    <line x1="120" y1="-80" x2="120" y2="-50" stroke="#d4af37" stroke-width="3"/>
+    <ellipse cx="120" cy="-35" rx="40" ry="15" fill="url(#scale2)"/>
+    <text x="120" y="-30" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a1a1a">AFTER</text>
+  </g>
+
+  <!-- Age badge -->
+  <g transform="translate(600, 440)" opacity="0.4">
+    <circle cx="-200" cy="0" r="35" fill="#d4af37"/>
+    <text x="-200" y="10" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1a1a1a">40+</text>
+
+    <circle cx="200" cy="0" r="35" fill="#f4cf67"/>
+    <text x="200" y="10" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1a1a1a">♂</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    WEIGHT LOSS
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    For Men Over 40
+  </text>
+
+  <text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#d4af37" letter-spacing="1">
+    Proven Strategies That Actually Work
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Overcome Age-Related Metabolic Slowdown
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="350" y="500" width="500" height="2" fill="url(#gold-wl)"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-met" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-met" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="fire1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b35"/>
+      <stop offset="50%" style="stop-color:#f7931e"/>
+      <stop offset="100%" style="stop-color:#ffcc00"/>
+    </linearGradient>
+    <linearGradient id="fire2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#f7931e"/>
+      <stop offset="100%" style="stop-color:#ffcc00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-met)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="200" cy="150" r="110" fill="#d4af37"/>
+    <circle cx="1000" cy="480" r="130" fill="#d4af37"/>
+  </g>
+
+  <!-- Fire/flame representations -->
+  <g transform="translate(600, 380)" opacity="0.25">
+    <!-- Main flame -->
+    <path d="M0,100 Q-40,50 -30,0 Q-50,-60 0,-120 Q50,-60 30,0 Q40,50 0,100 Z" fill="url(#fire1)"/>
+    <!-- Secondary flame -->
+    <path d="M-80,80 Q-100,40 -90,10 Q-105,-30 -80,-60 Q-55,-30 -70,10 Q-60,40 -80,80 Z" fill="url(#fire2)"/>
+    <path d="M80,80 Q60,40 70,10 Q55,-30 80,-60 Q105,-30 90,10 Q100,40 80,80 Z" fill="url(#fire2)"/>
+  </g>
+
+  <!-- Energy sparks -->
+  <g transform="translate(600, 380)" opacity="0.3">
+    <circle cx="-120" cy="-80" r="8" fill="#ffcc00"/>
+    <circle cx="130" cy="-60" r="6" fill="#ffcc00"/>
+    <circle cx="-90" cy="40" r="5" fill="#f7931e"/>
+    <circle cx="100" cy="60" r="7" fill="#f7931e"/>
+    <circle cx="0" cy="-130" r="9" fill="#ffcc00"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    METABOLISM
+  </text>
+  <text x="600" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    Boosters
+  </text>
+
+  <text x="600" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#d4af37" letter-spacing="1">
+    Ingredients & Strategies for Fat Loss
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#888" letter-spacing="1">
+    Ignite Your Calorie Burning Potential
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="350" y="500" width="500" height="2" fill="url(#gold-met)"/>
+</svg>
