@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-if" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-if" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="clock1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90a4"/>
+      <stop offset="100%" style="stop-color:#2d5a6b"/>
+    </linearGradient>
+    <linearGradient id="clock2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7cb342"/>
+      <stop offset="100%" style="stop-color:#558b2f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-if)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="180" cy="180" r="100" fill="#d4af37"/>
+    <circle cx="1020" cy="450" r="120" fill="#d4af37"/>
+  </g>
+
+  <!-- Clock representations -->
+  <g transform="translate(600, 380)" opacity="0.3">
+    <!-- Eating window clock -->
+    <circle cx="-120" cy="20" r="70" fill="none" stroke="url(#clock2)" stroke-width="8"/>
+    <path d="M-120,20 L-120,-15 L-95,-15" stroke="url(#clock2)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <text x="-120" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#7cb342">EAT</text>
+
+    <!-- Fasting window clock -->
+    <circle cx="120" cy="20" r="70" fill="none" stroke="url(#clock1)" stroke-width="8"/>
+    <path d="M120,20 L120,-25 L145,-40" stroke="url(#clock1)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <text x="120" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#4a90a4">FAST</text>
+
+    <!-- Hourglass in middle -->
+    <g transform="translate(0, 20)">
+      <polygon points="-20,-40 20,-40 10,0 -10,0" fill="#d4af37" opacity="0.6"/>
+      <polygon points="-20,40 20,40 10,0 -10,0" fill="#f4cf67" opacity="0.6"/>
+      <rect x="-25" y="-40" width="50" height="80" fill="none" stroke="#d4af37" stroke-width="3" rx="5"/>
+    </g>
+  </g>
+
+  <!-- Time markers -->
+  <g transform="translate(600, 460)" opacity="0.4">
+    <text x="-180" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#7cb342">8H</text>
+    <text x="180" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#4a90a4">16H</text>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    INTERMITTENT FASTING
+  </text>
+  <text x="600" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    For Men
+  </text>
+
+  <text x="600" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#d4af37" letter-spacing="1">
+    Complete Guide to Weight Loss and Health
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Transform Your Health with Time-Restricted Eating
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="350" y="500" width="500" height="2" fill="url(#gold-if)"/>
+</svg>

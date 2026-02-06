@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-sup" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold-sup" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f4cf67"/>
+      <stop offset="100%" style="stop-color:#d4af37"/>
+    </linearGradient>
+    <linearGradient id="pill-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#a67c00"/>
+    </linearGradient>
+    <linearGradient id="pill-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66bb6a"/>
+      <stop offset="100%" style="stop-color:#388e3c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-sup)"/>
+
+  <!-- Subtle pattern overlay -->
+  <g opacity="0.05">
+    <circle cx="200" cy="180" r="110" fill="#d4af37"/>
+    <circle cx="1000" cy="450" r="130" fill="#d4af37"/>
+  </g>
+
+  <!-- Pill/capsule representations -->
+  <g transform="translate(600, 350)" opacity="0.3">
+    <!-- Top row pills -->
+    <g transform="translate(-180, -60)">
+      <ellipse cx="0" cy="0" rx="50" ry="25" fill="url(#pill-green)"/>
+      <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#81c784"/>
+    </g>
+
+    <g transform="translate(0, -60)">
+      <ellipse cx="0" cy="0" rx="50" ry="25" fill="url(#pill-gold)"/>
+      <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#f4cf67"/>
+    </g>
+
+    <g transform="translate(180, -60)">
+      <ellipse cx="0" cy="0" rx="50" ry="25" fill="url(#pill-green)"/>
+      <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#81c784"/>
+    </g>
+
+    <!-- Bottom row pills -->
+    <g transform="translate(-90, 40)">
+      <ellipse cx="0" cy="0" rx="50" ry="25" fill="url(#pill-gold)"/>
+      <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#f4cf67"/>
+    </g>
+
+    <g transform="translate(90, 40)">
+      <ellipse cx="0" cy="0" rx="50" ry="25" fill="url(#pill-green)"/>
+      <ellipse cx="-20" cy="0" rx="20" ry="25" fill="#81c784"/>
+    </g>
+  </g>
+
+  <!-- Checkmarks indicating quality -->
+  <g transform="translate(600, 350)" opacity="0.4">
+    <circle cx="-220" cy="-60" r="20" fill="#4caf50"/>
+    <path d="M-228,-60 L-224,-56 L-212,-68" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="-40" cy="-60" r="20" fill="#4caf50"/>
+    <path d="M-48,-60 L-44,-56 L-32,-68" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="140" cy="-60" r="20" fill="#4caf50"/>
+    <path d="M132,-60 L136,-56 L148,-68" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="-130" cy="40" r="20" fill="#4caf50"/>
+    <path d="M-138,40 L-134,44 L-122,32" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="50" cy="40" r="20" fill="#4caf50"/>
+    <path d="M42,40 L46,44 L58,32" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#d4af37" letter-spacing="2">
+    BEST WEIGHT LOSS
+  </text>
+  <text x="600" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="600" fill="#f4cf67" letter-spacing="1">
+    Supplements 2026
+  </text>
+
+  <text x="600" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#d4af37" letter-spacing="1">
+    Complete Guide to Fat Burners That Work
+  </text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="530" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#888" letter-spacing="1">
+    Clinically Proven Ingredients for Real Results
+  </text>
+
+  <!-- Decorative gold bar -->
+  <rect x="300" y="500" width="600" height="2" fill="url(#gold-sup)"/>
+</svg>
