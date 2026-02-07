@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import NewsletterModal from '../components/NewsletterModal.astro';
 ---
 
 <Layout title="About Us | The Best Offers Around">
@@ -103,6 +104,9 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
   </main>
+
+  <!-- Newsletter Modal -->
+  <NewsletterModal delay={40} />
 
   <Footer />
 </Layout>

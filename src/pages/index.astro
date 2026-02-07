@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProductCard from '../components/ProductCard.astro';
+import NewsletterModal from '../components/NewsletterModal.astro';
 import { getFeaturedProducts } from '../data/products';
 
 const featuredProducts = getFeaturedProducts().slice(0, 3);
@@ -240,6 +241,9 @@ const featuredProducts = getFeaturedProducts().slice(0, 3);
       </div>
     </section>
   </main>
+
+  <!-- Newsletter Modal -->
+  <NewsletterModal delay={45} />
 
   <Footer />
 </Layout>

@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Unsubscribe - The Best Offers Around" description="Unsubscribe from our newsletter">
+  <div class="min-h-screen bg-off-black py-16">
+    <div class="max-w-2xl mx-auto px-4">
+      <div class="bg-dark-gray border border-gray-800 rounded-lg p-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 rounded-full mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <h1 class="text-3xl font-bold text-white mb-2">Unsubscribe from Newsletter</h1>
+          <p class="text-gray-400">We're sorry to see you go</p>
+        </div>
+
+        <!-- Unsubscribe Form -->
+        <form id="unsubscribe-form" class="space-y-4">
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email address"
+              class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
+            />
+          </div>
+
+          <div>
+            <label for="reason" class="block text-sm font-medium text-gray-300 mb-2">
+              Reason (optional)
+            </label>
+            <select
+              id="reason"
+              name="reason"
+              class="w-full px-4 py-3 bg-off-black border border-gray-700 rounded text-white focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
+            >
+              <option value="">Select a reason...</option>
+              <option value="no-longer-interested">No longer interested in the content</option>
+              <option value="too-many-emails">Too many emails</option>
+              <option value="not-relevant">Content not relevant</option>
+              <option value="found-alternative">Found an alternative source</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded transition duration-200"
+          >
+            Unsubscribe
+          </button>
+
+          <!-- Success Message -->
+          <div id="success-message" class="hidden bg-green-500/20 border border-green-500/30 rounded p-4 text-center">
+            <p class="text-green-400 font-medium">✓ You have been unsubscribed</p>
+            <p class="text-gray-400 text-sm mt-2">We've removed you from our mailing list. You'll no longer receive emails from us.</p>
+          </div>
+
+          <!-- Error Message -->
+          <div id="error-message" class="hidden bg-red-500/20 border border-red-500/30 rounded p-4 text-center">
+            <p class="text-red-400">Something went wrong. Please try again.</p>
+          </div>
+        </form>
+
+        <!-- Feedback -->
+        <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+          <p class="text-gray-400 text-sm mb-4">
+            Want to give us another chance? You can always resubscribe on any blog post.
+          </p>
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-gold hover:text-gold/80 transition"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('unsubscribe-form');
+  const emailInput = document.getElementById('email');
+  const reasonSelect = document.getElementById('reason');
+  const submitBtn = document.getElementById('submit-btn');
+  const successMsg = document.getElementById('success-message');
+  const errorMsg = document.getElementById('error-message');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = emailInput.value;
+    const reason = reasonSelect.value;
+
+    // Disable submit button
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Processing...';
+
+    try {
+      const response = await fetch('/api/newsletter/unsubscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, reason }),
+      });
+
+      if (response.ok) {
+        successMsg.classList.remove('hidden');
+        form.reset();
+
+        // Track in PostHog
+        if (window.posthog) {
+          window.posthog.capture('newsletter_unsubscribed', {
+            reason,
+            timestamp: new Date().toISOString()
+          });
+        }
+      } else {
+        throw new Error('Unsubscribe failed');
+      }
+    } catch (error) {
+      console.error('Unsubscribe error:', error);
+      errorMsg.classList.remove('hidden');
+      setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Unsubscribe';
+    }
+  });
+</script>

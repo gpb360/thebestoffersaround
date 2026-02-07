@@ -7,6 +7,10 @@ import RelatedArticles from '../../components/RelatedArticles.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
 import FAQSection from '../../components/FAQSection.astro';
 import ProgressIndicator from '../../components/ProgressIndicator.astro';
+import SocialShareButtons from '../../components/SocialShareButtons.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import NewsletterModal from '../../components/NewsletterModal.astro';
+import NewsletterSidebar from '../../components/NewsletterSidebar.astro';
 import { blogPosts, getBlogPostSlugs } from '../../data/blog';
 import { products } from '../../data/products';
 import { trackPageView, setupScrollTracking, trackTimeOnPage } from '../../lib/posthog';
@@ -181,9 +185,10 @@ if (post.keywords && post.keywords.length > 0) {
             )}
           </div>
 
-          <!-- Sidebar with TOC -->
-          <aside class="hidden lg:block">
+          <!-- Sidebar with TOC and Social -->
+          <aside class="hidden lg:block space-y-6">
             <TableOfContents content={post.content} />
+            <NewsletterSidebar />
           </aside>
         </div>
       </div>
@@ -221,6 +226,25 @@ if (post.keywords && post.keywords.length > 0) {
           maxArticles={4}
         />
 
+        <!-- Newsletter Signup -->
+        <div class="max-w-2xl mx-auto">
+          <NewsletterSignup placement="article-end" />
+        </div>
+
+        <!-- Social Share Buttons -->
+        <div class="max-w-2xl mx-auto">
+          <h3 class="text-center text-gray-300 mb-4">Share this article</h3>
+          <SocialShareButtons
+            url={`https://thebestoffersaround.com/blog/${slug}/`}
+            title={post.title}
+            description={post.excerpt}
+            image={`https://thebestoffersaround.com${post.image}`}
+            platforms={['twitter', 'linkedin', 'facebook', 'copy']}
+            showLabels={true}
+            orientation="horizontal"
+          />
+        </div>
+
         <!-- Final CTA -->
         {relatedProducts.length > 0 && (
           <CTASection
@@ -252,6 +276,9 @@ if (post.keywords && post.keywords.length > 0) {
       </div>
     </article>
   </main>
+
+  <!-- Newsletter Modal -->
+  <NewsletterModal delay={30} />
 
   <Footer />
 </Layout>

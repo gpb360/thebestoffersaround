@@ -1,0 +1,270 @@
+---
+/**
+ * Newsletter Modal Component
+ * Exit-intent popup with lead magnet promotion
+ */
+
+interface Props {
+  delay?: number; // seconds before showing
+  showOncePer?: number; // days between shows
+}
+
+const { delay = 30, showOncePer = 7 } = Astro.props;
+---
+
+<!-- Newsletter Modal (Hidden by default) -->
+<dialog id="newsletter-modal" class="newsletter-modal backdrop:bg-black/70 bg-transparent p-0 m-0">
+  <div class="modal-content bg-off-black border border-gold/30 rounded-xl shadow-2xl max-w-md w-full mx-4 overflow-hidden relative">
+
+    <!-- Close Button -->
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 text-gray-400 hover:text-white transition z-10"
+      aria-label="Close modal"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Modal Body -->
+    <div class="p-8">
+      <!-- Header -->
+      <div class="text-center mb-6">
+        <div class="inline-block p-3 bg-gold/10 rounded-full mb-4">
+          <svg class="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-white mb-2">
+          Wait! Don't Leave Empty-Handed
+        </h2>
+        <p class="text-gray-300">
+          Get our <span class="text-gold font-semibold">FREE Supplement Guide</span> worth $47
+        </p>
+      </div>
+
+      <!-- Lead Magnet Features -->
+      <ul class="space-y-2 mb-6 text-sm">
+        <li class="flex items-start gap-2 text-gray-300">
+          <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Top 10 clinically-validated supplements
+        </li>
+        <li class="flex items-start gap-2 text-gray-300">
+          <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Dosage guidelines & safety tips
+        </li>
+        <li class="flex items-start gap-2 text-gray-300">
+          <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Exclusive subscriber discounts
+        </li>
+        <li class="flex items-start gap-2 text-gray-300">
+          <svg class="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Weekly expert health tips
+        </li>
+      </ul>
+
+      <!-- Signup Form -->
+      <form id="modal-newsletter-form" class="space-y-3">
+        <input
+          type="email"
+          id="modal-email"
+          name="email"
+          required
+          placeholder="Enter your email address"
+          class="w-full px-4 py-3 bg-off-black border border-gold/30 rounded text-white placeholder-gray-400 focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition"
+        />
+
+        <label class="flex items-start gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            required
+            class="mt-1 w-4 h-4 rounded border-gold/30 bg-off-black text-gold focus:ring-gold/20"
+          />
+          <span class="text-xs text-gray-400">
+            I agree to receive emails and accept the <a href="/privacy" class="text-gold hover:underline">privacy policy</a>
+          </span>
+        </label>
+
+        <button
+          type="submit"
+          id="modal-submit-btn"
+          class="w-full bg-gold hover:bg-gold/90 text-off-black font-bold py-3 px-6 rounded transition duration-200"
+        >
+          Send Me The Free Guide →
+        </button>
+
+        <!-- Messages -->
+        <div id="modal-success" class="hidden bg-green-500/20 border border-green-500/30 rounded p-3 text-center">
+          <p class="text-green-400 font-medium text-sm">✓ Check your inbox for your free guide!</p>
+        </div>
+
+        <div id="modal-error" class="hidden bg-red-500/20 border border-red-500/30 rounded p-3 text-center">
+          <p class="text-red-400 text-sm">Something went wrong. Please try again.</p>
+        </div>
+      </form>
+
+      <!-- No Thanks Link -->
+      <p class="text-center mt-4 text-sm text-gray-400">
+        <button id="no-thanks" class="text-gray-400 hover:text-white transition underline">
+          No thanks, I don't want free expert tips
+        </button>
+      </p>
+    </div>
+  </div>
+</dialog>
+
+<script define:vars={{ delay, showOncePer }}>
+  // Newsletter modal with exit intent and timing control
+  let modalShown = false;
+  let modalTriggered = false;
+
+  const modal = document.getElementById('newsletter-modal');
+  const closeBtn = document.getElementById('close-modal');
+  const noThanksBtn = document.getElementById('no-thanks');
+  const form = document.getElementById('modal-newsletter-form');
+  const submitBtn = document.getElementById('modal-submit-btn');
+  const successMsg = document.getElementById('modal-success');
+  const errorMsg = document.getElementById('modal-error');
+
+  // Check if modal was shown recently
+  const getLastShown = () => {
+    const lastShown = localStorage.getItem('newsletter_modal_last_shown');
+    return lastShown ? new Date(lastShown) : null;
+  };
+
+  const shouldShowModal = () => {
+    const lastShown = getLastShown();
+    if (!lastShown) return true;
+
+    const daysSinceShown = (Date.now() - lastShown.getTime()) / (1000 * 60 * 60 * 24);
+    return daysSinceShown >= showOncePer;
+  };
+
+  const showModal = () => {
+    if (!shouldShowModal() || modalShown) return;
+
+    modalTriggered = true;
+    modal.showModal();
+
+    // Track modal view
+    if (window.posthog) {
+      window.posthog.capture('modal_triggered', {
+        trigger: modalShown ? 'timing' : 'exit_intent',
+        timestamp: new Date().toISOString()
+      });
+    }
+
+    modalShown = true;
+    localStorage.setItem('newsletter_modal_last_shown', new Date().toISOString());
+  };
+
+  // Exit intent detection (desktop)
+  if (window.innerWidth > 768) {
+    document.addEventListener('mouseleave', (e) => {
+      if (e.clientY < 10 && !modalTriggered) {
+        setTimeout(showModal, 500);
+      }
+    });
+  }
+
+  // Timer-based trigger (mobile)
+  setTimeout(() => {
+    if (!modalTriggered) {
+      showModal();
+    }
+  }, delay * 1000);
+
+  // Close handlers
+  const closeModal = () => {
+    modal.close();
+
+    if (window.posthog) {
+      window.posthog.capture('modal_closed', {
+        timestamp: new Date().toISOString()
+      });
+    }
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  noThanksBtn.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    const rect = modal.querySelector('.modal-content').getBoundingClientRect();
+    const isInDialog = (rect.top <= e.clientY && e.clientY <= rect.top + rect.height &&
+      rect.left <= e.clientX && e.clientX <= rect.left + rect.width);
+    if (!isInDialog) {
+      closeModal();
+    }
+  });
+
+  // Close on ESC key
+  modal.addEventListener('cancel', closeModal);
+
+  // Form submission
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('modal-email').value;
+
+    // Track signup attempt
+    if (window.posthog) {
+      window.posthog.capture('signup_form_submitted', {
+        placement: 'modal',
+        timestamp: new Date().toISOString()
+      });
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Subscribing...';
+
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, placement: 'modal' })
+      });
+
+      if (response.ok) {
+        // Track success
+        if (window.posthog) {
+          window.posthog.capture('modal_converted', {
+            timestamp: new Date().toISOString()
+          });
+          window.posthog.identify(email);
+        }
+
+        successMsg.classList.remove('hidden');
+        form.reset();
+
+        // Auto-close after 3 seconds
+        setTimeout(closeModal, 3000);
+      } else {
+        throw new Error('Subscription failed');
+      }
+    } catch (error) {
+      console.error('Newsletter signup error:', error);
+      errorMsg.classList.remove('hidden');
+
+      if (window.posthog) {
+        window.posthog.capture('signup_form_error', {
+          placement: 'modal',
+          error: error.message,
+          timestamp: new Date().toISOString()
+        });
+      }
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Me The Free Guide →';
+    }
+  });
+</script>

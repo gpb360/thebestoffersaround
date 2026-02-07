@@ -143,3 +143,178 @@ export function trackInternalLink(destination: string, linkText: string, article
     });
   }
 }
+
+/**
+ * Track newsletter signup form viewed
+ */
+export function trackSignupFormViewed(placement: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('signup_form_viewed', {
+      placement,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track newsletter signup form submitted
+ */
+export function trackSignupFormSubmitted(placement: string, email?: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('signup_form_submitted', {
+      placement,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Identify user if email provided
+    if (email) {
+      (window as any).posthog.identify(email);
+    }
+  }
+}
+
+/**
+ * Track newsletter signup success
+ */
+export function trackSignupFormSuccess(placement: string, email: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('signup_form_success', {
+      placement,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Update user properties
+    (window as any).posthog.people.set({
+      email_subscribed: true,
+      signup_date: new Date().toISOString(),
+      signup_placement: placement,
+    });
+  }
+}
+
+/**
+ * Track newsletter modal triggered
+ */
+export function trackModalTriggered(trigger: 'exit_intent' | 'timing') {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('modal_triggered', {
+      trigger,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track newsletter modal converted
+ */
+export function trackModalConverted() {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('modal_converted', {
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track social share button clicked
+ */
+export function trackShareButtonClicked(platform: string, url: string, title?: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('share_button_clicked', {
+      platform,
+      url,
+      title,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track share link copied
+ */
+export function trackShareCopied(url: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('share_copied', {
+      url,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track social follow clicked
+ */
+export function trackSocialFollowClicked(platform: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('social_follow_clicked', {
+      platform,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track RSS feed viewed
+ */
+export function trackRSSFeedViewed(feedType: string, category?: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('rss_feed_viewed', {
+      feed_type: feedType,
+      category,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track email link clicked
+ */
+export function trackEmailLinkClicked(url: string, emailType: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('email_link_clicked', {
+      url,
+      email_type,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track email product clicked
+ */
+export function trackEmailProductClicked(productId: string, productName: string, emailType: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('email_product_clicked', {
+      product_id: productId,
+      product_name: productName,
+      email_type: emailType,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track search query
+ */
+export function trackSearchQuery(query: string, resultsCount: number) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('search_performed', {
+      query,
+      results_count: resultsCount,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}
+
+/**
+ * Track newsletter signup error
+ */
+export function trackSignupError(placement: string, error: string) {
+  if (typeof window !== 'undefined' && (window as any).posthog) {
+    (window as any).posthog.capture('signup_form_error', {
+      placement,
+      error,
+      timestamp: new Date().toISOString(),
+    });
+  }
+}

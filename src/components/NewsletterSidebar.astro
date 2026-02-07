@@ -1,0 +1,172 @@
+---
+/**
+ * Newsletter Sidebar Widget
+ * Sticky sidebar component with product spotlight
+ */
+
+interface Props {
+  productSlug?: string;
+}
+
+const { productSlug } = Astro.props;
+
+// Import products to get featured product
+import { products } from '../data/products';
+const featuredProduct = productSlug ? products[productSlug] : products[Object.keys(products)[0]];
+---
+
+<aside class="newsletter-sidebar sticky top-4">
+  <div class="bg-gold/5 border border-gold/20 rounded-lg p-5 space-y-4">
+    <!-- Icon -->
+    <div class="flex justify-center">
+      <div class="p-2 bg-gold/10 rounded-full">
+        <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h3 class="text-lg font-bold text-white text-center">
+      Weekly Supplement Tips
+    </h3>
+
+    <!-- Description -->
+    <p class="text-sm text-gray-300 text-center">
+      Join 10,000+ readers getting expert reviews and exclusive deals.
+    </p>
+
+    <!-- Form -->
+    <form id="sidebar-newsletter-form" class="space-y-3">
+      <input
+        type="email"
+        id="sidebar-email"
+        name="email"
+        required
+        placeholder="Your email"
+        class="w-full px-3 py-2 bg-off-black border border-gold/30 rounded text-white text-sm placeholder-gray-400 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/20"
+      />
+
+      <button
+        type="submit"
+        id="sidebar-submit"
+        class="w-full bg-gold hover:bg-gold/90 text-off-black font-semibold py-2 px-4 rounded text-sm transition"
+      >
+        Subscribe Free
+      </button>
+
+      <p class="text-xs text-gray-400 text-center">
+        No spam, unsubscribe anytime
+      </p>
+
+      <!-- Messages -->
+      <div id="sidebar-success" class="hidden bg-green-500/20 border border-green-500/30 rounded p-2 text-center">
+        <p class="text-green-400 text-xs font-medium">✓ Check your inbox!</p>
+      </div>
+
+      <div id="sidebar-error" class="hidden bg-red-500/20 border border-red-500/30 rounded p-2 text-center">
+        <p class="text-red-400 text-xs">Please try again</p>
+      </div>
+    </form>
+
+    <!-- Product Spotlight (if product provided) -->
+    {featuredProduct && (
+      <div class="border-t border-gold/20 pt-4 mt-4">
+        <p class="text-xs text-gold font-semibold mb-2 text-center">⭐ Featured Product</p>
+        <a
+          href={`/products/${productSlug || featuredProduct.id}/`}
+          class="block group"
+        >
+          <div class="bg-off-black/50 rounded p-3 hover:bg-off-black transition">
+            <p class="text-white font-medium text-sm group-hover:text-gold transition">
+              {featuredProduct.name}
+            </p>
+            <p class="text-xs text-gray-400 mt-1 line-clamp-2">
+              {featuredProduct.description}
+            </p>
+            <p class="text-gold text-xs font-semibold mt-2">
+              {featuredProduct.rating} ★ {featuredProduct.price}
+            </p>
+          </div>
+        </a>
+      </div>
+    )}
+  </div>
+</aside>
+
+<script>
+  // Sidebar newsletter form
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('sidebar-newsletter-form');
+    const emailInput = document.getElementById('sidebar-email');
+    const submitBtn = document.getElementById('sidebar-submit');
+    const successMsg = document.getElementById('sidebar-success');
+    const errorMsg = document.getElementById('sidebar-error');
+
+    // Track form view
+    if (window.posthog) {
+      window.posthog.capture('signup_form_viewed', {
+        placement: 'sidebar',
+        timestamp: new Date().toISOString()
+      });
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value;
+
+      // Track attempt
+      if (window.posthog) {
+        window.posthog.capture('signup_form_submitted', {
+          placement: 'sidebar',
+          timestamp: new Date().toISOString()
+        });
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Subscribing...';
+
+      try {
+        const response = await fetch('/api/newsletter/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, placement: 'sidebar' })
+        });
+
+        if (response.ok) {
+          if (window.posthog) {
+            window.posthog.capture('signup_form_success', {
+              placement: 'sidebar',
+              timestamp: new Date().toISOString()
+            });
+            window.posthog.identify(email);
+          }
+
+          successMsg.classList.remove('hidden');
+          form.reset();
+
+          setTimeout(() => successMsg.classList.add('hidden'), 5000);
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (error) {
+        console.error('Newsletter error:', error);
+        errorMsg.classList.remove('hidden');
+
+        if (window.posthog) {
+          window.posthog.capture('signup_form_error', {
+            placement: 'sidebar',
+            error: error.message,
+            timestamp: new Date().toISOString()
+          });
+        }
+
+        setTimeout(() => errorMsg.classList.add('hidden'), 5000);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Subscribe Free';
+      }
+    });
+  });
+</script>

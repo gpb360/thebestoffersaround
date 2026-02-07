@@ -1,4 +1,6 @@
 ---
+import { navigationData } from '../data/navigation';
+import SocialFollowButtons from './SocialFollowButtons.astro';
 const currentYear = new Date().getFullYear();
 ---
 
@@ -14,17 +16,18 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Categories -->
-      <div>
-        <h4 class="text-lg font-semibold mb-4">Categories</h4>
-        <ul class="space-y-2">
-          <li><a href="/category/testosterone-boosters" class="text-gray-400 hover:text-gold text-sm transition-colors">Testosterone Boosters</a></li>
-          <li><a href="/category/male-enhancement" class="text-gray-400 hover:text-gold text-sm transition-colors">Male Enhancement</a></li>
-          <li><a href="/category/weight-loss" class="text-gray-400 hover:text-gold text-sm transition-colors">Weight Loss</a></li>
-          <li><a href="/category/muscle-fitness" class="text-gray-400 hover:text-gold text-sm transition-colors">Muscle & Fitness</a></li>
-          <li><a href="/category/anti-aging" class="text-gray-400 hover:text-gold text-sm transition-colors">Anti-Aging</a></li>
-          <li><a href="/category/brain-health" class="text-gray-400 hover:text-gold text-sm transition-colors">Brain Health</a></li>
-        </ul>
-      </div>
+      {navigationData.map(item => (
+        item.children && (
+          <div>
+            <h4 class="text-lg font-semibold mb-4">{item.name}</h4>
+            <ul class="space-y-2">
+              {item.children.map(child => (
+                <li><a href={child.href} class="text-gray-400 hover:text-gold text-sm transition-colors">{child.name}</a></li>
+              ))}
+            </ul>
+          </div>
+        )
+      ))}
 
       <!-- Quick Links -->
       <div>
@@ -46,6 +49,14 @@ const currentYear = new Date().getFullYear();
           <li><a href="/products/calmlean" class="text-gray-400 hover:text-gold text-sm transition-colors">CalmLean</a></li>
           <li><a href="/products/genf20" class="text-gray-400 hover:text-gold text-sm transition-colors">GenF20</a></li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Social Follow -->
+    <div class="mt-8 pt-8 border-t border-gray-800">
+      <div class="flex flex-col items-center gap-4">
+        <h4 class="text-lg font-semibold text-gray-300">Follow Us</h4>
+        <SocialFollowButtons layout="horizontal" size="md" showLabels={true} />
       </div>
     </div>
 

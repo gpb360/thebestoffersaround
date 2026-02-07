@@ -1,15 +1,6 @@
 ---
+import { navigationData } from '../data/navigation';
 const currentPath = Astro.url.pathname;
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Testosterone Boosters', href: '/category/testosterone-boosters' },
-  { name: 'Male Enhancement', href: '/category/male-enhancement' },
-  { name: 'Weight Loss', href: '/category/weight-loss' },
-  { name: 'Muscle & Fitness', href: '/category/muscle-fitness' },
-  { name: 'Anti-Aging', href: '/category/anti-aging' },
-  { name: 'Brain Health', href: '/category/brain-health' },
-  { name: 'Blog', href: '/blog' },
-];
 ---
 
 <header class="sticky top-0 z-50 bg-off-black/95 backdrop-blur-sm border-b border-gold/20">
@@ -17,21 +8,53 @@ const navItems = [
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
-        <span class="text-2xl font-bold text-gold">The Best Offers Around</span>
+        <span class="text-xl sm:text-2xl font-bold text-gold">The Best Offers Around</span>
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation with Dropdowns -->
       <div class="hidden lg:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-          {navItems.map(item => (
-            <a
-              href={item.href}
-              class:underline={currentPath === item.href}
-              class:text-gold={currentPath === item.href}
-              class="px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-gold hover:bg-dark-gray"
-            >
-              {item.name}
-            </a>
+        <div class="ml-8 xl:ml-10 flex items-baseline space-x-1 xl:space-x-2">
+          {navigationData.map(item => (
+            <div class="relative group">
+              {item.children ? (
+                // Dropdown menu
+                <>
+                  <button class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:text-gold hover:bg-dark-gray flex items-center gap-1.5">
+                    {item.name}
+                    <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div class="absolute left-0 mt-2 w-64 bg-dark-gray border border-gold/20 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div class="py-2">
+                      {item.children.map(child => (
+                        <a
+                          href={child.href}
+                          class:underline={currentPath === child.href}
+                          class:text-gold={currentPath === child.href}
+                          class="block px-4 py-2.5 text-sm hover:bg-off-black transition-colors first:rounded-t-md last:rounded-b-md"
+                        >
+                          <div class="font-medium">{child.name}</div>
+                          {child.description && (
+                            <div class="text-xs text-gray-400 mt-0.5">{child.description}</div>
+                          )}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                // Regular link
+                <a
+                  href={item.href}
+                  class:underline={currentPath === item.href}
+                  class:text-gold={currentPath === item.href}
+                  class="px-4 py-2 rounded-md text-sm font-medium transition-colors hover:text-gold hover:bg-dark-gray"
+                >
+                  {item.name}
+                </a>
+              )}
+            </div>
           ))}
         </div>
       </div>
@@ -54,18 +77,45 @@ const navItems = [
     </div>
   </nav>
 
-  <!-- Mobile menu -->
+  <!-- Mobile menu with accordion dropdowns -->
   <div class="lg:hidden hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-dark-gray">
-      {navItems.map(item => (
-        <a
-          href={item.href}
-          class:underline={currentPath === item.href}
-          class:text-gold={currentPath === item.href}
-          class="block px-3 py-2 rounded-md text-base font-medium hover:text-gold hover:bg-off-black"
-        >
-          {item.name}
-        </a>
+    <div class="px-3 pt-2 pb-4 space-y-1 sm:px-4 bg-dark-gray">
+      {navigationData.map(item => (
+        <div>
+          {item.children ? (
+            // Mobile accordion
+            <>
+              <button class="mobile-dropdown-toggle w-full flex items-center justify-between px-3 py-3 rounded-md text-base font-medium hover:text-gold hover:bg-off-black transition-colors">
+                <span>{item.name}</span>
+                <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="mobile-dropdown-menu hidden pl-4 space-y-0.5 mt-1">
+                {item.children.map(child => (
+                  <a
+                    href={child.href}
+                    class:underline={currentPath === child.href}
+                    class:text-gold={currentPath === child.href}
+                    class="block px-3 py-2.5 rounded-md text-sm hover:bg-off-black transition-colors"
+                  >
+                    {child.name}
+                  </a>
+                ))}
+              </div>
+            </>
+          ) : (
+            // Regular link
+            <a
+              href={item.href}
+              class:underline={currentPath === item.href}
+              class:text-gold={currentPath === item.href}
+              class="block px-3 py-3 rounded-md text-base font-medium hover:text-gold hover:bg-off-black transition-colors"
+            >
+              {item.name}
+            </a>
+          )}
+        </div>
       ))}
     </div>
   </div>
@@ -79,6 +129,17 @@ const navItems = [
       const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
       mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
       mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Mobile dropdown toggles
+    const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        const menu = toggle.nextElementSibling;
+        const icon = toggle.querySelector('svg');
+        menu.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
     });
   </script>
 </header>
