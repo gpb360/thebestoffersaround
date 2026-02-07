@@ -1,0 +1,410 @@
+# The Best Offers Around - LLM Context
+
+## Project Overview
+
+**Name:** The Best Offers Around
+**Type:** Affiliate Marketing Website
+**Domain:** https://thebestoffersaround.com
+**Niche:** Men's health supplements (testosterone boosters, male enhancement, HGH, nootropics)
+**Tech Stack:** Astro, TypeScript, Tailwind CSS, Vercel, PostHog Analytics
+**Mission:** Provide science-backed reviews of men's health products to help consumers make informed decisions
+
+---
+
+## Purpose
+
+This site is an affiliate marketing website that:
+1. Reviews men's health supplements (testosterone boosters, male enhancement pills, HGH releasers, nootropics)
+2. Provides educational content about men's health topics
+3. Compares products based on ingredients, clinical research, and user reviews
+4. Earns affiliate commissions when visitors purchase recommended products
+
+**Target Audience:** Men aged 30-65 looking for science-backed information about supplements for:
+- Low testosterone
+- Erectile dysfunction
+- Anti-aging (HGH)
+- Weight loss
+- Cognitive enhancement
+
+---
+
+## Site Structure
+
+### Core Pages
+- `/` - Homepage with featured content and top product recommendations
+- `/blog/` - Blog index with all articles
+- `/blog/[slug]/` - Individual blog post pages (31 posts)
+- `/products/[slug]/` - Individual product review pages (10-14 products)
+- `/category/[category]/` - Category pages for filtering content
+- `/about/` - About page
+- `/contact/` - Contact form
+- `/privacy/` - Privacy policy
+
+### Content Categories
+1. **Testosterone Boosters** - Natural testosterone support
+2. **Male Enhancement** - ED solutions and sexual health
+3. **HGH Releasers** - Anti-aging and growth hormone
+4. **Weight Loss** - Fat burning supplements
+5. **Brain Health** - Nootropics and cognitive enhancers
+6. **Muscle & Fitness** - Workout and bodybuilding supplements
+
+---
+
+## Key Data Files
+
+### Blog Posts
+**Location:** `/src/data/blog.ts` and `/src/data/blog-data.json`
+**Count:** 31 blog posts
+**Structure:** Each post has:
+- `slug` - URL-friendly identifier
+- `title` - Post title
+- `date` - Publication date
+- `author` - Content author
+- `readTime` - Estimated reading time
+- `category` - Content category
+- `content` - HTML content
+- `image` - Featured image path
+- `excerpt` - Post summary
+- `keywords` - SEO keywords array
+- `metaDescription` - SEO meta description
+- `relatedPosts` - Array of related post slugs
+- `affiliateProducts` - Array of product IDs to feature
+- `wordCount` - Article word count
+
+**Sample Posts:**
+- "Ultimate Guide to Male Enhancement: Science-Backed Solutions (2026)"
+- "Natural Testosterone Boosters: What Works in 2026"
+- "L-Arginine for Erectile Dysfunction: Complete Guide"
+- "VigRX Plus vs Erectin: Which Male Enhancement Pill Works Best?"
+- "Testosil Review: 434% Testosterone Increase with KSM-66"
+
+### Products
+**Location:** `/src/data/products.ts` and `/src/data/products-data.json`
+**Count:** 14 products across 6 categories
+**Structure:** Each product has:
+- `id` - Unique identifier
+- `name` - Product name
+- `slug` - URL-friendly identifier
+- `category` - Product category
+- `image` - Product image path
+- `rating` - Star rating (1-5)
+- `price` - Current price
+- `commission` - Affiliate commission percentage
+- `guarantee` - Money-back guarantee info
+- `affiliateLink` - Affiliate link
+- `benefits` - Array of key benefits
+- `keyIngredients` - Array of ingredients
+- `clinicalProof` - Clinical research summary
+- `description` - Product description
+- `featured` - Whether featured on homepage
+- `metaTitle` - SEO title
+- `metaDescription` - SEO description
+- `keywords` - SEO keywords array
+
+**Sample Products:**
+1. **Testosil** - Testosterone booster with KSM-66 Ashwagandha
+2. **VigRX Plus** - Male enhancement with clinical study
+3. **Erectin** - Fast-acting male enhancement
+4. **Semenax** - Volume enhancer
+5. **ProSolution Plus** - Premature ejaculation solution
+6. **Volume Pills** - Semen volume enhancer
+7. **Male Extra** - Ellagic acid formula
+8. **Extenze** - Budget male enhancement
+9. **Testogen** - Testosterone support
+10. **Nugenix** - Testosterone booster with Testofen
+11. **GenF20** - HGH releaser
+12. **HyperGH 14x** - HGH releaser
+13. **Brain Pill** - Nootropic
+14. **CalmLean** - Weight loss supplement
+
+---
+
+## Component Architecture
+
+### Layout Components
+- `Layout.astro` - Main site layout with SEO
+- `Header.astro` - Site navigation
+- `Footer.astro` - Site footer
+
+### Page Components
+- `CTASection.astro` - Call-to-action for affiliate products
+- `ProductCard.astro` - Product display card
+- `RelatedArticles.astro` - Related blog posts
+- `TableOfContents.astro` - Post table of contents
+- `FAQSection.astro` - FAQ section component
+- `ProgressIndicator.astro` - Reading progress bar
+- `SocialShareButtons.astro` - Social sharing widget
+- `NewsletterSignup.astro` - Newsletter signup form
+- `NewsletterModal.astro` - Newsletter popup modal
+- `NewsletterSidebar.astro` - Sidebar newsletter box
+
+### Utility Libraries
+- `lib/posthog.ts` - PostHog analytics integration
+- `lib/email-service.ts` - Resend email API
+- `lib/rss-generator.ts` - RSS feed generation
+- `lib/conversion-tracking.ts` - Affiliate click tracking
+- `lib/subscriber-manager.ts` - Email subscription management
+
+---
+
+## SEO Strategy
+
+### Keyword Strategy
+- **Primary:** "best testosterone booster", "male enhancement pills", "natural ED remedies"
+- **Secondary:** Product-specific keywords ("Testosil review", "VigRX Plus vs Erectin")
+- **Long-tail:** Question keywords ("Does ashwagandha increase testosterone?", "What is the best male enhancement pill?")
+- **LSI:** Related terms (KSM-66, L-Arginine, fenugreek, D-Aspartic Acid)
+
+### On-Page SEO
+- Schema markup (Article, Product, Organization)
+- Open Graph tags for social sharing
+- Twitter Cards
+- Proper heading hierarchy (H1, H2, H3)
+- Internal linking between related posts
+- Image alt text optimization
+- Meta descriptions (150-160 characters)
+
+### Technical SEO
+- Sitemap: `/sitemap-index.xml` (includes all blog posts and products)
+- Robots.txt: `/robots.txt` (allows all crawlers)
+- RSS feeds: `/rss.xml` and `/category/[category].xml`
+- Fast loading (Astro static/server hybrid)
+- Mobile-responsive (Tailwind CSS)
+- HTTPS (Vercel hosting)
+
+---
+
+## Affiliate Partners
+
+### Primary Network
+- **SellHealth** - Main affiliate network for most products
+- Commission: 40-50% on most products
+- Cookie duration: 60+ days
+- Payment: Monthly via check/wire
+
+### Product Categories & Commissions
+- Testosterone boosters: 50%
+- Male enhancement: 40-50%
+- HGH releasers: 40%
+- Nootropics: 40%
+- Weight loss: 40-45%
+
+---
+
+## Analytics & Tracking
+
+### PostHog Analytics
+- **Event Tracking:** Page views, scroll depth, affiliate link clicks
+- **Properties Tracked:**
+  - Article title, category, word count
+  - Product name, category, rating
+  - Affiliate link clicks
+  - Newsletter signups
+  - Social shares
+
+### Key Metrics
+- Page views per session
+- Time on page
+- Scroll depth (25%, 50%, 75%, 100%)
+- Affiliate click-through rate
+- Conversion rate (email signups)
+
+---
+
+## Email Marketing
+
+### Platform
+- **Resend** - Email API service
+- **From:** noreply@thebestoffersaround.com
+
+### Email Types
+1. **Weekly Digest** - Curated content roundup
+2. **Product Spotlights** - In-depth product reviews
+3. **Educational Series** - Multi-email sequences
+4. **Promotional** - Special offers and discounts
+
+### List Building
+- Popup modal (30-second delay)
+- Sidebar signup form
+- In-content CTAs
+- Lead magnets (free guides, checklists)
+
+---
+
+## Social Media Strategy
+
+### Platforms
+- Instagram (@thebestoffersaround)
+- Facebook
+- Twitter/X (@BestOffersAround)
+- Pinterest (business account)
+- LinkedIn
+
+### Content Types
+1. **Educational** (40%) - Tips, facts, guides
+2. **Product Spotlights** (30%) - Reviews, comparisons
+3. **Engagement** (20%) - Questions, polls, quizzes
+4. **Promotional** (10%) - Blog links, offers
+
+### Tools
+- **KIE.AI** - AI graphics generator
+- **Missinglettr** - Social media scheduling
+- **Canva** - Additional graphic design
+
+---
+
+## Recent Projects
+
+### 30-Day Traffic Strategy
+**Goal:** 1,000 visitors in 30 days using $0 organic methods
+**Status:** Documentation complete, execution started
+
+**Key Components:**
+- Social media account creation (5+ platforms)
+- Content creation (graphics, captions, stories)
+- Community engagement (Reddit, Facebook groups, Quora)
+- Pinterest growth (50+ pins)
+- SEO optimization (long-tail keywords, featured snippets)
+
+**Documentation:**
+- `30_DAY_IMPLEMENTATION_GUIDE.md` - Complete roadmap
+- `SOCIAL_MEDIA_ACCOUNT_SETUP.md` - Account setup
+- `WEEK1_CONTENT_CALENDAR.md` - Daily content plan
+- `KIE_AI_GRAPHICS_LIBRARY.md` - 25+ graphic prompts
+- `REDDIT_ENGAGEMENT_STRATEGY.md` - Reddit community building
+- `PINTEREST_STRATEGY.md` - 50 pin templates
+- `SEO_QUICK_WINS_GUIDE.md` - Week 4 SEO
+
+---
+
+## OpenClaw Agent Integration
+
+### Purpose
+AI agent for marketing automation and social media management
+
+### Capabilities
+- Content creation (graphics, captions, posts)
+- Community engagement (Reddit comments, Quora answers)
+- Analytics reporting (daily/weekly summaries)
+- Task execution (Day 1-30 routine)
+- Progress tracking via Telegram
+
+### Configuration
+- **Gateway:** Running as systemd service
+- **Agent:** Marketing Specialist mode
+- **Communication:** Telegram (@Gmanfit_bot)
+- **Documentation:** `/home/garyp/.openclaw/agents/main/agent/`
+
+### Agent Files
+- `IDENTITY.md` - Agent persona and mission
+- `MARKETING_CAMPAIGN_BRIEF.md` - 30-day strategy briefing
+
+---
+
+## Development Notes
+
+### Build Commands
+```bash
+npm install        # Install dependencies
+npm run dev        # Start dev server (localhost:4321)
+npm run build      # Build for production
+npm run preview    # Preview production build
+```
+
+### Deployment
+- **Platform:** Vercel
+- **Build Output:** Server mode (SSR) with static assets
+- **Domain:** thebestoffersaround.com
+- **Auto-deploy:** On git push to main branch
+
+### Environment Variables
+- `PUBLIC_POSTHOG_HOST` - PostHog analytics host
+- `PUBLIC_POSTHOG_KEY` - PostHog project key
+- `RESEND_API_KEY` - Resend email API key
+- `CRON_SECRET` - Cron job secret for Vercel Cron
+
+---
+
+## Content Strategy
+
+### Tone & Voice
+- **Authoritative but accessible** - Science-backed but easy to understand
+- **Objective** - Balanced reviews highlighting pros and cons
+- **Action-oriented** - Clear CTAs and next steps
+- **Empathetic** - Understanding of sensitive men's health issues
+
+### Content Pillars
+1. **Education** - How supplements work, ingredient science
+2. **Reviews** - Honest product assessments
+3. **Comparisons** - Head-to-head product comparisons
+4. **Guides** - How-to content for specific goals
+5. **FAQ** - Common questions answered
+
+### Writing Guidelines
+- Cite clinical studies when available
+- Include dosage information
+- Mention potential side effects
+- Provide realistic expectations
+- Link to scientific sources (PubMed, journals)
+- Update content annually for accuracy
+
+---
+
+## Important Files for LLMs
+
+When working on this project, these files are most relevant:
+
+### For Content Creation
+- `src/data/blog.ts` - Blog post data
+- `src/data/products.ts` - Product data
+- `WEEK1_CONTENT_CALENDAR.md` - Content templates
+
+### For SEO
+- `src/layouts/Layout.astro` - SEO schema markup
+- `SEO_QUICK_WINS_GUIDE.md` - SEO optimization guide
+
+### For Marketing
+- `30_DAY_IMPLEMENTATION_GUIDE.md` - Overall strategy
+- `DAILY_WORKFLOW_CHECKLIST.md` - Daily tasks
+- `KIE_AI_GRAPHICS_LIBRARY.md` - Graphic prompts
+
+### For Site Structure
+- `astro.config.mjs` - Site configuration
+- `src/pages/` - Page templates
+- `src/components/` - Reusable components
+
+---
+
+## Future Plans
+
+### Phase 1 (Current)
+- Complete 30-day traffic strategy
+- Build social media presence
+- Grow email list to 100+ subscribers
+- Achieve 1,000 visitors/month
+
+### Phase 2 (Months 2-3)
+- Email marketing automation
+- YouTube channel (video reviews)
+- Influencer outreach
+- Guest posting on health blogs
+- A/B testing for conversions
+
+### Phase 3 (Months 4-6)
+- Digital products (guides, courses)
+- Membership site
+- Affiliate product comparisons
+- Podcast launch
+- Paid advertising testing
+
+---
+
+## Contact & Support
+
+**Owner:** Gary
+**Project Location:** `/home/garyp/astro-affiliate-site/`
+**Documentation:** See `.md` files in project root
+**Agent:** OpenClaw (Marketing Specialist mode)
+
+**Last Updated:** February 7, 2026
+**Version:** 1.0.0

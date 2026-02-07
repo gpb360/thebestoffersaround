@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node generate-sitemap.cjs",
     "preview": "astro preview",
     "astro": "astro",
     "validate:seo": "node scripts/validate-seo.js",
-    "setup:posthog": "node scripts/setup-posthog.js"
+    "setup:posthog": "node scripts/setup-posthog.js",
+    "sitemap": "node generate-sitemap.cjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
