@@ -34,11 +34,15 @@ This site is an affiliate marketing website that:
 - `/` - Homepage with featured content and top product recommendations
 - `/blog/` - Blog index with all articles
 - `/blog/[slug]/` - Individual blog post pages (31 posts)
-- `/products/[slug]/` - Individual product review pages (10-14 products)
+- `/products/[slug]/` - Individual product review pages (10-14 products) - FOR INTERNAL LINKING ONLY
 - `/category/[category]/` - Category pages for filtering content
 - `/about/` - About page
 - `/contact/` - Contact form
 - `/privacy/` - Privacy policy
+
+**IMPORTANT LINKING RULE:**
+- **Internal site navigation:** Use `/products/[slug]/` (e.g., `/products/testosil/`)
+- **External content, social media, emails:** Use affiliate links from table above (e.g., `https://www.testosil.com/ct/752371`)
 
 ### Content Categories
 1. **Testosterone Boosters** - Natural testosterone support
@@ -175,6 +179,37 @@ This site is an affiliate marketing website that:
 ---
 
 ## Affiliate Partners
+
+### IMPORTANT: Always Use These Affiliate Links
+
+**CRITICAL:** When mentioning products in content, social media, or any external communication, ALWAYS use these affiliate links (NOT the site's internal product pages). These links earn commission (40-50%) when visitors make purchases.
+
+### Product Affiliate Links (Use These URLs)
+
+| Product | Affiliate Link (USE THIS) | Commission |
+|---------|---------------------------|------------|
+| **Testosil** | https://www.testosil.com/ct/752371 | 50% |
+| **VigRX Plus** | https://www.vigrxplus.net/ct/752371 | 50% |
+| **Erectin** | https://www.erectin.com/ct/752371 | 50% |
+| **Semenax** | https://www.semenax.com/ct/752371 | 40% |
+| **ProSolution Plus** | https://www.prosolutionplus.com/ct/752371 | 40% |
+| **GenF20** | https://www.genf20muscle.com/ct/752371 | 40% |
+| **Brain Pill** | https://www.brainpill.com/ct/752371 | 40% |
+| **HyperGH 14x** | https://www.hypergh14x.com/ct/752371 | 40% |
+| **CalmLean** | https://www.calmlean.com/ct/752371 | 45% |
+| **Volume Pills** | https://www.semenax.com/ct/752371 | 40% |
+
+### Link Usage Examples
+
+**CORRECT (Use Affiliate Link):**
+```
+Check out Testosil: https://www.testosil.com/ct/752371
+```
+
+**INCORRECT (Don't Use Internal Page):**
+```
+Check out Testosil: https://thebestoffersaround.com/products/testosil/
+```
 
 ### Primary Network
 - **SellHealth** - Main affiliate network for most products
