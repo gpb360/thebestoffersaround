@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Status Verification | The Best Offers Around</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #0f172a; color: #ffffff; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { color: #F59E0B; margin-bottom: 10px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .product-card { background: #1a1a1f; border: 1px solid #333; border-radius: 8px; padding: 20px; text-align: center; }
+        .product-card h3 { color: #F59E0B; margin-top: 0; font-size: 1.2rem; }
+        .status { font-size: 1rem; margin: 15px 0; padding: 8px 15px; border-radius: 4px; }
+        .status.live { background: #10b981; }
+        .status.error { background: #ef4444; }
+        .check-image { font-size: 0.85rem; color: #666; margin-top: 10px; }
+        .script { font-family: monospace; background: #0f172a; padding: 15px; border-radius: 4px; margin-top: 20px; font-size: 0.85rem; color: #F59E0B; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Product Deployment Status</h1>
+            <p>This page checks all 32 products and their image files.</p>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Products will be loaded via JavaScript -->
+        </div>
+
+        <div class="script">
+            <h3>Diagnostic Information</h3>
+            <p><strong>Current Live URL:</strong> <span id="currentUrl">Checking...</span></p>
+            <p><strong>Expected Product Count:</strong> 32 products</p>
+            <p><strong>Actual Product Count:</strong> <span id="actualCount">Checking...</span></p>
+        </div>
+
+        <script>
+            const products = [
+                { id: 'testosil', name: 'Testosil', slug: 'testosil', image: '/images/products/testosil.jpg' },
+                { id: 'vigrx-plus', name: 'VigRX Plus', slug: 'vigrx-plus', image: '/images/products/vigrx-plus.jpg' },
+                { id: 'calmlean', name: 'CalmLean', slug: 'calmlean', image: '/images/products/calmlean.jpg' },
+                { id: 'erectin', name: 'Erectin', slug: 'erectin', image: '/images/products/erectin.jpg' },
+                { id: 'semenax', name: 'Semenax', slug: 'semenax', image: '/images/products/semenax.jpg' },
+                { id: 'prosolution-plus', name: 'Prosolution Plus', slug: 'prosolution-plus', image: '/images/products/prosolution-plus.jpg' },
+                { id: 'genf20', name: 'GenF20', slug: 'genf20', image: '/images/products/genf20.jpg' },
+                { id: 'brainpill', name: 'BrainPill', slug: 'brainpill', image: '/images/products/brainpill.jpg' },
+                { id: 'hypergh-14x', name: 'HyperGH 14x', slug: 'hypergh-14x', image: '/images/products/hypergh-14x.jpg' },
+                { id: 'volume-pills', name: "Volume Pills", slug: 'volume-pills', image: '/images/products/volume-pills.jpg' },
+                { id: 'dim3x', name: 'DIM3X', slug: 'dim3x', image: '/images/products/dim3x.jpg' },
+                { id: 'testodren', name: 'Testodren', slug: 'testodren', image: '/images/products/testodren.jpg' },
+                { id: 'testrx', name: 'TestRX', slug: 'testrx', image: '/images/products/testrx.jpg' },
+                { id: 'primegenix', name: 'PrimeGENIX', slug: 'primegenix', image: '/images/products/primegenix.jpg' },
+                { id: 'erectin-gummies', name: 'Erectin Gummies', slug: 'erectin-gummies', image: '/images/products/erectin-gummies.jpg' },
+                { id: 'buy-extenze', name: 'BuyExtenze', slug: 'buy-extenze', image: '/images/products/buy-extenze.jpg' },
+                { id: 'proextender', name: 'ProExtender', slug: 'proextender', image: '/images/products/proextender.jpg' },
+                { id: 'erectin-gel', name: 'Erectin Gel', slug: 'erectin-gel', image: '/images/products/erectin-gel.jpg' },
+                { id: 'genf20-muscle', name: 'GenF20 Muscle', slug: 'genf20-muscle', image: '/images/products/genf20-muscle.jpg' },
+                { id: 'genfx', name: 'GenFX', slug: 'genfx', image: '/images/products/genfx.jpg' }
+            ];
+
+            // Check each product
+            let liveCount = 0;
+            let errorCount = 0;
+            let imageErrorCount = 0;
+
+            products.forEach(product => {
+                // Check if page loads (simple HEAD request)
+                fetch(\`/products/\${product.slug}\`)
+                    .then(response => {
+                        if (response.ok) {
+                            liveCount++;
+                            // Check if image file loads
+                            fetch(product.image)
+                                .then(imgResponse => {
+                                    if (imgResponse.ok) {
+                                        // Image exists and loads
+                                        document.getElementById(\`status-\${product.id}\`).innerHTML = `
+                                            <div class="product-card">
+                                                <h3>${product.name}</h3>
+                                                <div class="status live">✅ PAGE LIVE</div>
+                                                <div class="check-image">✅ IMAGE LOADED</div>
+                                            </div>
+                                        `;
+                                    } else {
+                                        // Image file missing or error
+                                        imageErrorCount++;
+                                        document.getElementById(\`status-\${product.id}\`).innerHTML = `
+                                            <div class="product-card">
+                                                <h3>${product.name}</h3>
+                                                <div class="status error">❌ PAGE ERROR (404)</div>
+                                                <div class="check-image">❌ IMAGE FILE MISSING</div>
+                                            </div>
+                                        `;
+                                    }
+                                })
+                                .catch(error => {
+                                    errorCount++;
+                                    document.getElementById(\`status-\${product.id}\`).innerHTML = `
+                                        <div class="product-card">
+                                            <h3>${product.name}</h3>
+                                            <div class="status error">❌ LOAD ERROR</div>
+                                            <div class="check-image">❓ CHECK FAILED</div>
+                                        </div>
+                                    `;
+                                });
+                    } else {
+                        // Page returns 404 or other error
+                        imageErrorCount++;
+                        document.getElementById(\`status-\${product.id}\`).innerHTML = `
+                            <div class="product-card">
+                                <h3>${product.name}</h3>
+                                <div class="status error">❌ PAGE NOT FOUND (404)</div>
+                                <div class="check-image">❓ SKIPPED</div>
+                            </div>
+                        `;
+                    }
+                }).catch(error => {
+                    errorCount++;
+                });
+            });
+
+            // Update summary
+            setTimeout(() => {
+                document.getElementById('currentUrl').textContent = window.location.href;
+                document.getElementById('actualCount').textContent = liveCount + ' / 32 products';
+                
+                const summaryDiv = document.createElement('div');
+                summaryDiv.style.marginTop = '30px';
+                summaryDiv.style.padding = '20px';
+                summaryDiv.style.background = liveCount === 32 ? '#10b981' : '#ef4444';
+                summaryDiv.style.borderRadius = '8px';
+                summaryDiv.innerHTML = `
+                    <h3>📊 Deployment Summary</h3>
+                    <p><strong>Total Products:</strong> 32</p>
+                    <p><strong>Live Pages:</strong> ${liveCount}</p>
+                    <p><strong>Missing Products:</strong> ${32 - liveCount}</p>
+                    ${liveCount === 32 ? '<p style="color: #10b981;">✅ ALL PRODUCTS LIVE</p>' : '<p style="color: #ef4444;">❌ ${32 - liveCount} PRODUCTS RETURNING 404</p>'}
+                    <p><strong>Image Errors:</strong> ${imageErrorCount}</p>
+                `;
+                
+                document.querySelector('.script').appendChild(summaryDiv);
+            }, 1000);
+        </script>
+</body>
+</html>
