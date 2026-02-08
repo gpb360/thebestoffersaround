@@ -22,6 +22,7 @@ export interface Product {
 }
 
 export const products: Product[] = [
+  // =================== 50% COMMISSION PRODUCTS ===================
   {
     id: 'testosil',
     name: 'Testosil',
@@ -512,6 +513,75 @@ export const products: Product[] = [
     `
   },
   {
+    id: 'erectin',
+    name: 'Erectin',
+    slug: 'erectin',
+    category: 'male-enhancement',
+    image: '/images/products/erectin.jpg',
+    rating: 4.7,
+    price: '$69.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectin.com/ct/752371',
+    benefits: [
+      'Backed by clinical study',
+      'Endorsed by Dr. Dave David',
+      'Rapid release liquid gel capsules',
+      'Works within 30 minutes',
+      '24-hour effectiveness'
+    ],
+    keyIngredients: ['Epimedium', 'Muira Puama', 'Catuaba Bark', 'Ginkgo Biloba', 'Asian Red Ginseng'],
+    clinicalProof: 'Clinical study demonstrated significant improvements in erectile function and intercourse satisfaction',
+    description: 'Erectin features rapid-release liquid gel technology for faster absorption. Endorsed by surgeon Dr. Dave David, clinically proven to improve male sexual performance.',
+    featured: false
+  },
+  {
+    id: 'dim3x',
+    name: 'DIM 3X',
+    slug: 'dim3x',
+    category: 'testosterone-boosters',
+    image: '/images/products/dim3x.jpg',
+    rating: 4.6,
+    price: '$54.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.dim3x.com/ct/752371',
+    benefits: [
+      'Reduces estrogen levels',
+      'Boosts testosterone',
+      'Improves mood and focus',
+      'Increases strength and stamina',
+      'All-natural formula'
+    ],
+    keyIngredients: ['DIM (Diindolylmethane)', 'BioPerine', 'Vitamin E', 'Calcium D-Glucarate'],
+    clinicalProof: 'Clinical studies support DIM for hormone balance and estrogen metabolism',
+    description: 'DIM 3X helps men manage estrogen levels naturally. By reducing active estrogen and optimizing testosterone, it improves mood, focus, strength, and stamina.',
+    featured: false
+  },
+  {
+    id: 'testodren',
+    name: 'Testodren',
+    slug: 'testodren',
+    category: 'testosterone-boosters',
+    image: '/images/products/testodren.jpg',
+    rating: 4.7,
+    price: '$59.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.testodren.com/ct/752371',
+    benefits: [
+      'Clinically-tested patented formula',
+      'All-natural testosterone booster',
+      'Designed for men over 30',
+      'Increases free testosterone',
+      'No side effects'
+    ],
+    keyIngredients: ['Fenugreek Extract (Patented TF-4)', 'BioPerine'],
+    clinicalProof: 'Clinical study showed significant increase in free testosterone levels',
+    description: 'Testodren features a patented Fenugreek extract clinically tested to boost free testosterone. All-natural formula designed specifically for men over 30 experiencing natural testosterone decline.',
+    featured: true
+  },
+  {
     id: 'calmlean',
     name: 'CalmLean',
     slug: 'calmlean',
@@ -705,261 +775,98 @@ export const products: Product[] = [
     `
   },
   {
-    id: 'erectin',
-    name: 'Erectin',
-    slug: 'erectin',
-    category: 'male-enhancement',
-    image: '/images/products/erectin.jpg',
+    id: 'cortisync',
+    name: 'CortiSync',
+    slug: 'cortisync',
+    category: 'weight-loss',
+    image: '/images/products/cortisync.jpg',
+    rating: 4.5,
+    price: '$64.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.cortisync.com/ct/752371',
+    benefits: [
+      'Reduces cortisol levels',
+      'Targets belly fat',
+      'Clinically proven',
+      'Balances stress hormones',
+      'Supports weight loss'
+    ],
+    keyIngredients: ['Sensoril Ashwagandha', 'L-Theanine', 'Magnolia Bark', 'Phosphatidylserine'],
+    clinicalProof: 'Clinical study showed significant reduction in cortisol levels and belly fat',
+    description: 'CortiSync targets the root cause of belly fat: high cortisol. Clinically proven to balance stress hormones and support healthy weight loss without stimulants.',
+    featured: false
+  },
+  {
+    id: 'testrx',
+    name: 'TestRX',
+    slug: 'testrx',
+    category: 'muscle-fitness',
+    image: '/images/products/testrx.jpg',
+    rating: 4.6,
+    price: '$64.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.testrx.com/ct/752371',
+    benefits: [
+      'Natural testosterone booster',
+      'For muscle building crowd',
+      'Increases muscle mass',
+      'Boosts energy levels',
+      'Improves virility'
+    ],
+    keyIngredients: ['Zinc Monomethionine', 'Magnesium Aspartate', 'Vitamin B6', 'D-Aspartic Acid', 'Fenugreek'],
+    clinicalProof: 'ZMA studies show increased testosterone and strength in athletes',
+    description: 'TestRX is designed for men who want bigger muscles, more energy, and better virility. Natural testosterone support optimized for the fitness and bodybuilding community.',
+    featured: false
+  },
+  {
+    id: 'primegenix',
+    name: 'PrimeGENIX',
+    slug: 'primegenix',
+    category: 'muscle-fitness',
+    image: '/images/products/primegenix.jpg',
     rating: 4.7,
     price: '$69.99',
     commission: '50%',
     guarantee: '67-Day Money-Back Guarantee',
-    affiliateLink: 'https://www.erectin.com/ct/752371',
+    affiliateLink: 'https://www.primegenix.com/ct/752371',
     benefits: [
-      'Backed by clinical study',
-      'Endorsed by Dr. Dave David',
-      'Rapid release liquid gel capsules',
-      'Works within 30 minutes',
-      '24-hour effectiveness'
+      'For men over 40',
+      'Clinically proven formula',
+      'Premium fitness supplements',
+      'Science-backed ingredients',
+      'Optimal for aging men'
     ],
-    keyIngredients: ['Epimedium', 'Muira Puama', 'Catuaba Bark', 'Ginkgo Biloba', 'Asian Red Ginseng'],
-    clinicalProof: 'Clinical study demonstrated significant improvements in erectile function and intercourse satisfaction',
-    description: 'Erectin features rapid-release liquid gel technology for faster absorption. Endorsed by surgeon Dr. Dave David, clinically proven to improve male sexual performance.',
-    featured: false,
-    metaTitle: 'Erectin Review 2026: Fast-Acting Male Enhancement with Clinical Proof',
-    metaDescription: 'Complete Erectin review. Learn how rapid-release liquid gel technology delivers results in 30 minutes. Clinical study, ingredients, side effects, and 67-day guarantee.',
-    keywords: ['erectin review', 'male enhancement supplement', 'natural ED pills', 'fast acting male enhancement', 'erectile dysfunction supplements'],
-    fullReviewContent: `
-      <h2>What is Erectin?</h2>
-      <p>Erectin is a male enhancement supplement designed for men who want fast-acting results without the side effects of prescription ED medications. What makes Erectin unique is its advanced <strong>liquid gel capsule technology</strong>, which allows for rapid absorption and faster onset of action compared to traditional tablets.</p>
+    keyIngredients: ['D-Aspartic Acid', 'Fenugreek', 'Zinc', 'Magnesium', 'Vitamin D3'],
+    clinicalProof: 'Multiple clinical studies support ingredients for testosterone and muscle support in men 40+',
+    description: 'PrimeGENIX offers clinically proven natural fitness supplements specifically formulated for men over 40. All ingredients backed by scientific research for optimal performance.',
+    featured: false
+  },
 
-      <p>Endorsed by Dr. Dave David, a board-certified surgeon, Erectin is backed by clinical research demonstrating its effectiveness for improving erectile function. The formula targets the root causes of ED using a synergistic blend of natural ingredients that have been used traditionally for male sexual health.</p>
-
-      <p>Manufactured by Leading Edge Health, the same company behind VigRX Plus and ProSolution Plus, Erectin benefits from over 20 years of experience in the male enhancement industry. The supplement is produced in cGMP-certified facilities, ensuring quality and safety.</p>
-
-      <p>Unlike many competitors that require weeks of consistent use before showing results, Erectin is designed to work within <strong>30-60 minutes</strong>, making it ideal for spontaneous intimacy. At the same time, the formula provides cumulative benefits with continued use.</p>
-
-      <h2>How Erectin Works</h2>
-      <p>Erectin employs a multi-targeted approach to male enhancement:</p>
-
-      <p><strong>1. Rapid-Release Technology:</strong> The liquid gel capsules dissolve quickly in the stomach, releasing the ingredients in a form that's readily absorbed. This bypasses the slow breakdown process required by traditional tablets, allowing faster onset of action.</p>
-
-      <p><strong>2. Nitric Oxide Enhancement:</strong> Several ingredients boost nitric oxide production, which relaxes blood vessels and improves blood flow to the penis. This is the same mechanism targeted by prescription ED medications like Viagra, but using natural ingredients.</p>
-
-      <p><strong>3. Hormone Support:</strong> Erectin includes ingredients that support healthy testosterone levels, which directly impact libido, energy, and sexual performance. Optimized testosterone also contributes to better erection quality.</p>
-
-      <p><strong>4. Neurological Enhancement:</strong> Stress, anxiety, and mental fatigue are major contributors to ED. Erectin contains adaptogens that help the body manage stress, improve mental clarity, and enhance sexual desire.</p>
-
-      <p><strong>5. 24-Hour Effectiveness:</strong> Unlike fast-acting ED pills that only work for 4-6 hours, Erectin's effects last up to 24 hours, giving you a wider window of opportunity without needing to time doses precisely.</p>
-
-      <h2>Ingredients Breakdown</h2>
-      <p>Erectin contains a synergistic blend of natural ingredients, each selected for its proven effects on male sexual function:</p>
-
-      <p><strong>Epimedium (Horny Goat Weed):</strong> Contains icariin, a compound that inhibits PDE5—the same enzyme targeted by Viagra. This allows blood vessels to relax and improves blood flow to the penis. Research supports epimedium's effectiveness for erectile function, with studies showing improved erection quality in men with ED.</p>
-
-      <p><strong>Muira Puama:</strong> Known as "potency wood" in the Amazon, this traditional aphrodisiac has been used for centuries to enhance sexual desire and combat erectile difficulties. Modern research suggests Muira Puama may improve libido by supporting nervous system function and balancing hormones.</p>
-
-      <p><strong>Catuaba Bark:</strong> A Brazilian herbal remedy traditionally used as a sexual stimulant. Catuaba contains alkaloids that may support the nervous system and enhance arousal. It's particularly noted for its ability to combat sexual fatigue and boost stamina.</p>
-
-      <p><strong>Ginkgo Biloba:</strong> Improves circulation throughout the body by dilating blood vessels and reducing blood viscosity. This enhances blood flow to the genitals. Ginkgo also has antioxidant properties that protect blood vessels from oxidative damage, supporting long-term vascular health.</p>
-
-      <p><strong>Asian Red Ginseng (Panax ginseng):</strong> One of the most researched herbs for sexual health. Multiple studies demonstrate ginseng's effectiveness for ED, with one trial showing 60% of participants reported improvement. Ginseng works by enhancing nitric oxide synthesis, reducing oxidative stress, and improving energy levels.</p>
-
-      <p><strong>Chinese Hawthorn (Crataegus pinnatifida):</strong> Supports cardiovascular health by improving blood vessel function and circulation. Good cardiovascular health is foundational for erectile function, as erections depend on healthy blood flow. Hawthorn also has antioxidant properties.</p>
-
-      <p><strong>Velvet Bean (Mucuna Pruriens):</strong> Contains L-DOPA, a precursor to dopamine. Increased dopamine levels can enhance mood, reduce stress, and improve sexual desire. Some research also suggests velvet bean may support healthy testosterone levels.</p>
-
-      <p><strong>Pumpkin Seed Extract:</strong> Rich in zinc, magnesium, and essential fatty acids—all important for male sexual health. Zinc is particularly crucial for testosterone production and prostate health. Pumpkin seeds may also support healthy urinary function.</p>
-
-      <h2>Clinical Studies & Evidence</h2>
-      <p>Erectin is backed by clinical research, though it's important to note that the full study details are not as publicly available as VigRX Plus's triple-blind trial:</p>
-
-      <p><strong> Erectin Clinical Study:</strong></p>
-      <ul>
-        <li>Demonstrated significant improvements in erectile function</li>
-        <li>Showed enhanced intercourse satisfaction</li>
-        <li>Participants reported improved ability to maintain erections</li>
-        <li>No serious adverse effects reported</li>
-      </ul>
-
-      <p>While the study details aren't as transparent as we'd like, the endorsement by Dr. Dave David lends credibility. Dr. David is a legitimate medical professional who has appeared on major media outlets including CNN and The Dr. Oz Show.</p>
-
-      <p><strong>Individual Ingredient Research:</strong></p>
-      <p>Many of Erectin's ingredients have independent clinical support:</p>
-      <ul>
-        <li><strong>Ginseng:</strong> A 2002 study found that 60% of men taking Korean red ginseng reported improved erections</li>
-        <li><strong>Epimedium:</strong> Research confirms icariin's PDE5-inhibiting effects similar to ED medications</li>
-        <li><strong>Ginkgo Biloba:</strong> Studies show improved blood flow throughout the body</li>
-        <li><strong>Muira Puama:</strong> A 1990 study found 62% of participants reported enhanced libido, and 51% reported improved erections</li>
-      </ul>
-
-      <h2>Expected Results Timeline</h2>
-      <p>Erectin's unique advantage is its fast-acting nature:</p>
-
-      <p><strong>30-60 Minutes:</strong> Most men experience improved erection quality within the first hour. This makes Erectin ideal for spontaneous intimacy. You may notice easier arousal, firmer erections, and increased sensitivity.</p>
-
-      <p><strong>2-4 Hours:</strong> Peak effectiveness is typically reached. Erections are at their firmest, stamina is enhanced, and overall sexual satisfaction is maximized. This window is ideal for sexual activity.</p>
-
-      <p><strong>Up to 24 Hours:</strong> Effects continue for up to 24 hours, though most intense in the first 6-8 hours. You may find it easier to achieve erections during this period, and recovery time between orgasms may be reduced.</p>
-
-      <p><strong>With Continued Use (2-4 weeks):</strong> While Erectin is designed for fast action, regular use provides cumulative benefits. Many men report:</p>
-      <ul>
-        <li>Improved libido and sexual desire</li>
-        <li>Better erection quality even without taking the supplement immediately before</li>
-        <li>Increased stamina and control</li>
-        <li>Enhanced confidence in sexual performance</li>
-      </ul>
-
-      <p><strong>Important:</strong> For best fast-acting results, take Erectin on an empty stomach. Food can delay absorption, meaning it might take longer to work. For long-term benefits, consistent daily use is recommended even on days you don't plan sexual activity.</p>
-
-      <h2>Dosage & Usage Instructions</h2>
-      <p>The recommended dosage is <strong>two capsules per day</strong>, but timing depends on your goals:</p>
-
-      <p><strong>For Fast-Action (Spontaneous Use):</strong></p>
-      <ul>
-        <li>Take 2 capsules 30-60 minutes before sexual activity</li>
-        <li>Take on an empty stomach for fastest absorption</li>
-        <li>Avoid heavy meals or alcohol before taking, as these can delay effects</li>
-      </ul>
-
-      <p><strong>For Long-Term Benefits (Daily Use):</strong></p>
-      <ul>
-        <li>Take 1 capsule twice daily with meals</li>
-        <li>Or take 2 capsules once daily at a consistent time</li>
-        <li>Consistency is key for cumulative benefits</li>
-      </ul>
-
-      <p><strong>Can I take more than 2 capsules?</strong> No. Exceeding the recommended dose won't enhance results and may increase side effect risk.</p>
-
-      <p><strong>Can I take Erectin with alcohol?</strong> While small amounts of alcohol are unlikely to interfere, heavy drinking can impair erectile function regardless of supplements. For best results, avoid excessive alcohol when planning to use Erectin.</p>
-
-      <h2>Side Effects & Safety</h2>
-      <p>Erectin is generally well-tolerated, with most men experiencing no side effects. The natural formula uses ingredients at safe doses. However, some men may experience:</p>
-
-      <ul>
-        <li>Mild digestive discomfort (nausea, stomach upset)—usually temporary</li>
-        <li>Headaches—uncommon, typically resolve as body adjusts</li>
-        <li>Flushing or warmth—due to improved blood circulation</li>
-        <li>Mild dizziness or lightheadedness—rare, usually with first dose</li>
-      </ul>
-
-      <p>These side effects typically subside within a few days as your body adjusts to the supplement.</p>
-
-      <p><strong>Who should avoid Erectin:</strong></p>
-      <ul>
-        <li>Men under 18 years old</li>
-        <li>Men with serious cardiovascular conditions (heart disease, history of stroke)</li>
-        <li>Men taking prescription ED medications (Viagra, Cialis, Levitra)</li>
-        <li>Men taking nitrates for chest pain</li>
-        <li>Men with uncontrolled high or low blood pressure</li>
-      </ul>
-
-      <p><strong>Drug Interactions:</strong> Erectin may interact with:</p>
-      <ul>
-        <li>Blood pressure medications</li>
-        <li>Blood thinners (warfarin, aspirin)</li>
-        <li>Antidepressants</li>
-        <li>Diabetes medications</li>
-      </ul>
-
-      <p><strong>Consult your doctor</strong> before taking Erectin if you have any medical conditions or take prescription medications, especially cardiovascular conditions.</p>
-
-      <p><strong>Quality & Safety:</strong> Erectin is manufactured in cGMP-certified facilities, third-party tested for purity, and uses high-quality natural ingredients. It contains no synthetic hormones or pharmaceutical compounds.</p>
-
-      <h2>Pros & Cons</h2>
-      <table class="w-full border-collapse my-6">
-        <thead>
-          <tr class="bg-gold/20">
-            <th class="border border-gray-700 p-3 text-left">Pros</th>
-            <th class="border border-gray-700 p-3 text-left">Cons</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Fast-acting (30-60 minutes)</td>
-            <td class="border border-gray-700 p-3">❌ Study details not fully transparent</td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ 24-hour effectiveness window</td>
-            <td class="border border-gray-700 p-3">❌ Less long-term research than VigRX Plus</td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Liquid gel for better absorption</td>
-            <td class="border border-gray-700 p-3">❌ Best on empty stomach (less convenient)</td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Doctor-endorsed (Dr. Dave David)</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ 67-day money-back guarantee</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Clinically studied</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Made by Leading Edge Health (reputable)</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Natural ingredients</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>How fast does Erectin work?</h3>
-      <p>Most men experience results within 30-60 minutes when taken on an empty stomach. The liquid gel capsules dissolve quickly for rapid absorption. For fastest results, avoid heavy meals for 2 hours before taking.</p>
-
-      <h3>How long do the effects last?</h3>
-      <p>Erectin's effects last up to 24 hours, though they're most pronounced in the first 6-8 hours. You'll likely find it easier to achieve erections during this entire period.</p>
-
-      <h3>Is Erectin safe?</h3>
-      <p>Yes, Erectin is generally safe when taken as directed. It uses natural ingredients at researched doses. Side effects are rare and usually mild. However, consult your doctor if you have medical conditions or take medications, especially for cardiovascular health.</p>
-
-      <h3>Can I take Erectin with prescription ED medications?</h3>
-      <p><strong>No.</strong> Do not combine Erectin with Viagra, Cialis, Levitra, or other ED medications. Both affect blood flow, and combining them may cause dangerous drops in blood pressure. Consult your doctor before switching from ED meds to Erectin.</p>
-
-      <h3>Do I need to take Erectin every day?</h3>
-      <p>Not necessarily. You can take it as needed 30-60 minutes before sexual activity. However, for cumulative benefits (improved libido, better baseline erection quality), daily use is recommended.</p>
-
-      <h3>What's the difference between Erectin and Viagra?</h3>
-      <p>Both work relatively quickly, but key differences include:</p>
-      <ul>
-        <li><strong>Ingredients:</strong> Viagra is a synthetic drug (sildenafil); Erectin uses natural ingredients</li>
-        <li><strong>Duration:</strong> Viagra lasts 4-6 hours; Erectin lasts up to 24 hours</li>
-        <li><strong>Side Effects:</strong> Viagra commonly causes headaches, flushing, nasal congestion; Erectin rarely causes side effects</li>
-        <li><strong>Prescription:</strong> Viagra requires a prescription; Erectin does not</li>
-        <li><strong>Cost:</strong> Viagra costs $15-30 per pill; Erectin is more cost-effective, especially with bulk purchases</li>
-      </ul>
-
-      <h3>Will Erectin work if I have diabetes?</h3>
-      <p>Many men with diabetes use Erectin successfully, but consult your doctor first. Diabetes can affect absorption and metabolism. Also, diabetes is a common cause of ED, so addressing underlying diabetes management is important alongside any supplement.</p>
-
-      <h3>Can I take Erectin with alcohol?</h3>
-      <p>Small amounts of alcohol (1-2 drinks) are unlikely to interfere significantly. However, heavy alcohol consumption can impair erectile function regardless of supplements. For best results, avoid excessive drinking when using Erectin.</p>
-
-      <h3>Does Erectin increase penis size?</h3>
-      <p>No. Erectin improves erection quality, which may make your penis appear fuller due to better blood flow. However, it does not permanently increase size. Be skeptical of any product claiming permanent enlargement.</p>
-
-      <h3>What if Erectin doesn't work for me?</h3>
-      <p>Take advantage of the 67-day money-back guarantee. Also consider: Are you taking it correctly (on an empty stomach)? Are underlying issues (severe anxiety, diabetes, heart disease) contributing? Sometimes ED has multiple causes requiring a comprehensive approach.</p>
-
-      <h2>Conclusion</h2>
-      <p>Erectin fills an important niche in the male enhancement market: fast-acting, natural support for erectile function. While VigRX Plus is better for long-term, cumulative improvements, Erectin excels for men who want results "on demand" without the side effects of prescription medications.</p>
-
-      <p>The liquid gel technology is a genuine innovation, allowing faster absorption than traditional tablets. Combined with a well-researched ingredient formula and the security of a 67-day guarantee, Erectin is an excellent choice for men seeking spontaneity and performance enhancement.</p>
-
-      <p><a href="https://www.erectin.com/ct/752371" target="_blank" rel="noopener sponsored noreferrer" class="text-gold hover:underline font-semibold">Visit Erectin Official Site →</a></p>
-
-      <hr class="my-8 border-gray-800" />
-      <p class="text-sm text-gray-500"><em>Affiliate Disclosure: We may earn a commission when you purchase through our links. This doesn't affect our editorial integrity or recommendations.</em></p>
-      <p class="text-sm text-gray-500"><em>Medical Disclaimer: This content is for informational purposes only and doesn't constitute medical advice. Always consult a healthcare provider before starting any supplement regimen.</em></p>
-    `
+  // =================== 40% COMMISSION PRODUCTS ===================
+  {
+    id: 'genf20-muscle',
+    name: 'GenF20 Muscle',
+    slug: 'genf20-muscle',
+    category: 'muscle-fitness',
+    image: '/images/products/genf20-muscle.jpg',
+    rating: 4.6,
+    price: '$69.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.genf20muscle.com/ct/752371',
+    benefits: [
+      'HGH releaser for muscle',
+      'Pack on lean muscle mass',
+      'Torch body fat',
+      'Enhances gym performance',
+      'Natural formula'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'Tribulus Terrestris'],
+    clinicalProof: 'Studies support HGH precursors for increased muscle mass and reduced body fat',
+    description: 'GenF20 Muscle is a powerful HGH releaser focused on helping men pack on lean muscle mass and torch body fat. Natural alternative to synthetic HGH.',
+    featured: false
   },
   {
     id: 'semenax',
@@ -1130,6 +1037,75 @@ export const products: Product[] = [
     `
   },
   {
+    id: 'erectin-gummies',
+    name: 'Erectin Gummies',
+    slug: 'erectin-gummies',
+    category: 'male-enhancement',
+    image: '/images/products/erectin-gummies.jpg',
+    rating: 4.6,
+    price: '$64.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectingummies.com/ct/752371',
+    benefits: [
+      'Award-winning formula',
+      'Boosts blood flow in 30 minutes',
+      'Improves circulation for 24 hours',
+      'Convenient gummies',
+      'No pills to swallow'
+    ],
+    keyIngredients: ['L-Citrulline', 'L-Arginine', 'Maca Root', 'Ginseng', 'Zinc'],
+    clinicalProof: 'Award-winning formula with clinically-supported ingredients for blood flow enhancement',
+    description: 'Erectin Gummies offer a convenient, tasty alternative to pills. Award-winning formula boosts blood flow within 30 minutes and maintains improvement for 24 hours.',
+    featured: false
+  },
+  {
+    id: 'proextender',
+    name: 'ProExtender',
+    slug: 'proextender',
+    category: 'male-enhancement',
+    image: '/images/products/proextender.jpg',
+    rating: 4.4,
+    price: '$199.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.proextender.com/ct/752371',
+    benefits: [
+      'Urologist recommended',
+      'Clinically reviewed',
+      'Uses traction method',
+      'Increases penis size',
+      'Revised 2021 for better value'
+    ],
+    keyIngredients: ['Medical-grade traction device', 'Ergonomic design', 'Adjustable tension'],
+    clinicalProof: 'Clinical studies show traction devices increase length by 1-2 inches',
+    description: 'ProExtender is a penis enlargement device recommended by urologists and reviewed by clinical studies. Uses the proven traction method to increase penis size naturally.',
+    featured: false
+  },
+  {
+    id: 'hypergh-14x',
+    name: 'HyperGH 14x',
+    slug: 'hypergh-14x',
+    category: 'muscle-fitness',
+    image: '/images/products/hypergh-14x.jpg',
+    rating: 4.5,
+    price: '$79.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.hypergh14x.com/ct/752371',
+    benefits: [
+      'Natural HGH boost for muscle growth',
+      'Reduces body fat',
+      'Increases lean muscle mass',
+      'Faster workout recovery',
+      'Enhances gym performance'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'L-Tyrosine'],
+    clinicalProof: 'Studies support HGH precursors for increasing lean muscle and reducing body fat',
+    description: 'HyperGH 14x is designed for serious fitness enthusiasts. Natural HGH boost supports greater lean muscle mass, reduced body fat, and enhanced workout performance.',
+    featured: false
+  },
+  {
     id: 'prosolution-plus',
     name: 'Prosolution Plus',
     slug: 'prosolution-plus',
@@ -1292,6 +1268,29 @@ export const products: Product[] = [
     `
   },
   {
+    id: 'erectin-gel',
+    name: 'Erectin Gel',
+    slug: 'erectin-gel',
+    category: 'male-enhancement',
+    image: '/images/products/erectin-gel.jpg',
+    rating: 4.6,
+    price: '$59.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectingel.com/ct/752371',
+    benefits: [
+      'Topical application',
+      'Four erection-hardening compounds',
+      'Absorption enhancers',
+      'Improves erectile function',
+      'Enhances satisfaction'
+    ],
+    keyIngredients: ['L-Arginine', 'Menthol', 'Aloe Vera', 'Vitamin E'],
+    clinicalProof: 'Topical L-Arginine clinically shown to improve blood flow and erectile function',
+    description: 'Erectin Gel is a topical male enhancement solution with four erection-hardening compounds and absorption enhancers. Improves erectile function, desire, and satisfaction.',
+    featured: false
+  },
+  {
     id: 'genf20',
     name: 'GenF20',
     slug: 'genf20',
@@ -1313,6 +1312,213 @@ export const products: Product[] = [
     clinicalProof: 'Multiple studies support HGH precursor effectiveness for anti-aging benefits',
     description: 'GenF20 is the #1 rated HGH releaser, targeting anti-aging and muscle building. Safe, affordable, and doctor-endorsed alternative to HGH injections.',
     featured: true
+  },
+  {
+    id: 'volume-pills',
+    name: 'Volume Pills',
+    slug: 'volume-pills',
+    category: 'male-enhancement',
+    image: '/images/products/volume-pills.jpg',
+    rating: 4.4,
+    price: '$54.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.semenax.com/ct/752371',
+    benefits: [
+      'Increases semen volume',
+      'Bigger, more intense orgasms',
+      'Improves fertility',
+      'Works with ProSolution Pills',
+      'Enhanced sexual pleasure'
+    ],
+    keyIngredients: ['Solidilin', 'Xi Lan Rou Gui', 'Hong Hua Fen', 'Ku Gua', 'Emblica Officinalis'],
+    clinicalProof: 'Formulation designed based on traditional medicine and modern research',
+    description: 'Volume Pills helps men increase semen volume for bigger, more intense orgasms. Also improves fertility and pairs well with ProSolution Pills for enhanced results.',
+    featured: false
+  },
+  {
+    id: 'extenze',
+    name: 'Extenze',
+    slug: 'extenze',
+    category: 'male-enhancement',
+    image: '/images/products/extenze.jpg',
+    rating: 4.3,
+    price: '$49.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.buyextenze.com/ct/752371',
+    benefits: [
+      'Over 1 billion pills sold',
+      'Most well-known brand',
+      'Extended-release gel caps',
+      'Improves sexual performance',
+      'Affordable option'
+    ],
+    keyIngredients: 'Yohimbe extract, Korean ginseng, horny goat weed, L-arginine, zinc',
+    clinicalProof: 'Extensive customer use and testimonials',
+    description: 'Extenze is one of the most well-known male enhancement supplements, with over 1 billion pills sold. Extended-release gel caps provide improved absorption and effectiveness.',
+    featured: false
+  },
+  {
+    id: 'prosolution-pills',
+    name: 'ProSolution Pills',
+    slug: 'prosolution-pills',
+    category: 'male-enhancement',
+    image: '/images/products/prosolution-pills.jpg',
+    rating: 4.5,
+    price: '$59.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.prosolutionpills.com/ct/752371',
+    benefits: [
+      'Industry leader for over a decade',
+      'Excellent customer results',
+      'Fantastic conversions',
+      'Great upsell potential',
+      'Cross-product sales'
+    ],
+    keyIngredients: ['Withania Somnifera', 'Solidilin', 'Taj', 'Momordica', 'Drilizen'],
+    clinicalProof: 'Proven track record with excellent customer feedback',
+    description: 'ProSolution Pills has been an industry leader for over a decade. Excellent customer results, conversions, and strong potential for upsells and cross-product sales.',
+    featured: false
+  },
+  {
+    id: 'vigrx-oil',
+    name: 'VigRX Oil',
+    slug: 'vigrx-oil',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-oil.jpg',
+    rating: 4.4,
+    price: '$49.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.vigrxoil.com/ct/752371',
+    benefits: [
+      'Topical application',
+      '73% get erection in 1 minute',
+      'Fast-acting',
+      'Improves sexual pleasure',
+      'No pills to swallow'
+    ],
+    keyIngredients: ['Transdermal Delivery System', 'L-Arginine', 'Asian Red Ginseng', 'Ginkgo Biloba', 'Muira Puama'],
+    clinicalProof: '73% of men achieved erection within one minute in studies',
+    description: 'VigRX Oil is a topical male enhancement solution used to improve sexual pleasure. 73% of men get an erection within a minute or less.',
+    featured: false
+  },
+  {
+    id: 'vigrx-delay-spray',
+    name: 'VigRX Delay Spray',
+    slug: 'vigrx-delay-spray',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-delay-spray.jpg',
+    rating: 4.5,
+    price: '$39.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.vigrxdelayspray.com/ct/752371',
+    benefits: [
+      'Male desensitizer spray',
+      'Last longer in bed',
+      'Great upsell with VigRX Plus',
+      'Fast-acting',
+      'Easy to use'
+    ],
+    keyIngredients: ['Benzocaine', 'Menthol', 'Aloe Vera'],
+    clinicalProof: 'Clinically proven to delay ejaculation',
+    description: 'VigRX Delay Spray helps guys delay orgasm so they last longer. Works as a great upsell with VigRX Plus or Semenax.',
+    featured: false
+  },
+  {
+    id: 'prosolution-gel',
+    name: 'ProSolution Gel',
+    slug: 'prosolution-gel',
+    category: 'male-enhancement',
+    image: '/images/products/prosolution-gel.jpg',
+    rating: 4.5,
+    price: '$49.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.prosolutiongel.com/ct/752371',
+    benefits: [
+      'Results in seconds',
+      'Stimulates instant erection',
+      'Adds control',
+      'Prevents premature ejaculation',
+      'Topical application'
+    ],
+    keyIngredients: ['L-Arginine', 'Algae Extract', 'Methyl Nicotinate', 'Bearberry Extract'],
+    clinicalProof: 'Rapid-absorption formula for instant results',
+    description: 'ProSolution Gel results in literally seconds. Stimulates instant erection and adds control to prevent premature ejaculation. Topical formula for fast action.',
+    featured: false
+  },
+  {
+    id: 'genfx',
+    name: 'GenFX',
+    slug: 'genfx',
+    category: 'anti-aging',
+    image: '/images/products/genfx.jpg',
+    rating: 4.5,
+    price: '$59.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.genfx.com/ct/752371',
+    benefits: [
+      'Solid HGH performer',
+      'Extensive track record',
+      'Strong customer testimonials',
+      'Doctor endorsements',
+      'Anti-aging focus'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'L-Pyroglutamate'],
+    clinicalProof: 'Long track record with customer results and medical endorsements',
+    description: 'GenFX is a solid performer in the HGH market with extensive track record, strong customer testimonials, and credible doctor endorsements.',
+    featured: false
+  },
+  {
+    id: 'nexus-pheromones',
+    name: 'Nexus Pheromones',
+    slug: 'nexus-pheromones',
+    category: 'male-enhancement',
+    image: '/images/products/nexus-pheromones.jpg',
+    rating: 4.4,
+    price: '$54.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.nexuspheromones.com/ct/752371',
+    benefits: [
+      'Sexual chemistry in a bottle',
+      '100% pure androstenone',
+      'Makes you attractive to women',
+      '100% moneyback guarantee',
+      'No side effects'
+    ],
+    keyIngredients: ['Pure Androstenone Pheromone Concentrate', 'Proprietary Blend'],
+    clinicalProof: 'Studies show pheromones influence attraction',
+    description: 'Nexus Pheromones is sexual chemistry in a bottle. 100% pure androstenone pheromone concentrate that makes men irresistibly attractive to women.',
+    featured: false
+  },
+  {
+    id: 'provacyl',
+    name: 'Provacyl',
+    slug: 'provacyl',
+    category: 'anti-aging',
+    image: '/images/products/provacyl.jpg',
+    rating: 4.6,
+    price: '$69.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.provacyl.com/ct/752371',
+    benefits: [
+      'Addresses andropause',
+      'HGH releaser',
+      'For baby boomers',
+      'Anti-aging market leader',
+      'Comprehensive formula'
+    ],
+    keyIngredients: ['L-Glutamine', 'L-Arginine', 'L-Glycine', 'GABA', 'L-Lysine'],
+    clinicalProof: 'Designed to address steady decrease of hormone production in men',
+    description: 'Provacyl addresses the steady decrease of hormone production in men (andropause). Powerful HGH releaser designed for baby boomers and leader in anti-aging market.',
+    featured: false
   },
   {
     id: 'brainpill',
@@ -1338,613 +1544,213 @@ export const products: Product[] = [
     featured: true
   },
   {
-    id: 'hypergh-14x',
-    name: 'HyperGH 14x',
-    slug: 'hypergh-14x',
-    category: 'muscle-fitness',
-    image: '/images/products/hypergh-14x.jpg',
+    id: 'vigrx-nitric-oxide',
+    name: 'VigRX Nitric Oxide',
+    slug: 'vigrx-nitric-oxide',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-nitric-oxide.jpg',
     rating: 4.5,
-    price: '$79.99',
+    price: '$49.99',
     commission: '40%',
     guarantee: '67-Day Money-Back Guarantee',
-    affiliateLink: 'https://www.hypergh14x.com/ct/752371',
+    affiliateLink: 'https://www.vigrxnitricoxide.com/ct/752371',
     benefits: [
-      'Natural HGH boost for muscle growth',
-      'Reduces body fat',
-      'Increases lean muscle mass',
-      'Faster workout recovery',
-      'Enhances gym performance'
+      'Improves erection quality',
+      'Boosts sexual stamina',
+      'Increases blood flow',
+      'Made with L-Citrulline and L-Arginine',
+      'VigRX brand quality'
     ],
-    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'L-Tyrosine'],
-    clinicalProof: 'Studies support HGH precursors for increasing lean muscle and reducing body fat',
-    description: 'HyperGH 14x is designed for serious fitness enthusiasts. Natural HGH boost supports greater lean muscle mass, reduced body fat, and enhanced workout performance.',
-    featured: false,
-    metaTitle: 'HyperGH 14x Review 2026: HGH Releaser for Muscle Growth & Recovery',
-    metaDescription: 'Comprehensive HyperGH 14x review. Natural HGH releaser for muscle growth, fat loss, and recovery. Ingredients, results timeline, side effects, and clinical evidence.',
-    keywords: ['hypergh 14x review', 'hgh releaser', 'hgh for muscle growth', 'natural hgh supplement', 'growth hormone pills'],
-    fullReviewContent: `
-      <h2>What is HyperGH 14x?</h2>
-      <p>HyperGH 14x is a natural HGH (human growth hormone) releaser designed specifically for bodybuilders, athletes, and fitness enthusiasts. Unlike synthetic HGH injections which require a prescription and come with serious risks, HyperGH 14x uses a blend of amino acids and natural compounds to stimulate your body's own HGH production.</p>
-
-      <p>Manufactured by Leading Edge Health, HyperGH 14x has been formulated to help men maximize muscle growth, reduce body fat, speed recovery, and enhance overall athletic performance. It's particularly popular among men over 30 who are experiencing the natural decline in HGH production that begins around age 25-30.</p>
-
-      <p><strong>Key differentiation:</strong> HyperGH 14x is specifically designed for fitness enthusiasts and bodybuilders, not just for anti-aging. The formula prioritizes ingredients that support workout performance, muscle protein synthesis, and recovery.</p>
-
-      <h2>How HyperGH 14x Works</h2>
-      <p>HyperGH 14x works by providing your pituitary gland with the raw materials it needs to produce more HGH. Instead of introducing synthetic HGH from outside sources, it encourages your body to produce more of its own growth hormone naturally.</p>
-
-      <p><strong>The mechanism involves:</strong></p>
-
-      <h3>1. Amino Acid Precursors</h3>
-      <p>HyperGH 14x contains a potent blend of amino acids that serve as building blocks for HGH production. When these precursors are available in adequate amounts, your pituitary gland can more readily manufacture and release HGH.</p>
-
-      <h3>2. Pituitary Stimulation</h3>
-      <p>Specific ingredients in the formula stimulate the pituitary gland to increase HGH secretion. This is particularly effective during exercise and sleep—two times when natural HGH release is already elevated.</p>
-
-      <h3>3. Enhanced Absorption</h3>
-      <p>The formula includes ingredients that improve nutrient absorption and utilization, ensuring that the HGH-precursors are effectively delivered to your pituitary gland.</p>
-
-      <h3>4. Optimal Timing</h3>
-      <p>HyperGH 14x is designed to be taken at specific times (pre-workout and before bed) to maximize HGH release during exercise and during deep sleep—when your body naturally produces the most HGH.</p>
-
-      <h2>Ingredients Breakdown</h2>
-
-      <h3>L-Arginine (130mg)</h3>
-      <p>L-Arginine is a potent HGH releaser. Research shows that arginine supplementation can significantly increase HGH levels, particularly when taken before exercise or during sleep.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Stimulates HGH release (up to 3x increase in some studies)</li>
-        <li>Improves blood flow (nitric oxide production)</li>
-        <li>Enhances exercise performance</li>
-      </ul>
-
-      <h3>L-Glutamine (115mg)</h3>
-      <p>Glutamine is the most abundant amino acid in muscle tissue and plays a crucial role in muscle recovery and immune function.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Supports HGH production (especially post-exercise)</li>
-        <li>Speeds muscle recovery</li>
-        <li>Reduces muscle breakdown</li>
-        <li>Strengthens immune system</li>
-      </ul>
-
-      <h3>L-Glycine (100mg)</h3>
-      <p>Glycine has been shown to stimulate HGH release and improve sleep quality—critical since most HGH is produced during deep sleep.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Promotes HGH secretion during sleep</li>
-        <li>Improves sleep quality</li>
-        <li>Supports collagen production (joint health)</li>
-      </ul>
-
-      <h3>L-Lysine (100mg)</h3>
-      <p>Lysine works synergistically with arginine to enhance HGH release. It also supports calcium absorption and collagen synthesis.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Amplifies arginine's HGH-releasing effects</li>
-        <li>Supports bone health</li>
-        <li>Enhances tissue repair</li>
-      </ul>
-
-      <h3>L-Tyrosine (100mg)</h3>
-      <p>Tyrosine is a precursor to thyroid hormones and neurotransmitters that support energy, focus, and metabolism during intense training.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Supports thyroid function (metabolism)</li>
-        <li>Enhances mental focus and energy</li>
-        <li>Reduces exercise-induced stress</li>
-      </ul>
-
-      <h3>GTF Chromium (100mcg)</h3>
-      <p>Chromium enhances insulin sensitivity, helping your body efficiently use nutrients for muscle growth rather than fat storage.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Improves nutrient partitioning (muscle vs. fat)</li>
-        <li>Enhances insulin sensitivity</li>
-        <li>Supports healthy blood sugar levels</li>
-      </ul>
-
-      <h3>Astragalus Root Extract</h3>
-      <p>Used in traditional Chinese medicine for centuries, astragalus supports immune function and may enhance HGH production.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Supports immune system</li>
-        <li>May stimulate HGH release</li>
-        <li>Anti-aging properties</li>
-      </ul>
-
-      <h3>Deer Antler Velvet</h3>
-      <p>Contains IGF-1 (Insulin-like Growth Factor 1), which mediates many of HGH's anabolic effects.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Provides IGF-1 (HGH's downstream effector)</li>
-        <li>Supports joint health and recovery</li>
-        <li>Enhances muscle repair</li>
-      </ul>
-
-      <h3>Gaba (Gamma-Aminobutyric Acid)</h3>
-      <p>GABA is a neurotransmitter that can stimulate HGH release, particularly when taken before sleep.</p>
-
-      <p><strong>Benefits:</strong></p>
-      <ul>
-        <li>Promotes HGH secretion during sleep</li>
-        <li>Improves sleep quality</li>
-        <li>Reduces anxiety and stress</li>
-      </ul>
-
-      <h2>Clinical Studies & Evidence</h2>
-
-      <h3>Amino Acids and HGH Release</h3>
-      <p>Multiple studies have demonstrated that specific amino acid combinations can significantly increase HGH levels:</p>
-
-      <ul>
-        <li><strong>Arginine + Lysine:</strong> One study found this combination increased HGH levels by up to 700% (7-fold) in healthy men.</li>
-        <li><strong>Ornithine (similar to arginine):</strong> Research shows 4-5x increase in HGH levels with supplementation.</li>
-        <li><strong>Glycine:</strong> Studies demonstrate significant HGH release, particularly during slow-wave sleep.</li>
-      </ul>
-
-      <h3>HGH Decline with Age</h3>
-      <p>Research clearly shows that HGH levels decline with age:</p>
-
-      <ul>
-        <li><strong>Age 20:</strong> HGH levels at peak (~500 mcg/L)</li>
-        <li><strong>Age 40:</strong> HGH levels decline by ~50% (~250 mcg/L)</li>
-        <li><strong>Age 60:</strong> HGH levels decline by ~75% (~125 mcg/L)</li>
-      </ul>
-
-      <p>This decline correlates with:</p>
-      <ul>
-        <li>Decreased muscle mass (sarcopenia)</li>
-        <li>Increased body fat</li>
-        <li>Reduced bone density</li>
-        <li>Slower recovery from injury</li>
-        <li>Decreased exercise capacity</li>
-      </ul>
-
-      <h3>Natural HGH Releasers vs. Synthetic HGH</h3>
-      <p>Studies show that natural HGH releasers can increase HGH levels by 2-4x, which is significant but safe. Synthetic HGH injections can increase levels 10x or more, which comes with serious risks including:</p>
-
-      <ul>
-        <li>Joint and muscle pain</li>
-        <li>Carpal tunnel syndrome</li>
-        <li>Insulin resistance and diabetes risk</li>
-        <li>Edema (fluid retention)</li>
-        <li>Enlarged heart (cardiomegaly)</li>
-        <li>Acromegaly (abnormal bone growth)</li>
-      </ul>
-
-      <p>Natural releasers like HyperGH 14x provide a safer alternative with meaningful benefits for muscle growth and body composition.</p>
-
-      <h2>Expected Results Timeline</h2>
-
-      <p><strong>Week 1-2:</strong> Initial effects</p>
-      <ul>
-        <li>Improved sleep quality</li>
-        <li>Better workout energy</li>
-        <li>Faster recovery between sets</li>
-      </ul>
-
-      <p><strong>Week 3-4:</strong> Early changes</p>
-      <ul>
-        <li>Increased strength (5-10% improvement)</li>
-        <li>Noticeable recovery improvement</li>
-        <li>Better muscle pumps during workouts</li>
-        <li>Reduced body fat (1-2 lbs)</li>
-      </ul>
-
-      <p><strong>Week 5-8:</strong> Significant progress</p>
-      <ul>
-        <li>Visible muscle definition</li>
-        <li>Noticeable leanness (3-5 lbs fat loss)</li>
-        <li>Increased muscle fullness</li>
-        <li>Enhanced athletic performance</li>
-        <li>Better skin quality (anti-aging effect)</li>
-      </ul>
-
-      <p><strong>Week 9-12:</strong> Optimal results</p>
-      <ul>
-        <li>Sustained muscle growth (2-5 lbs lean mass)</li>
-        <li>Significant fat reduction (5-8 lbs total)</li>
-        <li>Improved recovery from intense training</li>
-        <li>Better joint comfort and mobility</li>
-        <li>Overall more youthful appearance</li>
-      </ul>
-
-      <p><strong>3-6 months:</strong> Long-term benefits</p>
-      <ul>
-        <li>Continued muscle development</li>
-        <li>Maintained leanness</li>
-        <li>Optimized hormone profile</li>
-        <li>Enhanced overall fitness and performance</li>
-      </ul>
-
-      <blockquote>
-        <strong>Important:</strong> Individual results vary based on age, training intensity, nutrition, and genetics. HyperGH 14x works best when combined with proper diet and intense strength training.
-      </blockquote>
-
-      <h2>Dosage & Usage Instructions</h2>
-
-      <p><strong>Recommended dosage:</strong> 2 capsules twice daily</p>
-
-      <p><strong>Timing for optimal results:</strong></p>
-
-      <h3>Morning Dose (2 capsules)</h3>
-      <p>Take 2 capsules approximately 30 minutes before breakfast or your morning workout.</p>
-
-      <p><strong>Why this timing:</strong></p>
-      <ul>
-        <li>Supports HGH release during exercise (if training)</li>
-        <li>Provides amino acids for muscle maintenance</li>
-        <li>Enhances energy and focus for the day</li>
-      </ul>
-
-      <h3>Evening Dose (2 capsules)</h3>
-      <p>Take 2 capsules approximately 2 hours after dinner, before bed.</p>
-
-      <p><strong>Why this timing:</strong></p>
-      <ul>
-        <li>Maximizes HGH release during deep sleep</li>
-        <li>Supports overnight muscle repair</li>
-        <li>Enhances sleep quality</li>
-      </ul>
-
-      <p><strong>Tips for maximum effectiveness:</strong></p>
-      <ul>
-        <li>Take consistently every day (including rest days)</li>
-        <li>Don't eat immediately after taking (wait 30 minutes)</li>
-        <li>Combine with high-protein diet (1g per pound of body weight)</li>
-        <li>Train intensely 3-5x weekly (strength training)</li>
-        <li>Prioritize sleep (7-9 hours nightly)</li>
-      </ul>
-
-      <h2>Side Effects & Safety</h2>
-
-      <p>HyperGH 14x is generally well-tolerated with minimal side effects. The ingredients are natural amino acids and herbal extracts with established safety profiles.</p>
-
-      <p><strong>Potential side effects (rare):</strong></p>
-      <ul>
-        <li>Mild digestive discomfort (typically temporary)</li>
-        <li>Headaches (usually due to dehydration)</li>
-        <li>Slight dizziness (take with food if this occurs)</li>
-      </ul>
-
-      <p><strong>Minimizing side effects:</strong></p>
-      <ul>
-        <li>Stay well-hydrated (100+ ounces water daily)</li>
-        <li>Take with meals if digestive issues occur</li>
-        <li>Start with half dose for first week if sensitive</li>
-        <li>Cycle usage (8-12 weeks on, 2-4 weeks off)</li>
-      </ul>
-
-      <p><strong>Who should avoid:</strong></p>
-      <ul>
-        <li>Men under 18 (HGH levels are naturally high)</li>
-        <li>Women who are pregnant or nursing</li>
-        <li>Those with serious medical conditions</li>
-        <li>Anyone taking prescription medications (consult doctor)</li>
-      </ul>
-
-      <p><strong>Safety advantages over synthetic HGH:</strong></p>
-      <ul>
-        <li>No prescription required</li>
-        <li>No injections (oral capsules)</li>
-        <li>Much lower risk of side effects</li>
-        <li>Body self-regulates HGH production (natural feedback loops)</li>
-        <li>No risk of HGH overdose</li>
-      </ul>
-
-      <h2>Pros & Cons</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Pros</th>
-            <th>Cons</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              ✓ Natural HGH support (no synthetic hormones)
-              ✓ Comprehensive amino acid blend
-              ✓ Specifically formulated for bodybuilders
-              ✓ Enhances muscle growth and recovery
-              ✓ Supports fat loss
-              ✓ Improves sleep quality
-              ✓ No injections required
-              ✓ 67-day money-back guarantee
-              ✓ Manufactured by reputable company
-              ✓ Positive customer reviews
-            </td>
-            <td>
-              ✗ More expensive than basic amino acids
-              ✗ Takes 4-8 weeks for full effects
-              ✗ Requires consistent use
-              ✗ Must be combined with training for best results
-              ✗ Not as potent as synthetic HGH (but safer)
-              ✗ Multiple capsules daily (4 total)
-              ✗ Results vary by individual
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>HyperGH 14x vs. Synthetic HGH Injections</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Factor</th>
-            <th>HyperGH 14x</th>
-            <th>Synthetic HGH</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Cost</strong></td>
-            <td>$80-160/month</td>
-            <td>$500-2000/month</td>
-          </tr>
-          <tr>
-            <td><strong>Administration</strong></td>
-            <td>Oral capsules</td>
-            <td>Daily injections</td>
-          </tr>
-          <tr>
-            <td><strong>Prescription</strong></td>
-            <td>Not required</td>
-            <td>Required</td>
-          </tr>
-          <tr>
-            <td><strong>Safety</strong></td>
-            <td>Very safe</td>
-            <td>Significant risks</td>
-          </tr>
-          <tr>
-            <td><strong>Side effects</strong></td>
-            <td>Minimal to none</td>
-            <td>Joint pain, edema, carpal tunnel, organ enlargement</td>
-          </tr>
-          <tr>
-            <td><strong>Effectiveness</strong></td>
-            <td>2-4x HGH increase (moderate)</td>
-            <td>10-20x HGH increase (dramatic)</td>
-          </tr>
-          <tr>
-            <td><strong>Legal status</strong></td>
-            <td>Legal to buy and use</td>
-            <td>Illegal without prescription</td>
-          </tr>
-          <tr>
-            <td><strong>Best for</strong></td>
-            <td>Natural muscle growth, anti-aging</td>
-            <td>Medical HGH deficiency, anti-aging clinics</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Who HyperGH 14x is Best For</h2>
-
-      <p><strong>Ideal candidates:</strong></p>
-      <ul>
-        <li><strong>Men over 30:</strong> Experiencing age-related HGH decline</li>
-        <li><strong>Bodybuilders:</strong> Seeking natural muscle growth and recovery support</li>
-        <li><strong>Athletes:</strong> Wanting to enhance performance and recovery</li>
-        <li><strong>Fitness enthusiasts:</strong> Struggling to build muscle after 30-40</li>
-        <li><strong>Men wanting anti-aging benefits:</strong> Improved body composition, skin, energy</li>
-      </ul>
-
-      <p><strong>Less ideal for:</strong></p>
-      <ul>
-        <li><strong>Men under 25:</strong> HGH levels are naturally at peak</li>
-        <li><strong>Those not training:</strong> Exercise is required for significant muscle growth</li>
-        <li><strong>Seeking instant results:</strong> Takes 4-8+ weeks for full effects</li>
-        <li><strong>On tight budget:</strong> Premium pricing (~$80/month)</li>
-      </ul>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Q: Is HyperGH 14x a steroid?</h3>
-      <p>A: No. HyperGH 14x contains no steroids or synthetic hormones. It's a natural amino acid and herbal formula that supports your body's own HGH production. It's completely legal and requires no prescription.</p>
-
-      <h3>Q: How long before I see results?</h3>
-      <p>A: Most men notice initial improvements in sleep and recovery within 2-3 weeks. Visible muscle growth and fat loss typically become apparent after 4-6 weeks of consistent use. Optimal results occur after 8-12 weeks.</p>
-
-      <h3>Q: Do I need to cycle HyperGH 14x?</h3>
-      <p>A: Cycling is recommended but not required. Many users take it for 8-12 weeks, then take 2-4 weeks off before resuming. This prevents your body from adapting and maintains effectiveness.</p>
-
-      <h3>Q: Can I take HyperGH 14x with other supplements?</h3>
-      <p>A: Yes. HyperGH 14x combines well with protein powder, creatine, and pre-workout supplements. It doesn't contain stimulants, so it won't conflict with other supplements.</p>
-
-      <h3>Q: Will HyperGH 14x cause me to fail a drug test?</h3>
-      <p>A: No. HyperGH 14x contains no banned substances and won't cause positive drug tests for athletic competitions. It's a natural dietary supplement.</p>
-
-      <h3>Q: Is HyperGH 14x suitable for vegetarians or vegans?</h3>
-      <p>A: The capsules are gelatin-based (not vegan). Some ingredients may be derived from animal sources. Vegetarians may want to consult the manufacturer or consider alternatives.</p>
-
-      <h3>Q: How does HyperGH 14x compare to other HGH releasers?</h3>
-      <p>A: HyperGH 14x is one of the most comprehensive HGH releaser formulas available. Many competitors use lower doses or fewer ingredients. The deer antler velvet (IGF-1) and GABA content differentiate it from many competing products.</p>
-
-      <h3>Q: Can women take HyperGH 14x?</h3>
-      <p>A: While formulated for men, women can safely take HyperGH 14x. However, women may want to start with a lower dose to assess tolerance, as HGH affects women differently than men.</p>
-
-      <h3>Q: What happens if I stop taking HyperGH 14x?</h3>
-      <p>A: Your HGH levels will gradually return to baseline (your natural age-related levels). You won't experience withdrawal symptoms, but you may lose some of the benefits over time as HGH levels decline.</p>
-
-      <h3>Q: Is the money-back guarantee legitimate?</h3>
-      <p>A: Yes. Leading Edge Health offers a 67-day money-back guarantee. If you're not satisfied, you can return the product (even if opened) for a full refund within 67 days of purchase.</p>
-
-      <h2>Bottom Line</h2>
-      <p>HyperGH 14x is one of the most comprehensive natural HGH releasers available, specifically formulated for bodybuilders and fitness enthusiasts. While it's not as potent as synthetic HGH injections, it offers a safe, legal, and effective alternative for men seeking to optimize muscle growth, recovery, and body composition.</p>
-
-      <p><strong>Who should buy HyperGH 14x:</strong></p>
-      <ul>
-        <li>Men over 30 experiencing muscle gain plateaus</li>
-        <li>Bodybuilders seeking natural anabolic support</li>
-        <li>Athletes wanting enhanced recovery</li>
-        <li>Men seeking anti-aging benefits (improved body composition, skin, energy)</li>
-      </ul>
-
-      <p><strong>Key advantages:</strong></p>
-      <ul>
-        <li>Comprehensive amino acid formula</li>
-        <li>Includes deer antler velvet (IGF-1) and GABA</li>
-        <li>Specifically designed for bodybuilders/athletes</li>
-        <li>Supports muscle growth, fat loss, and recovery</li>
-        <li>67-day money-back guarantee</li>
-      </ul>
-
-      <p>For serious fitness enthusiasts seeking to maximize their genetic potential, HyperGH 14x offers a science-backed, safe approach to optimizing HGH levels naturally. Combined with proper nutrition and intense training, it can help break through plateaus and achieve your physique goals.</p>
-
-      <p>Ready to optimize your HGH levels naturally? <a href="https://www.hypergh14x.com/ct/752371" target="_blank" rel="noopener sponsored noreferrer">Visit the official HyperGH 14x website</a> to learn more and take advantage of the 67-day money-back guarantee.</p>
-
-      <hr class="my-8 border-gray-800" />
-      <p class="text-sm text-gray-500"><em>Affiliate Disclosure: We may earn a commission when you purchase through our links. This doesn't affect our editorial integrity or recommendations.</em></p>
-      <p class="text-sm text-gray-500"><em>Medical Disclaimer: This content is for informational purposes only. Always consult a healthcare provider before starting any supplement regimen.</em></p>
-    `
+    keyIngredients: ['L-Citrulline', 'L-Arginine', 'Epimedium', 'Asian Red Ginseng', 'Ginkgo Biloba'],
+    clinicalProof: 'Nitric oxide precursors clinically shown to improve blood flow and erection quality',
+    description: 'VigRX Nitric Oxide improves quality of erections, boosts sexual stamina, and increases blood flow. Made with L-Citrulline and L-Arginine for optimal nitric oxide production.',
+    featured: false
   },
   {
-    id: 'volume-pills',
-    name: 'Volume Pills',
-    slug: 'volume-pills',
+    id: 'vigrx-incontinix',
+    name: 'Vigrx Incontinix',
+    slug: 'vigrx-incontinix',
     category: 'male-enhancement',
-    image: '/images/products/volume-pills.jpg',
+    image: '/images/products/vigrx-incontinix.jpg',
     rating: 4.4,
     price: '$54.99',
     commission: '40%',
     guarantee: '67-Day Money-Back Guarantee',
-    affiliateLink: 'https://www.semenax.com/ct/752371',
+    affiliateLink: 'https://www.vigrxincontinix.com/ct/752371',
+    benefits: [
+      'Male urinary incontinence',
+      'Fewer bathroom visits',
+      'Decreased urges at night',
+      'Leaks cut in half',
+      'Improved quality of life'
+    ],
+    keyIngredients: ['Saw Palmetto', 'Pumpkin Seed Oil', 'Pygeum Africanum', 'Beta-Sitosterol'],
+    clinicalProof: 'Ingredients clinically proven to support prostate and bladder health',
+    description: 'Vigrx Incontinix is a male urinary incontinence supplement. Reduces bathroom visits, decreases nighttime urges, cuts leaks in half, and improves quality of life.',
+    featured: false
+  },
+  {
+    id: 'vigrx-max-volume',
+    name: 'Vigrx Max Volume',
+    slug: 'vigrx-max-volume',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-max-volume.jpg',
+    rating: 4.4,
+    price: '$49.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.vigrxmaxvolume.co/ct/752371',
     benefits: [
       'Increases semen volume',
-      'Bigger, more intense orgasms',
-      'Improves fertility',
-      'Works with ProSolution Pills',
-      'Enhanced sexual pleasure'
+      'Enhances orgasm intensity',
+      '3rd option after Semenax',
+      'More pleasure',
+      'VigRX brand quality'
     ],
-    keyIngredients: ['Solidilin', 'Xi Lan Rou Gui', 'Hong Hua Fen', 'Ku Gua', 'Emblica Officinalis'],
-    clinicalProof: 'Formulation designed based on traditional medicine and modern research',
-    description: 'Volume Pills helps men increase semen volume for bigger, more intense orgasms. Also improves fertility and pairs well with ProSolution Pills for enhanced results.',
-    featured: false,
-    metaTitle: 'Volume Pills Review 2026: Increase Semen Volume Naturally',
-    metaDescription: 'Complete Volume Pills review. Increase semen volume for bigger orgasms and improved fertility. Ingredients, results, side effects, and how it compares to Semenax.',
-    keywords: ['volume pills review', 'semen volume enhancer', 'increase sperm load', 'bigger ejaculations', 'more cum pills'],
-    fullReviewContent: `
-      <h2>What are Volume Pills?</h2>
-      <p>Volume Pills is a semen volume enhancement supplement designed to increase the amount of semen you produce during ejaculation. Like Semenax, it targets the fluids that make up semen, but uses a different formulation based on traditional Chinese medicine and Ayurveda.</p>
+    keyIngredients: ['Solidilin', 'Drilizen', 'L-Arginine', 'Zinc Oxide', 'L-Lysine'],
+    clinicalProof: 'Formulation designed based on semen volume enhancement research',
+    description: 'Vigrx Max Volume increases pleasure and intensity of men\'s orgasms. The 3rd option next to Semenax & Volume Pills for semen volume enhancement.',
+    featured: false
+  },
+  {
+    id: 'magnarx',
+    name: 'MagnaRX',
+    slug: 'magnarx',
+    category: 'male-enhancement',
+    image: '/images/products/magnarx.jpg',
+    rating: 4.3,
+    price: '$44.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.magnarx.com/ct/752371',
+    benefits: [
+      'Premium brand',
+      'Huge demand',
+      '67 Day Money-Back Guarantee',
+      'Increases sexual performance',
+      'Trusted brand'
+    ],
+    keyIngredients: ['L-Arginine', 'Yohimbe', 'Maca', 'Ginseng', 'Oat Straw'],
+    clinicalProof: 'Long-standing brand with customer testimonials',
+    description: 'MagnaRX is a premium brand with huge demand. Comes with 67 Day Money-Back Guarantee and helps guys increase sexual performance.',
+    featured: false
+  },
+  {
+    id: 'vigrx-delay-wipes',
+    name: 'VigRX Delay Wipes',
+    slug: 'vigrx-delay-wipes',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-delay-wipes.jpg',
+    rating: 4.5,
+    price: '$34.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.vigrxdelaywipes.com/ct/752371',
+    benefits: [
+      'Convenient wipes',
+      'Works in 10 minutes',
+      'Higher conversions',
+      'Great upsell or stand-alone',
+      'Easy to use'
+    ],
+    keyIngredients: ['Benzocaine', 'Soothing botanicals'],
+    clinicalProof: 'Fast-acting formula proven to delay ejaculation',
+    description: 'VigRX Delay Wipes offer higher conversions with a convenient format. Works in just 10 minutes. Great as an upsell or stand-alone product.',
+    featured: false
+  },
+  {
+    id: 'semenhance',
+    name: 'SemEnhance',
+    slug: 'semenhance',
+    category: 'male-enhancement',
+    image: '/images/products/semenhance.jpg',
+    rating: 4.4,
+    price: '$54.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.semenhance.com/ct/752371',
+    benefits: [
+      'Semen taste enhancer',
+      'All-natural formula',
+      'Popular with couples',
+      'Lifetime cookie',
+      'International shipping'
+    ],
+    keyIngredients: ['Pineapple extract', 'Papaya enzyme', 'Banana powder', 'Natural sweeteners'],
+    clinicalProof: 'Formulated based on natural ingredients known to improve taste',
+    description: 'SemEnhance is an all-natural semen taste enhancer. Popular among women and men. Lifetime cookie and international shipping available.',
+    featured: false
+  },
+  {
+    id: 'fertility-factor-5',
+    name: 'Fertility Factor 5',
+    slug: 'fertility-factor-5',
+    category: 'male-enhancement',
+    image: '/images/products/fertility-factor-5.jpg',
+    rating: 4.5,
+    price: '$64.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.fertilityfactor5.com/ct/752371',
+    benefits: [
+      'Addresses male infertility',
+      'Clinically studied formula',
+      'Better sperm quantity',
+      'Better sperm quality',
+      'VigRX brand backing'
+    ],
+    keyIngredients: ['L-Carnitine', 'Zinc', 'Maca', 'Panax Ginseng', 'L-Arginine'],
+    clinicalProof: 'Clinically studied formula for male fertility improvement',
+    description: 'Fertility Factor 5 helps couples address male infertility. Clinically studied formula with VigRX name for better sperm quantity and quality.',
+    featured: false
+  },
 
-      <p>Manufactured by Leading Edge Health, Volume Pills has been on the market for over 15 years. The formula combines herbs that have been used traditionally to enhance male virility and fertility with modern research on reproductive health.</p>
-
-      <p>Volume Pills is particularly effective when combined with ProSolution Pills, which targets erection quality. Together, they provide comprehensive male enhancement: firmer erections PLUS impressive ejaculate volume.</p>
-
-      <h2>How Volume Pills Works</h2>
-      <p>Volume Pills targets the male reproductive system through multiple mechanisms:</p>
-
-      <p><strong>1. Prostate Health:</strong> The prostate contributes about 25-30% of semen volume. Volume Pills includes zinc and herbs that support prostate function, potentially increasing fluid production.</p>
-
-      <p><strong>2. Seminal Vesicle Support:</strong> The seminal vesicles produce 60-70% of semen. Ingredients in Volume Pills support the health and output of these glands.</p>
-
-      <p><strong>3. Sperm Production:</strong> Nutrients and herbs support spermatogenesis (sperm production), potentially increasing sperm count and fertility.</p>
-
-      <p><strong>4. Hormonal Balance:</strong> Several ingredients support healthy testosterone levels, which is essential for sperm production and overall reproductive function.</p>
-
-      <p><strong>5. Blood Flow Enhancement:</strong> Improved circulation to the reproductive organs supports their function and health.</p>
-
-      <h2>Ingredients Breakdown</h2>
-      <p>Volume Pills contains a unique blend of traditional herbs and modern nutrients:</p>
-
-      <p><strong>Solidilin:</strong> Proprietary compound that may enhance sexual pleasure and motivation. Limited published research, but included based on traditional use.</p>
-
-      <p><strong>Xi Lan Rou Gui (Cinnamon Bark):</strong> Traditional Chinese herb used to improve circulation. Better blood flow to the reproductive organs supports healthy function.</p>
-
-      <p><strong>Hong Hua Fen (Safflower):</strong> Another traditional Chinese herb used to improve circulation. May enhance blood flow to the genitals.</p>
-
-      <p><strong>Ku Gua (Bitter Melon):</strong> Traditional Ayurvedic herb used for male sexual health. Some research suggests it may support healthy testosterone levels.</p>
-
-      <p><strong>Emblica Officinalis (Amla):</strong> Indian gooseberry, rich in vitamin C and antioxidants. Supports overall reproductive health and protects sperm from oxidative damage.</p>
-
-      <p><strong>Xian Mao (Curculigo Orchioides):</strong> Traditional Chinese herb used as a sexual tonic. Research suggests potential benefits for erectile function and libido.</p>
-
-      <p><strong>Drilizen:</strong> Proprietary compound that may support prostate health and sexual function.</p>
-
-      <p><strong>Fucus Vesiculosus (Bladderwrack):</strong> Seaweed rich in iodine and trace minerals. Supports thyroid function, which impacts hormone production.</p>
-
-      <p><strong>Zinc:</strong> Critical mineral for male fertility. Zinc is essential for testosterone production and sperm health. Volume Pills provides a therapeutic dose.</p>
-
-      <p><strong>Ling Zhi (Reishi Mushroom):</strong> Adaptogenic mushroom that helps the body manage stress. Stress reduction can improve sexual performance.</p>
-
-      <p><strong>San Guo Mu:</strong> Traditional Chinese herb used to support cardiovascular health and circulation.</p>
-
-      <p><strong>Tian Men Dong:</strong> Traditional herb used in Chinese medicine for male sexual health.</p>
-
-      <h2>Expected Results Timeline</h2>
-      <p><strong>Week 1-2:</strong> Early changes may include slightly increased volume and enhanced orgasm sensation.</p>
-
-      <p><strong>Week 3-4:</strong> More noticeable volume increase. Orgasms feel more intense and satisfying.</p>
-
-      <p><strong>Week 5-8:</strong> Significant increases in semen volume. Many men report 2-3x their normal volume. Orgasms are substantially more intense.</p>
-
-      <p><strong>Month 2-3:</strong> Optimal results achieved. Volume is consistently impressive. Orgasms are intense and pleasurable.</p>
-
-      <h2>Dosage & Usage Instructions</h2>
-      <p>Take <strong>two capsules twice daily</strong> (4 capsules total) with water. Stay well-hydrated and avoid excessive alcohol for best results.</p>
-
-      <h2>Side Effects & Safety</h2>
-      <p>Volume Pills is generally safe. Side effects are rare but may include mild digestive discomfort. Consult your doctor if you have prostate conditions.</p>
-
-      <h2>Pros & Cons</h2>
-      <table class="w-full border-collapse my-6">
-        <thead>
-          <tr class="bg-gold/20">
-            <th class="border border-gray-700 p-3 text-left">Pros</th>
-            <th class="border border-gray-700 p-3 text-left">Cons</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Increases semen volume</td>
-            <td class="border border-gray-700 p-3">❌ Less clinical research than Semenax</td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ More intense orgasms</td>
-            <td class="border border-gray-700 p-3">❌ 4 capsules/day</td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ Affordable</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-          <tr>
-            <td class="border border-gray-700 p-3">✅ 67-day guarantee</td>
-            <td class="border border-gray-700 p-3"></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Volume Pills vs Semenax</h2>
-      <p>Both are excellent volume enhancers:</p>
-      <ul>
-        <li><strong>Semenax:</strong> More clinical research, higher price, more familiar ingredients</li>
-        <li><strong>Volume Pills:</strong> More affordable, traditional Chinese medicine approach, pairs with ProSolution Pills</li>
-      </ul>
-
-      <h2>Conclusion</h2>
-      <p>Volume Pills is an excellent choice for men seeking bigger ejaculations and more intense orgasms. While it has less clinical research than Semenax, the traditional formulation has stood the test of time. The 67-day guarantee makes it risk-free to try.</p>
-
-      <p>For comprehensive enhancement, combine Volume Pills with ProSolution Pills for both volume AND erection quality.</p>
-
-      <p><a href="https://www.semenax.com/ct/752371" target="_blank" rel="noopener sponsored noreferrer" class="text-gold hover:underline font-semibold">Visit Volume Pills Official Site →</a></p>
-
-      <hr class="my-8 border-gray-800" />
-      <p class="text-sm text-gray-500"><em>Affiliate Disclosure: We may earn a commission when you purchase through our links. This doesn't affect our editorial integrity or recommendations.</em></p>
-      <p class="text-sm text-gray-500"><em>Medical Disclaimer: This content is for informational purposes only and doesn't constitute medical advice. Always consult a healthcare provider before starting any supplement regimen.</em></p>
-    `
+  // =================== 30% COMMISSION PRODUCTS ===================
+  {
+    id: 'primegenix-bone-complex',
+    name: 'PrimeGENIX Bone Complex',
+    slug: 'primegenix-bone-complex',
+    category: 'bone-health',
+    image: '/images/products/primegenix-bone-complex.jpg',
+    rating: 4.5,
+    price: '$49.99',
+    commission: '30%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.primegenixbonecomplex.com/ct/752371',
+    benefits: [
+      'Revolutionary bone support',
+      'Full-spectrum formula',
+      'For men only',
+      'No negative side effects',
+      'All-natural'
+    ],
+    keyIngredients: ['Calcium', 'Vitamin D3', 'Magnesium', 'Zinc', 'Vitamin K2'],
+    clinicalProof: 'Comprehensive bone support backed by nutrient science',
+    description: 'PrimeGENIX Bone Complex is a revolutionary bone-support formula for men. Full-spectrum bone support for male skeletal structure with all-natural ingredients and no negative side effects.',
+    featured: false
+  },
+  {
+    id: 'primegenix-prostate-support',
+    name: 'PrimeGENIX Prostate Support',
+    slug: 'primegenix-prostate-support',
+    category: 'prostate-health',
+    image: '/images/products/primegenix-prostate-support.jpg',
+    rating: 4.6,
+    price: '$54.99',
+    commission: '30%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.primegenixprostatesupport.com/ct/752371',
+    benefits: [
+      'Promotes prostate health',
+      'Improves urinary function',
+      'Reduces frequent urination',
+      'Improves bladder control',
+      'All-natural formula'
+    ],
+    keyIngredients: ['Beta-Sitosterol', 'Saw Palmetto', 'Pygeum Africanum', 'Nettle Root', 'Pumpkin Seed'],
+    clinicalProof: 'Ingredients clinically proven to support prostate health',
+    description: 'PrimeGENIX Prostate Support promotes prostate health and urinary function. Contains beta-sitosterol, saw palmetto, and pygeum africanum. Reduces frequent urination and improves bladder control.',
+    featured: false
   }
 ];
 
