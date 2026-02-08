@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { POSTHOG_KEY, POSTHOG_HOST } from '../lib/posthog';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -67,6 +68,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="alternate" type="application/rss+xml" title="The Best Offers Around - Male Enhancement" href="/rss/male-enhancement.xml" />
     <link rel="alternate" type="application/rss+xml" title="The Best Offers Around - Testosterone Boosters" href="/rss/testosterone-boosters.xml" />
     <link rel="alternate" type="application/rss+xml" title="The Best Offers Around - Weight Loss" href="/rss/weight-loss.xml" />
+
+    <!-- Vercel Web Analytics -->
+    <Analytics />
 
     <!-- Analytics placeholder -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

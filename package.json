@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
+    "@vercel/analytics": "^1.6.1",
     "astro": "^5.17.1",
     "html-to-text": "^9.0.5",
     "posthog-js": "^1.342.1",
