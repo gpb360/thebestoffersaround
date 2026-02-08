@@ -1,0 +1,583 @@
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+  image: string;
+  rating: number;
+  price: string;
+  commission: string;
+  guarantee: string;
+  affiliateLink: string;
+  benefits: string[];
+  keyIngredients: string[];
+  clinicalProof: string;
+  description: string;
+  featured: boolean;
+  // SEO fields
+  metaTitle?: string;  // Custom SEO title
+  metaDescription?: string;  // SEO meta description
+  keywords?: string[];  // Target keywords
+  fullReviewContent?: string;  // Comprehensive 2000+ word review
+}
+
+export const products: Product[] = [
+  {
+    id: 'testosil',
+    name: 'Testosil',
+    slug: 'testosil',
+    category: 'testosterone-boosters',
+    image: '/images/products/testosil.jpg',
+    rating: 4.8,
+    price: '$69.99',
+    commission: '50%',
+    guarantee: 'Lifetime Money-Back Guarantee',
+    affiliateLink: 'https://www.testosil.com/ct/752371',
+    benefits: [
+      '300mg of KSM-66® Ashwagandha',
+      'Clinically-validated dosage',
+      'Boosts free testosterone by up to 434%',
+      'Lifetime guarantee',
+      'All-natural formula'
+    ],
+    keyIngredients: ['KSM-66® Ashwagandha (300mg)', 'Fenugreek', 'Zinc', 'Magnesium', 'Vitamin D3', 'D-Aspartic Acid'],
+    clinicalProof: 'Clinical study showed 434% increase in free testosterone levels with KSM-66 Ashwagandha',
+    description: 'Testosil is a premium testosterone booster featuring 300mg of patented KSM-66® Ashwagandha - clinically-validated dosage. Backed by a lifetime guarantee, it\'s designed for men seeking natural testosterone support.',
+    featured: true,
+    metaTitle: 'Testosil Review 2026: 434% Testosterone Increase with KSM-66',
+    metaDescription: 'Comprehensive Testosil review. Learn how 300mg KSM-66 Ashwagandha boosts free testosterone by 434%. Clinical research, ingredients, side effects, lifetime guarantee.',
+    keywords: ['testosil review', 'best testosterone booster', 'ashwagandha testosterone', 'natural testosterone boosters', 'testosterone supplements', 'ksm-66 benefits']
+  },
+  {
+    id: 'vigrx-plus',
+    name: 'VigRX Plus',
+    slug: 'vigrx-plus',
+    category: 'male-enhancement',
+    image: '/images/products/vigrx-plus.jpg',
+    rating: 4.7,
+    price: '$76.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.vigrxplus.net/ct/752371',
+    benefits: [
+      'Doctor-endorsed formula',
+      'Backed by clinical study',
+      'Improved erection quality',
+      'Enhanced sexual stamina',
+      'Increased libido'
+    ],
+    keyIngredients: ['Bioperine', 'Damiana', 'Asian Red Ginseng', 'Epimedium Leaf Extract', 'Hawthorn Berry'],
+    clinicalProof: 'Triple-blind clinical study showed significant improvements in erection quality and sexual satisfaction',
+    description: 'VigRX Plus is a premier male enhancement supplement, backed by a clinical study and endorsed by Dr. Steven Lamm. Improves erection quality, stamina, and overall sexual performance.',
+    featured: true,
+    metaTitle: 'VigRX Plus Review 2026: Clinical Results, Ingredients & Side Effects',
+    metaDescription: 'Comprehensive VigRX Plus review based on clinical research. Discover ingredients, results timeline, side effects, and why it\'s rated #1 for male enhancement. 67-day guarantee.',
+    keywords: ['vigrx plus review', 'vigrx plus results', 'vigrx plus ingredients', 'best male enhancement pills', 'male enhancement supplements']
+  },
+  {
+    id: 'calmlean',
+    name: 'CalmLean',
+    slug: 'calmlean',
+    category: 'weight-loss',
+    image: '/images/products/calmlean.jpg',
+    rating: 4.6,
+    price: '$59.99',
+    commission: '50%',
+    guarantee: 'Lifetime Money-Back Guarantee',
+    affiliateLink: 'https://www.calmlean.com/ct/752371',
+    benefits: [
+      'Stimulant-free formula',
+      'Doctor-recommended',
+      'Boosts metabolism naturally',
+      'Reduces stubborn belly fat',
+      'No jitters or crashes'
+    ],
+    keyIngredients: ['ForsLean', 'Capsimax', 'Chromax', 'BioPerine', 'Green Tea Extract'],
+    clinicalProof: 'ForsLean shown to increase lean muscle mass while reducing body fat in clinical studies',
+    description: 'CalmLean is a stimulant-free weight loss supplement designed specifically for men. Doctor-recommended formula boosts metabolism without the jitters associated with caffeine-based products.',
+    featured: true,
+    metaTitle: 'CalmLean Review 2026: Stimulant-Free Weight Loss for Men',
+    metaDescription: 'Comprehensive CalmLean review. Discover how this doctor-recommended, stimulant-free formula boosts metabolism and burns stubborn fat. No jitters, lifetime guarantee.',
+    keywords: ['calmlean review', 'stimulant-free weight loss', 'weight loss for men', 'metabolism booster', 'fat burning supplements']
+  },
+  {
+    id: 'erectin',
+    name: 'Erectin',
+    slug: 'erectin',
+    category: 'male-enhancement',
+    image: '/images/products/erectin.jpg',
+    rating: 4.7,
+    price: '$69.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectin.com/ct/752371',
+    benefits: [
+      'Backed by clinical study',
+      'Endorsed by Dr. Dave David',
+      'Rapid release liquid gel capsules',
+      'Works within 30 minutes',
+      '24-hour effectiveness'
+    ],
+    keyIngredients: ['Epimedium', 'Muira Puama', 'Catuaba Bark', 'Ginkgo Biloba', 'Asian Red Ginseng'],
+    clinicalProof: 'Clinical study demonstrated significant improvements in erectile function and intercourse satisfaction',
+    description: 'Erectin features rapid-release liquid gel technology for faster absorption. Endorsed by surgeon Dr. Dave David, clinically proven to improve male sexual performance.',
+    featured: false,
+    metaTitle: 'Erectin Review 2026: Fast-Acting Male Enhancement with Clinical Proof',
+    metaDescription: 'Complete Erectin review. Learn how rapid-release liquid gel technology delivers results in 30 minutes. Clinical study, ingredients, side effects, and 67-day guarantee.',
+    keywords: ['erectin review', 'male enhancement supplement', 'natural ED pills', 'fast acting male enhancement', 'erectile dysfunction supplements']
+  },
+  {
+    id: 'semenax',
+    name: 'Semenax',
+    slug: 'semenax',
+    category: 'male-enhancement',
+    image: '/images/products/semenax.jpg',
+    rating: 4.5,
+    price: '$59.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.semenax.com/ct/752371',
+    benefits: [
+      'Backed by clinical study',
+      'Increases semen volume up to 500%',
+      'More intense orgasms',
+      'Improved fertility',
+      'Enhanced sexual pleasure'
+    ],
+    keyIngredients: ['Swedish Flower Pollen', 'L-Lysine', 'Zinc Oxide', 'L-Arginine', 'Epimedium'],
+    clinicalProof: 'Clinical study showed significant increase in semen volume and orgasm intensity',
+    description: 'Semenax is a leading semen volume enhancer, backed by clinical research. Increases volume up to 500% for more intense orgasms and improved fertility.',
+    featured: false,
+    metaTitle: 'Semenax Review 2026: Increase Semen Volume Naturally',
+    metaDescription: 'Comprehensive Semenax review. Increase semen volume up to 500% for more intense orgasms and improved fertility. Ingredients, results, side effects, and 67-day guarantee.',
+    keywords: ['semenax review', 'semen volume enhancer', 'increase sperm load', 'bigger ejaculations', 'more cum pills']
+  },
+  {
+    id: 'prosolution-plus',
+    name: 'Prosolution Plus',
+    slug: 'prosolution-plus',
+    category: 'male-enhancement',
+    image: '/images/products/prosolution-plus.jpg',
+    rating: 4.6,
+    price: '$64.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.prosolutionplus.com/ct/752371',
+    benefits: [
+      'Clinically proven for premature ejaculation',
+      '64% improvement in PE symptoms',
+      'Improves erection quality',
+      'Enhances control',
+      'Increases satisfaction'
+    ],
+    keyIngredients: ['Withania Somnifera', 'Tribulus Terrestris', 'Mucuna Pruriens', 'Curculigo Orchioides'],
+    clinicalProof: 'Clinical study showed 64% improvement in premature ejaculation symptoms',
+    description: 'Prosolution Plus is one of very few natural supplements clinically proven to improve premature ejaculation. Targets both timing and erection quality.',
+    featured: false,
+    metaTitle: 'Prosolution Plus Review 2026: Industry-Leading Male Enhancement',
+    metaDescription: 'Comprehensive ProSolution Plus review. Industry leader for over a decade with excellent results, fantastic conversions, and strong return sales.',
+    keywords: ['prosolution plus review', 'prosolution results', 'male enhancement industry leader', 'best male enhancement brand', 'prosolution customer reviews']
+  },
+  {
+    id: 'genf20',
+    name: 'GenF20',
+    slug: 'genf20',
+    category: 'anti-aging',
+    image: '/images/products/genf20.jpg',
+    rating: 4.7,
+    price: '$69.95',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.genf20muscle.com/ct/752371',
+    benefits: [
+      '#1 rated HGH releaser',
+      'Reduces wrinkles and fine lines',
+      'Increases muscle tone',
+      'Boosts energy levels',
+      'Doctor-endorsed'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'Astragalus Root Extract'],
+    clinicalProof: 'Multiple studies support HGH precursor effectiveness for anti-aging benefits',
+    description: 'GenF20 is the #1 rated HGH releaser, targeting anti-aging and muscle building. Safe, affordable, and doctor-endorsed alternative to HGH injections.',
+    featured: true,
+    metaTitle: 'GenF20 Review 2026: #1 Rated HGH Releaser for Anti-Aging',
+    metaDescription: 'Comprehensive GenF20 review. #1 rated HGH releaser helps you pack on lean muscle mass and torch body fat naturally.',
+    keywords: ['genf20 review', 'hgh releaser', 'anti-aging supplements', 'best hgh releaser', 'natural hgh', 'hgh muscle builder']
+  },
+  {
+    id: 'brainpill',
+    name: 'BrainPill',
+    slug: 'brainpill',
+    category: 'brain-health',
+    image: '/images/products/brainpill.jpg',
+    rating: 4.6,
+    price: '$59.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.brainpill.com/ct/752371',
+    benefits: [
+      'Boosts focus and concentration',
+      'Increases mental energy',
+      'Reduces brain fog',
+      'Enhances memory recall',
+      'Improves cognitive performance'
+    ],
+    keyIngredients: ['Cognizin', 'Synapsa', 'Vitamin B12', 'Bacopa Monnieri', 'L-Tyrosine'],
+    clinicalProof: 'Clinical studies support ingredients for improved memory and cognitive function',
+    description: 'BrainPill is a premium nootropic supplement designed to boost focus, mental energy, and reduce brain fog. Perfect for professionals and students seeking peak cognitive performance.',
+    featured: true,
+    metaTitle: 'BrainPill Review 2026: Premium Nootropic for Focus & Energy',
+    metaDescription: 'Comprehensive BrainPill review. Boosts focus, mental energy, reduces brain fog. Perfect for professionals and students.',
+    keywords: ['brainpill review', 'nootropic supplements', 'focus pills', 'memory enhancer', 'cognitive booster', 'brain health supplements']
+  },
+  {
+    id: 'hypergh-14x',
+    name: 'HyperGH 14x',
+    slug: 'hypergh-14x',
+    category: 'muscle-fitness',
+    image: '/images/products/hypergh-14x.jpg',
+    rating: 4.5,
+    price: '$79.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.hypergh14x.com/ct/752371',
+    benefits: [
+      'Natural HGH boost for muscle growth',
+      'Reduces body fat',
+      'Increases lean muscle mass',
+      'Faster workout recovery',
+      'Enhances gym performance'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'L-Tyrosine'],
+    clinicalProof: 'Studies support HGH precursors for increasing lean muscle and reducing body fat',
+    description: 'HyperGH 14x is designed for serious fitness enthusiasts. Natural HGH boost supports greater lean muscle mass, reduced body fat, and enhanced workout performance.',
+    featured: false,
+    metaTitle: 'HyperGH 14x Review 2026: Natural HGH Booster for Bodybuilders',
+    metaDescription: 'Comprehensive HyperGH 14x review. Natural HGH boost supports greater lean muscle mass, reduced body fat, and enhanced workout performance.',
+    keywords: ['hypergh 14x review', 'hgh for bodybuilding', 'muscle growth supplements', 'lean mass builder', 'workout recovery supplements']
+  },
+  {
+    id: 'volume-pills',
+    name: 'Volume Pills',
+    slug: 'volume-pills',
+    category: 'male-enhancement',
+    image: '/images/products/volume-pills.jpg',
+    rating: 4.4,
+    price: '$54.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.semenax.com/ct/752371',
+    benefits: [
+      'Increases semen volume',
+      'Bigger, more intense orgasms',
+      'Improves fertility',
+      'Works with ProSolution Pills',
+      'Enhanced sexual pleasure'
+    ],
+    keyIngredients: ['Solidilin', 'Xi Lan Rou Gui', 'Hong Hua Fen', 'Ku Gua', 'Emblica Officinalis'],
+    clinicalProof: 'Formulation designed based on traditional medicine and modern research',
+    description: 'Volume Pills helps men increase semen volume for bigger, more intense orgasms. Also improves fertility and pairs well with ProSolution Pills for enhanced results.',
+    featured: false,
+    metaTitle: 'Volume Pills Review 2026: Increase Semen Volume Naturally',
+    metaDescription: 'Comprehensive Volume Pills review. Increase semen volume for bigger orgasms and improved fertility. Ingredients, results, side effects, and 67-day guarantee.',
+    keywords: ['volume pills review', 'semen volume enhancer', 'increase sperm load', 'bigger ejaculations', 'more cum pills']
+  },
+  {
+    id: 'dim3x',
+    name: 'DIM3X',
+    slug: 'dim3x',
+    category: 'estrogen-management',
+    image: '/images/products/dim3x.jpg',
+    rating: 4.5,
+    price: '$59.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.dim3x.com/ct/752371',
+    benefits: [
+      'Helps lower active estrogen levels',
+      'Boosts mood, focus, strength and stamina',
+      'Promotes healthy testosterone-to-estrogen balance',
+      'Reduces water retention',
+      'Clinically-tested formula'
+    ],
+    keyIngredients: ['DIM (Diindolylmethane)', 'Calcium D-Glucarate', 'Vitamin D3', 'BioPerine', 'Phytosterols'],
+    clinicalProof: 'Helps men reduce active estrogen levels naturally using bioavailable DIM compound',
+    description: 'DIM3X helps men reduce active estrogen levels to boost mood, focus, strength, and stamina. Clinically-tested formula promotes healthy hormonal balance.',
+    featured: false,
+    metaTitle: 'DIM3X Review 2026: Natural Estrogen Management & Hormonal Balance',
+    metaDescription: 'Comprehensive DIM3X review. Learn how bioavailable DIM helps lower estrogen, boost testosterone, and improve overall hormonal balance for men.',
+    keywords: ['dim3x review', 'estrogen blocker', 'reduce estrogen men', 'hormonal balance supplements', 'natural estrogen control']
+  },
+  {
+    id: 'testodren',
+    name: 'Testodren',
+    slug: 'testodren',
+    category: 'testosterone-boosters',
+    image: '/images/products/testodren.jpg',
+    rating: 4.6,
+    price: '$64.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.testodren.com/ct/752371',
+    benefits: [
+      'Clinically-tested patented formula',
+      'All-natural testosterone booster',
+      'Helps guys get bigger muscles',
+      'More energy and better virility',
+      'Designed for men over 30'
+    ],
+    keyIngredients: ['Testofen', 'Eurycoma Longifolia', 'Tribulus Terrestris', 'Fenugreek', 'Zinc', 'Magnesium'],
+    clinicalProof: 'All-natural testosterone boosting supplement with clinically-tested, patented formula designed for muscle crowd and men over 30',
+    description: 'Testodren is a clinically-tested, all-natural testosterone booster with a patented formula. Helps men increase muscle mass, energy, and virility.',
+    featured: false,
+    metaTitle: 'Testodren Review 2026: Patented Natural Testosterone Booster',
+    metaDescription: 'Complete Testodren review. Discover how this patented, natural testosterone booster helps men build muscle, increase energy, and enhance virility.',
+    keywords: ['testodren review', 'natural testosterone booster', 'testosterone supplements', 'muscle building testosterone', 'testodren results']
+  },
+  {
+    id: 'testrx',
+    name: 'TestRX',
+    slug: 'testrx',
+    category: 'testosterone-boosters',
+    image: '/images/products/testrx.jpg',
+    rating: 4.3,
+    price: '$59.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.testrx.com/ct/752371',
+    benefits: [
+      'Natural testosterone booster',
+      'Helps get bigger muscles',
+      'More energy and better virility',
+      'Designed for bodybuilders and athletes',
+      'Supports workout performance'
+    ],
+    keyIngredients: ['Tribulus Terrestris', 'Maca Root', 'Zinc', 'Magnesium', 'Longjack', 'D-Aspartic Acid'],
+    clinicalProof: 'Natural formula designed for bodybuilders and athletes seeking testosterone support for bigger muscles and enhanced performance',
+    description: 'TestRX is a natural testosterone booster designed for bodybuilders and athletes. Helps increase muscle mass, energy, and virility.',
+    featured: false,
+    metaTitle: 'TestRX Review 2026: Natural Testosterone Booster for Bodybuilders',
+    metaDescription: 'Comprehensive TestRX review. Discover how this natural testosterone booster helps bodybuilders get bigger muscles, more energy, and enhanced performance.',
+    keywords: ['testrx review', 'testosterone booster bodybuilding', 'testosterone supplements athletes', 'muscle building testosterone', 'testrx results']
+  },
+  {
+    id: 'primegenix',
+    name: 'PrimeGENIX',
+    slug: 'primegenix',
+    category: 'muscle-fitness',
+    image: '/images/products/primegenix.jpg',
+    rating: 4.6,
+    price: '$69.99',
+    commission: '50%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.primegenix.com/ct/752371',
+    benefits: [
+      'Clinically proven natural supplements',
+      'Formulated for men 40+',
+      'All ingredients backed by scientific research',
+      'Supports muscle mass and strength',
+      'Premium fitness supplements'
+    ],
+    keyIngredients: ['Ashwagandha', 'D-Aspartic Acid', 'Rhodiola Rosea', 'Tribulus Terrestris', 'Fenugreek', 'Zinc'],
+    clinicalProof: 'Clinically proven natural premium fitness supplements specifically formulated for men over 40 seeking muscle growth and strength',
+    description: 'PrimeGENIX is clinically proven natural fitness supplements specifically formulated for men over 40. All ingredients are backed by scientific research.',
+    featured: false,
+    metaTitle: 'PrimeGENIX Review 2026: Premium Fitness Supplements for Men 40+',
+    metaDescription: 'Comprehensive PrimeGENIX review. Discover clinically proven supplements designed for men 40+ seeking muscle growth, strength, and enhanced performance.',
+    keywords: ['primegenix review', 'fitness supplements men 40', 'muscle building over 40', 'natural fitness supplements', 'primegenix results']
+  },
+  {
+    id: 'erectin-gummies',
+    name: 'Erectin Gummies',
+    slug: 'erectin-gummies',
+    category: 'male-enhancement',
+    image: '/images/products/erectin-gummies.jpg',
+    rating: 4.7,
+    price: '$64.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectingummies.com/ct/752371',
+    benefits: [
+      'Award-winning formula',
+      'Boosts blood flow within 30 minutes',
+      'Improves circulation for 24 hours',
+      'Convenient gummy form',
+      'Fast-acting male enhancement'
+    ],
+    keyIngredients: ['Epimedium', 'Muira Puama', 'L-Citrulline', 'L-Arginine', 'Asian Red Ginseng', 'Ginkgo Biloba'],
+    clinicalProof: 'Award-winning formula demonstrated to boost blood flow within 30 minutes with 24-hour circulation improvements',
+    description: 'Erectin Gummies feature an award-winning formula that boosts blood flow within 30 minutes and improves circulation for 24 hours. Convenient gummy form.',
+    featured: true,
+    metaTitle: 'Erectin Gummies Review 2026: Fast-Acting Male Enhancement Gummies',
+    metaDescription: 'Comprehensive Erectin Gummies review. Award-winning formula delivers results in 30 minutes with 24-hour circulation benefits. Convenient gummies.',
+    keywords: ['erectin gummies review', 'male enhancement gummies', 'fast acting male enhancement', 'natural ED gummies', 'erectin gummies results']
+  },
+  {
+    id: 'proextender',
+    name: 'ProExtender',
+    slug: 'proextender',
+    category: 'penis-enlargement',
+    image: '/images/products/proextender.jpg',
+    rating: 4.3,
+    price: '$199.99',
+    commission: '40%',
+    guarantee: '1-Year Money-Back Guarantee',
+    affiliateLink: 'https://www.proextender.com/ct/752371',
+    benefits: [
+      'Medical device for penis enlargement',
+      'Uses traction method for gains',
+      'Recommended by urologists',
+      'Reviewed by clinical studies',
+      '1-year guarantee included'
+    ],
+    keyIngredients: ['Medical-grade traction device', 'Adjustable tension', 'Comfort strap system', 'Doctor-designed protocol', 'Support resources'],
+    clinicalProof: 'Recommended by urologists and reviewed by clinical studies for effective penis enlargement using traction method',
+    description: 'ProExtender is a medical-grade traction device for penis enlargement recommended by urologists. Reviewed by clinical studies with a 1-year guarantee.',
+    featured: false,
+    metaTitle: 'ProExtender Review 2026: Medical-Grade Penis Enlargement Device',
+    metaDescription: 'Comprehensive ProExtender review. Medical-grade traction device using proven method. Recommended by urologists with 1-year guarantee.',
+    keywords: ['proextender review', 'penis enlargement device', 'penis extender', 'penis traction method', 'medical penis enlarger']
+  },
+  {
+    id: 'erectin-gel',
+    name: 'Erectin Gel',
+    slug: 'erectin-gel',
+    category: 'male-enhancement',
+    image: '/images/products/erectin-gel.jpg',
+    rating: 4.6,
+    price: '$69.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.erectingel.com/ct/752371',
+    benefits: [
+      'Four erection-hardening compounds',
+      'Absorption enhancers',
+      'Improves erectile function',
+      'Sexual desire enhancement',
+      'Intercourse satisfaction'
+    ],
+    keyIngredients: ['Epimedium', 'Muira Puama', 'Catuaba Bark', 'Ginkgo Biloba', 'Asian Red Ginseng', 'Proprietary absorption blend'],
+    clinicalProof: 'Four erection-hardening compounds and absorption enhancers work to improve erectile function, sexual desire, and intercourse satisfaction',
+    description: 'Erectin Gel features four erection-hardening compounds and absorption enhancers to improve erectile function, sexual desire, and intercourse satisfaction.',
+    featured: true,
+    metaTitle: 'Erectin Gel Review 2026: Topical Male Enhancement for Fast Results',
+    metaDescription: 'Comprehensive Erectin Gel review. Four erection-hardening compounds with absorption enhancers improve erectile function, sexual desire, and satisfaction. 67-day guarantee.',
+    keywords: ['erectin gel review', 'topical male enhancement', 'fast acting male enhancement', 'natural ED gel', 'erectin gel results']
+  },
+  {
+    id: 'genf20-muscle',
+    name: 'GenF20 Muscle',
+    slug: 'genf20-muscle',
+    category: 'muscle-fitness',
+    image: '/images/products/genf20-muscle.jpg',
+    rating: 4.7,
+    price: '$69.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.genf20muscle.com/ct/752371',
+    benefits: [
+      '#1 rated HGH releaser for muscle building',
+      'Helps pack on lean muscle mass',
+      'Torches body fat effectively',
+      'Natural boost for gym performance',
+      'Doctor-endorsed'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'Astragalus Root Extract', 'Deer Antler Velvet'],
+    clinicalProof: 'Rated #1 HGH releaser focused on helping men pack on lean muscle mass and torch body fat naturally',
+    description: 'GenF20 Muscle is the #1 rated HGH releaser for muscle building. Helps pack on lean muscle mass and torch body fat naturally.',
+    featured: true,
+    metaTitle: 'GenF20 Muscle Review 2026: #1 Rated HGH Muscle Builder',
+    metaDescription: 'Comprehensive GenF20 Muscle review. #1 rated HGH releaser helps you pack on lean muscle mass and torch body fat naturally.',
+    keywords: ['genf20 muscle review', 'hgh muscle builder', 'lean muscle supplements', 'genf20 muscle results', 'best hgh releaser']
+  },
+  {
+    id: 'buy-extenze',
+    name: 'BuyExtenze',
+    slug: 'buy-extenze',
+    category: 'male-enhancement',
+    image: '/images/products/buy-extenze.jpg',
+    rating: 4.5,
+    price: '$59.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.buyextenze.com/ct/752371',
+    benefits: [
+      'Over 1 billion pills sold',
+      'One of most well-known male enhancement supplements',
+      'Extended-release gel caps',
+      'Trusted brand for decades',
+      'Strong customer following'
+    ],
+    keyIngredients: ['Yohimbe', 'Tribulus Terrestris', 'L-Arginine', 'Ginseng Blend', 'Zinc', 'Ginkgo Biloba'],
+    clinicalProof: 'With over 1 billion pills sold and decades on the market, BuyExtenze has established itself as one of the most recognized male enhancement brands',
+    description: 'BuyExtenze is one of the most well-known male enhancement supplements with over 1 billion pills sold. Extended-release gel caps for sustained results.',
+    featured: true,
+    metaTitle: 'BuyExtenze Review 2026: The Original Male Enhancement Formula',
+    metaDescription: 'Comprehensive BuyExtenze review. With over 1 billion pills sold, discover why this trusted brand has been a top choice for decades. Extended-release technology.',
+    keywords: ['buyextenze review', 'extenze review', 'male enhancement pills', 'best male enhancement supplement', 'extenze results']
+  },
+  {
+    id: 'prosolution-pills',
+    name: 'ProSolution Pills',
+    slug: 'prosolution-pills',
+    category: 'male-enhancement',
+    image: '/images/products/prosolution-pills.jpg',
+    rating: 4.6,
+    price: '$64.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.prosolutionpills.com/ct/752371',
+    benefits: [
+      'Industry leader for over a decade',
+      'Excellent customer results',
+      'Fantastic conversions and return sales',
+      'Improves erection quality',
+      'Enhances sexual stamina'
+    ],
+    keyIngredients: ['Drilizen', 'Solidilin', 'Taj', 'Momordica', 'L-Arginine', 'Zinc'],
+    clinicalProof: 'Industry-leading male enhancement brand with over a decade of success, excellent customer feedback, and fantastic conversion rates',
+    description: 'ProSolution Pills is an industry-leading male enhancement brand for over a decade. Excellent customer results, fantastic conversions, and strong return sales.',
+    featured: true,
+    metaTitle: 'ProSolution Pills Review 2026: Industry-Leading Male Enhancement',
+    metaDescription: 'Comprehensive ProSolution Pills review. Industry leader for over a decade with excellent results, fantastic conversions, and strong return sales.',
+    keywords: ['prosolution pills review', 'prosolution results', 'male enhancement industry leader', 'best male enhancement brand', 'prosolution customer reviews']
+  },
+  {
+    id: 'genfx',
+    name: 'GenFX',
+    slug: 'genfx',
+    category: 'anti-aging',
+    image: '/images/products/genfx.jpg',
+    rating: 4.5,
+    price: '$59.99',
+    commission: '40%',
+    guarantee: '67-Day Money-Back Guarantee',
+    affiliateLink: 'https://www.genfx.com/ct/752371',
+    benefits: [
+      'Solid performer in HGH market',
+      'Extensive track record',
+      'Strong customer testimonials',
+      'Credible doctor endorsements',
+      'Safe and affordable'
+    ],
+    keyIngredients: ['L-Arginine', 'L-Glutamine', 'L-Glycine', 'L-Lysine', 'Astragalus Root Extract', 'Alpha-GPC'],
+    clinicalProof: 'Solid performer with extensive track record, strong customer testimonials, and credible doctor endorsements in HGH market',
+    description: 'GenFX is a solid performer in the HGH market with extensive track record, strong customer testimonials, and credible doctor endorsements.',
+    featured: false,
+    metaTitle: 'GenFX Review 2026: Proven HGH Releaser for Anti-Aging',
+    metaDescription: 'Comprehensive GenFX review. Solid HGH performer with extensive track record, strong testimonials, and credible doctor endorsements.',
+    keywords: ['genfx review', 'hgh releaser', 'anti-aging supplements', 'best hgh releaser', 'natural hgh']
+  }
+];
+
+export function getProductsByCategory(category: string): Product[] {
+  return products.filter(p => p.category === category);
+}
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find(p => p.slug === slug);
+}
+
+export function getFeaturedProducts(): Product[] {
+  return products.filter(p => p.featured);
+}

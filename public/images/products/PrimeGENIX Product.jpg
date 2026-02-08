@@ -1,0 +1,6 @@
+--2026-02-07 10:30:22--  https://www.primegenix.com/ct/752371
+Resolving www.primegenix.com (www.primegenix.com)... 23.227.38.74, 2620:127:f00f:e::
+Connecting to www.primegenix.com (www.primegenix.com)|23.227.38.74|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2026-02-07 10:30:22 ERROR 404: Not Found.
+

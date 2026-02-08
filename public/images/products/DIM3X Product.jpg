@@ -1,0 +1,20 @@
+--2026-02-07 10:30:12--  https://www.dim3x.com/ct/752371
+Resolving www.dim3x.com (www.dim3x.com)... 141.193.213.11, 141.193.213.10
+Connecting to www.dim3x.com (www.dim3x.com)|141.193.213.11|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.dim3x.com/cart/?u=752371&ct=1 [following]
+--2026-02-07 10:30:13--  https://www.dim3x.com/cart/?u=752371&ct=1
+Reusing existing connection to www.dim3x.com:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: / [following]
+--2026-02-07 10:30:15--  https://www.dim3x.com/
+Reusing existing connection to www.dim3x.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘dim3x.jpg’
+
+     0K .......... .......... .......... .......... ..........  912K
+    50K .......... .......... .......... .......... ...         211K=0.3s
+
+2026-02-07 10:30:15 (359 KB/s) - ‘dim3x.jpg’ saved [95525]
+

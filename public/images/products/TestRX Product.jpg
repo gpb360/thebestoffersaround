@@ -1,0 +1,21 @@
+--2026-02-07 10:30:19--  https://www.testrx.com/ct/752371
+Resolving www.testrx.com (www.testrx.com)... 141.193.213.11, 141.193.213.10
+Connecting to www.testrx.com (www.testrx.com)|141.193.213.11|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.testrx.com/cart/?u=752371&ct=1 [following]
+--2026-02-07 10:30:20--  https://www.testrx.com/cart/?u=752371&ct=1
+Reusing existing connection to www.testrx.com:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: / [following]
+--2026-02-07 10:30:21--  https://www.testrx.com/
+Reusing existing connection to www.testrx.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘testrx.jpg’
+
+     0K .......... .......... .......... .......... .......... 1.13M
+    50K .......... .......... .......... .......... ..........  875K
+   100K .......... .                                           22.6M=0.1s
+
+2026-02-07 10:30:22 (1.08 MB/s) - ‘testrx.jpg’ saved [114515]
+

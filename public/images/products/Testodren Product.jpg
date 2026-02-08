@@ -1,0 +1,21 @@
+--2026-02-07 10:30:15--  https://www.testodren.com/ct/752371
+Resolving www.testodren.com (www.testodren.com)... 141.193.213.10, 141.193.213.11
+Connecting to www.testodren.com (www.testodren.com)|141.193.213.10|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.testodren.com/cart/?u=752371&ct=1 [following]
+--2026-02-07 10:30:16--  https://www.testodren.com/cart/?u=752371&ct=1
+Reusing existing connection to www.testodren.com:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: / [following]
+--2026-02-07 10:30:16--  https://www.testodren.com/
+Reusing existing connection to www.testodren.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘testodren.jpg’
+
+     0K .......... .......... .......... .......... ..........  576K
+    50K .......... .......... .......... .......... ..........  784K
+   100K ......                                                 1.56M=0.2s
+
+2026-02-07 10:30:17 (687 KB/s) - ‘testodren.jpg’ saved [108666]
+
