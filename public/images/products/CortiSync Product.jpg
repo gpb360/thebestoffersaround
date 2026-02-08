@@ -1,0 +1,21 @@
+--2026-02-07 10:30:17--  https://www.cortisync.com/ct/752371
+Resolving www.cortisync.com (www.cortisync.com)... 141.193.213.10, 141.193.213.11
+Connecting to www.cortisync.com (www.cortisync.com)|141.193.213.10|:443... connected.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: https://www.cortisync.com/cart/?u=752371&ct=1 [following]
+--2026-02-07 10:30:17--  https://www.cortisync.com/cart/?u=752371&ct=1
+Reusing existing connection to www.cortisync.com:443.
+HTTP request sent, awaiting response... 301 Moved Permanently
+Location: / [following]
+--2026-02-07 10:30:19--  https://www.cortisync.com/
+Reusing existing connection to www.cortisync.com:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘cortisync.jpg’
+
+     0K .......... .......... .......... .......... ..........  778K
+    50K .......... .......... .......... .......... ..........  599K
+   100K                                                         153G=0.1s
+
+2026-02-07 10:30:19 (678 KB/s) - ‘cortisync.jpg’ saved [102482]
+
